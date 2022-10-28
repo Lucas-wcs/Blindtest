@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Buttons({ name }) {
+function Buttons({ name, id }) {
   return (
     <div className="eachbutton">
-      <button type="button">{name}</button>
+      <button id={id} type="button">{name}</button>
     </div>
   );
 }
