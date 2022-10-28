@@ -1,4 +1,4 @@
-import "./App.css";
+import "./BlindTestChoice.css"
 
 import BlindTestChoice from "@pages/BlindTestChoice.jsx";
 
@@ -11,5 +11,3 @@ function App() {
 }
 
 export default App;
-
-

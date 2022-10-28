@@ -3,7 +3,6 @@ import Title from "@components/Title";
 import Toggle from "@components/Toggle";
 import ButtonContainer from "@components/ButtonContainer";
 
-
 const years = [
   {
     name: "60's & 70's",
@@ -30,23 +29,23 @@ const years = [
 const kind = [
   {
     name: "Rock",
-    id: "button6"
+    id: "button6",
   },
   {
     name: "Pop",
-    id: "button7"
+    id: "button7",
   },
   {
     name: "Film",
-    id: "button8"
+    id: "button8",
   },
   {
     name: "Rap",
-    id: "button9"
+    id: "button9",
   },
   {
     name: "Electro",
-    id: "button10"
+    id: "button10",
   },
 ];
 
@@ -68,12 +67,12 @@ const ourChoice = [
   },
 ];
 
-const BlindTestChoice = () => {
+function BlindTestChoice() {
   return (
     <div className="test-selection">
       <Title />
       <Toggle />
-      <div className="section">  
+      <div className="section">
         <div className="music-filter">
           <ButtonContainer array={years} />
           <ButtonContainer array={kind} />
@@ -84,6 +83,6 @@ const BlindTestChoice = () => {
       </div>
     </div>
   );
-};
+}
 
 export default BlindTestChoice;
