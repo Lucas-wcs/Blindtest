@@ -1,9 +1,10 @@
-import Recherche from "./pages/Recherche";
+import Accueil from "./pages/Accueil";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Recherche />
+      <Accueil />
     </div>
   );
 }

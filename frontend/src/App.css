@@ -36,6 +36,8 @@ a {
 body {
   color: var(--noir);
   font-family: var(--ffTexte);
+  background-color: var(--bg);
+  min-height: 100vh;
+  text-align: center;
+  padding-bottom: 2rem;
 }
-
-/* ---------------------------------------------- */
