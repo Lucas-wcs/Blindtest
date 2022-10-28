@@ -1,0 +1,110 @@
+body {
+  background: linear-gradient(
+      0deg,
+      rgba(146, 102, 61, 0.2),
+      rgba(146, 102, 61, 0.2)
+    ),
+    #ffffff;
+  background-image: url("https://cdn.discordapp.com/attachments/1031509947487363165/1035467965061144617/Vinyle2.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: left;
+}
+
+h1 {
+  text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
+    1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
+    4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
+    4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
+    7px 6px 1px gray;
+
+  font-size: 50px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.titleName {
+  text-align: center;
+  font-family: var(--ffTitre);
+}
+
+.spanS {
+  color: var(--orange);
+}
+
+a {
+  list-style-type: disc;
+}
+
+.lastListen {
+  margin-top: 20px;
+  font-family: var(--ffTexte);
+  text-align: center;
+  background-color: var(--beige);
+  box-shadow: var(--orange) -7px 7px;
+  padding: 20px;
+  width: 80%;
+  justify-content: center;
+  margin-left: 10%;
+}
+
+.pieceOfMusic {
+  margin-top: 20px;
+  font-family: var(--ffTexte);
+  text-align: center;
+}
+
+.imgMusic {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.caret-right-circle {
+  color: red;
+}
+
+@media (max-width: 319px) {
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 768px) {
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+}
+
+@media (min-width: 1024px) {
+  .lastListen {
+    background: none;
+    box-shadow: none;
+  }
+
+  body {
+    display: flex;
+  }
+}
+
+@media (width: 1024px) {
+}
