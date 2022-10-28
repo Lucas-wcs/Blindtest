@@ -1,14 +1,15 @@
-import Home from "./pages/Home";
-
 import "./App.css";
+
+import BlindTestChoice from "@pages/BlindTestChoice.jsx";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <BlindTestChoice />
     </div>
   );
 }
 
 export default App;
+
+

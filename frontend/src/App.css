@@ -1,56 +1,227 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap%22");
+*,
+*::before,
+::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --blanc: white;
+  --noir: black;
+  --orange: #ec7e40;
+  --bleu: #24335f;
+  --beige: #d7c392;
+  --bg: rgba(146, 102, 61, 0.2);
+
+  --ffTitre: "Monoton", cursive;
+  --ffTexte: sans-serif;
 }
 
-.App {
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  color: var(--noir);
+  font-family: var(--ffTexte);
+  background-color: var(--bg);
+  margin: 0 1rem;
+}
+
+h1 {text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
+  1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
+  4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
+  4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
+  7px 6px 1px gray;
+}
+
+/*css dani*/
+
+.buttons-container {
+  background-color: var(--bleu);
+  margin: 0 10%;
+  box-shadow: -5px 5px 0 var(--orange);
+}
+
+.title {
   text-align: center;
+  margin: 4%;
+  font-size: 1.8rem;
+  font-family: var(--ffTitre);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#tests-titles {
+  color: var(--blanc);
+  font-size: 2rem;
+  font-family: var(--ffTexte);
+  padding: 4%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.eachbutton {
+  width: 80%;
+  height: 4.5rem;
+  margin: 2% auto;
+}
+
+.buttons-container button {
+  width: 100%;
+  height: 100%;
+  background-color: var(--beige);
+  font-size: 2rem;
+}
+
+.toggle-container {
+  width: 65%;
+  height: 4.5rem;
+  margin: 2% auto;
+  box-shadow: -5px 5px 0 var(--orange);
+  margin-bottom: 5%;
+}
+
+#toggle {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bleu);
+  color: var(--blanc);
+  font-size: 1.5rem;
+}
+
+
+@media only screen and (min-width: 800px) {
+
+
+  body {
+    color: var(--noir);
+    font-family: var(--ffTexte);
+    background-color: var(--bg);
+    background-image:url(vinyle-left-side.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: left ;
   }
+
+.music-filter {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+    
+      }
+
+.buttons-container {
+  background-color: unset;
+  margin: 0;
+  box-shadow: unset;
+  width: 100%;
+
+  
+  }
+
+.section {
+  display: flex;
+  justify-content: flex-end;
+  clear: both;
+  
+}  
+
+.buttons-container button {
+  width: 60%;
+  height: 60%;
+  background-color: var(--orange);
+  box-shadow: -5px 5px 0 #d7c392;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  
+  
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#button1,#button3,#button5, #button7, #button9{
+background-color: var(--beige);
+box-shadow: -5px 5px 0 var(--orange);
+border-color: var(--beige);
+}
+
+#button2,#button4,#button6, #button8, #button10{
+  background-color: var(--orange);
+  box-shadow: -5px 5px 0 var(--beige);
+  border-color: var(--orange);
+}
+
+
+.eachbutton {
+  width: 100%;
+  height: 3.5rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#tests-titles {
+  color: var(--orange);
+  font-size: 2rem;
+  font-family: var(--ffTexte);
+  padding: 4%;
+}
+
+.our-tests {
+  background-color: var(--bleu);
+  box-shadow: -5px 5px 0 var(--orange);
+  width: 30%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 3%;
+  
+
 }
 
-.App-link {
-  color: #61dafb;
+.our-tests button{
+min-width: 14rem;
+height: 70%;
+background-color: var(--beige);
+font-size: 1.3rem;
+border-radius: unset;
+box-shadow: unset;
+
+}
+.toggle-container {
+  width: 30%;
+  height: 3rem;
+  box-shadow: -5px 5px 0 var(--orange);
+  margin: 0;
+  float: right;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#toggle {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bleu);
+  color: var(--blanc);
+  font-size: 1.3rem;
+  
+  
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.title {
+  text-align: center;
+  margin: 1%;
+  font-size: 1.8rem;
+  font-family: var(--ffTitre);
+}
+
+
+
 }
