@@ -1,42 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 *,
-
-
 *::before,
 ::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --blanc: white;
-    --noir: black;
-    --orange: #ec7e40;
-    --bleu: #24335f;
-    --beige: #d7c392;
-    --bg: rgba(146, 102, 61, 0.2);
+  --blanc: white;
+  --noir: black;
+  --orange: #ec7e40;
+  --bleu: #24335f;
+  --beige: #d7c392;
+  --bg: rgba(146, 102, 61, 0.2);
 
-    --ffTitre: "Monoton", cursive;
-    --ffTexte: sans-serif;
+  --ffTitre: "Monoton", cursive;
+  --ffTexte: sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 body {
-    color: var(--noir);
-    font-family: var(--ffTexte);
-    background-color: var(--bg);
+  color: var(--noir);
+  font-family: var(--ffTexte);
+  background-color: var(--bg);
 }
-
