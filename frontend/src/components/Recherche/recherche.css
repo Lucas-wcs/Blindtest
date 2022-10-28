@@ -1,0 +1,109 @@
+h1 {
+  text-align: center;
+  font-family: var(--ffTitre);
+  margin-inline: 15%;
+  text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
+    1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
+    4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
+    4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
+    7px 6px 1px gray;
+}
+
+.imgfirst {
+  width: 90%;
+  border-radius: 5%;
+}
+
+.buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-inline: 0;
+  flex-wrap: wrap;
+}
+
+.imglist {
+  padding: 10px;
+  width: 100%;
+}
+
+.listglobal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.searchright {
+  transition: transform 0.1s;
+  width: 120px;
+  height: 200px;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--bleu);
+  text-align: center;
+  box-shadow: -5px 5px 0px 0px #ec7e40;
+}
+.searchright:hover {
+  transform: scale(0.95);
+}
+.searchleft {
+  text-align: center;
+}
+
+p {
+  color: var(--blanc);
+  font-family: var(--ffTexte);
+}
+
+span {
+  color: var(--orange);
+}
+.go {
+  font-family: var(--ffTexte);
+  border: black solid 1px;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  transition: transform 0.1s;
+}
+.go:hover {
+  background-color: rgb(124, 192, 124);
+  transform: scale(0.95);
+}
+.searchbox {
+  height: 20px;
+  margin-inline: 100%;
+}
+.filter {
+  width: 50%;
+  margin-inline: 25%;
+}
+.choice {
+  width: 45%;
+}
+
+@media screen and (min-width: 800px) {
+  .all {
+    background-image: url(vinyle.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .title {
+    position: fixed;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .listglobal {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+}
