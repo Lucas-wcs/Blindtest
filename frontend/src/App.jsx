@@ -1,10 +1,11 @@
-import Home from "./pages/Home";
+import Btpage from "./pages/Btpage";
 import "./App.css";
+
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Btpage />
       <p>coucou</p>
     </div>
   );
