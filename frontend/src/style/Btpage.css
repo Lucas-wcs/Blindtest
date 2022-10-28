@@ -82,7 +82,7 @@ body {
 }
 @media screen and (min-width: 800px) {
   html {
-    background-image: url("../public/vinyle.png");
+    background-image: url(../assets/vinyle.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;

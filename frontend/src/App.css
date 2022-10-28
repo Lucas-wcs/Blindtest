@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-
 :root {
   --blanc: white;
   --noir: black;
@@ -41,5 +40,16 @@ body {
   min-height: 100vh;
   text-align: center;
   padding-bottom: 2rem;
+}
 
+h1 {
+  font-family: var(--ffTitre);
+  color: var(--noir);
+  padding-top: 70px;
+  font-size: 3rem;
+  text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
+    1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
+    4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
+    4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
+    7px 6px 1px gray;
 }

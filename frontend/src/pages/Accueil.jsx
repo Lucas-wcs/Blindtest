@@ -1,7 +1,7 @@
 import React from "react";
-import "./accueil.css";
-import Menu from "../components/Menu";
-import BlocAccueil from "../components/BlocAccueil";
+import "../style/accueil.css";
+import Menu from "../Menu";
+import BlocAccueil from "../components/accueil/BlocAccueil";
 
 function App() {
   return (

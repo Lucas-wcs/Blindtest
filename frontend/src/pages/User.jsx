@@ -1,9 +1,8 @@
 import React from "react";
-import MyTitle from "./components/user/MyTitle";
-import LastListen from "./components/user/LastListen";
-import Favoris from "./components/user/Favoris";
-import "./User.css";
-import "./App.css";
+import MyTitle from "../components/user/MyTitle";
+import LastListen from "../components/user/LastListen";
+import Favoris from "../components/user/Favoris";
+import "../style/User.css";
 import "boxicons";
 
 function User() {

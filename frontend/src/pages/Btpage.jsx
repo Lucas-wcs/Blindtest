@@ -1,8 +1,7 @@
-import "./Btpage.css";
-import React from "react";
-import { useState } from "react";
+import "../style/Btpage.css";
+import React, { useState } from "react";
 
-const Btpage = () => {
+function Btpage() {
   const [score, setScore] = useState(0);
 
   return (
@@ -13,18 +12,24 @@ const Btpage = () => {
       <div className="quizzpoints">
         <div className="quizz">
           <div className="pochette">
-            <img src="https://i.discogs.com/W4bMsFIhfx4xQgX4L1lD7PwtYyaqMgaC30DmSSVu9E4/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1OTYw/Ni0xNDUwMzg5NDI1/LTg4NTIuanBlZw.jpeg"></img>
+            <img
+              src="https://i.discogs.com/W4bMsFIhfx4xQgX4L1lD7PwtYyaqMgaC30DmSSVu9E4/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1OTYw/Ni0xNDUwMzg5NDI1/LTg4NTIuanBlZw.jpeg"
+              alt="empty"
+            />
           </div>
           <div className="buttons">
             <div className="buttons12">
-              <button onClick={() => setScore((oldScore) => oldScore + 1)}>
+              <button
+                type="button"
+                onClick={() => setScore((oldScore) => oldScore + 1)}
+              >
                 Reponse 1
               </button>
-              <button>Reponse 2</button>
+              <button type="button">Reponse 2</button>
             </div>
             <div className="buttons34">
-              <button>Reponse 3</button>
-              <button>Reponse 4</button>
+              <button type="button">Reponse 3</button>
+              <button type="button">Reponse 4</button>
             </div>
           </div>
         </div>
@@ -34,6 +39,6 @@ const Btpage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Btpage;

@@ -87,7 +87,7 @@ span {
 
 @media screen and (min-width: 800px) {
   .all {
-    background-image: url(vinyle.png);
+    background-image: url(../assets/vinyle.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;

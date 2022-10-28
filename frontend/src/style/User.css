@@ -5,7 +5,7 @@ body {
       rgba(146, 102, 61, 0.2)
     ),
     #ffffff;
-  background-image: url("https://cdn.discordapp.com/attachments/1031509947487363165/1035467965061144617/Vinyle2.png");
+  background-image: url(../assets/vinyle.png);
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
