@@ -1,14 +1,8 @@
 import React from "react";
 
-function Filter() {
+function Choice() {
   return (
     <div>
-      <h1>
-        Re<span>c</span>herchez <span>d</span>es tit<span>r</span>es
-      </h1>
-      <button type="button" className="filter">
-        Ouvrir les filtres
-      </button>
       <div className="buttons">
         <fieldset className="choice">
           <legend>Genre</legend>
@@ -28,12 +22,8 @@ function Filter() {
             <label htmlFor="louie"> Film</label>
           </div>
           <div>
-            <input type="checkbox" id="check" name="drone" value="Rap FR" />
-            <label htmlFor="louie"> Rap FR</label>
-          </div>
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Rap US" />
-            <label htmlFor="louie"> Rap US</label>
+            <input type="checkbox" id="check" name="drone" value="Rap" />
+            <label htmlFor="louie"> Rap</label>
           </div>
           <div>
             <input type="checkbox" id="check" name="drone" value="Electro" />
@@ -86,10 +76,30 @@ function Filter() {
           size="20"
           placeholder="Recherche par titre"
         />
-        <button type="button" className="go">
-          GO !
-        </button>
       </div>
+
+      <button type="button" className="go">
+        GO !
+      </button>
+    </div>
+  );
+}
+
+function Filter() {
+  return (
+    <div>
+      <h1>
+        Re<span>c</span>herchez <span>d</span>es tit<span>r</span>es
+      </h1>
+      <button
+        type="button"
+        className="filter"
+        onClick={() => {
+          Choice();
+        }}
+      >
+        Ouvrir les filtres
+      </button>
     </div>
   );
 }

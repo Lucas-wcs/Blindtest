@@ -2,8 +2,8 @@ import React from "react";
 import Title from "../components/Recherche/Title";
 import List from "../components/Recherche/List";
 import Filter from "../components/Recherche/Filter";
-import "../components/Recherche/app.css";
-import "../components/Recherche/recherche.css";
+
+import "../style/recherche.css";
 
 function Rechecrhe() {
   return (
@@ -14,6 +14,7 @@ function Rechecrhe() {
         </div>
         <div className="listglobal">
           <Filter />
+
           <List />
           <List />
           <List />
