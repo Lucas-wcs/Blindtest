@@ -85,23 +85,4 @@ function Choice() {
   );
 }
 
-function Filter() {
-  return (
-    <div>
-      <h1>
-        Re<span>c</span>herchez <span>d</span>es tit<span>r</span>es
-      </h1>
-      <button
-        type="button"
-        className="filter"
-        onClick={() => {
-          Choice();
-        }}
-      >
-        Ouvrir les filtres
-      </button>
-    </div>
-  );
-}
-
-export default Filter;
+export default Choice;
