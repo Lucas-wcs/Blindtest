@@ -86,7 +86,7 @@ img {
 
 @media screen and (min-width: 800px) {
   body {
-    background: url(../vinyleAccueil.jpg) center no-repeat;
+    background: url(../assets/vinyleAccueil.jpg) center no-repeat;
     background-size: cover;
     z-index: -1;
     color: white;

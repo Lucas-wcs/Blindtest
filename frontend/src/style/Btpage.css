@@ -35,12 +35,12 @@ body {
   color: var(--noir);
   font-family: var(--ffTexte);
 }
-
+.titleBt h1 {
+  padding-top: 0;
+}
 body {
   min-height: 100vh;
   background-color: var(--bg);
-  display: flex;
-  justify-content: center;
 }
 
 .quizz {
@@ -49,14 +49,16 @@ body {
   height: 500px;
   margin: 30px;
   justify-content: space-around;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
   box-shadow: -5px 5px 0px 0px #ec7e40;
 }
 .quizz img {
-  width: 150px;
+  width: 65%;
+  min-width: 250px;
+  margin: auto;
 }
 .quizz button {
   font-size: x-large;
@@ -77,38 +79,69 @@ body {
   font-size: 60px;
   background-color: var(--beige);
 }
+.buttonScore button {
+  font-size: 30px;
+  background-color: var(--beige);
+}
 .buttons {
   margin-bottom: 30px;
 }
+.answer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+}
+.answerButton button {
+  width: 90%;
+}
+.buttonScore {
+  height: max-content;
+}
+.scoreMobile {
+  height: max-content;
+}
+.scoreDesktop {
+  display: none;
+}
 @media screen and (min-width: 800px) {
-  html {
-    background-image: url("../public/vinyle.png");
+  body {
+    background-image: url(../assets/vinyle.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
     background-position: left;
   }
-  .quizzpoints {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 90px;
-  }
-  .quizz,
-  .points {
-    box-shadow: none;
-    background-color: unset;
-    width: 300px;
-    display: flex;
-  }
 
+  .quizz {
+    float: right;
+    width: 500px;
+    background-color: unset;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+  }
+  .scoreDesktop {
+    display: block;
+  }
   .quizz img {
-    width: 350px;
+    width: 100%;
+    border: #d7c392 solid 5px;
+    margin-top: 15px;
   }
-  .points {
-    width: 300px;
+  .answerButton button {
+    width: 100%;
   }
-  .points button {
-    font-size: 40px;
+  .scoreMobile {
+    display: none;
+  }
+  .buttonScore {
+    margin-top: 20%;
+  }
+  .buttonScore button {
+    font-size: 60px;
   }
 }
