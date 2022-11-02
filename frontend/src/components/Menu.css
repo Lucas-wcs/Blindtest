@@ -1,0 +1,138 @@
+button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+
+  height: 45px;
+  width: 45px;
+  background-color: transparent;
+  border: 2px var(--orange) solid;
+  color: var(--orange);
+  border-radius: 7px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+button .bars {
+  display: block;
+}
+
+button .xmark {
+  display: none;
+}
+
+button.click {
+  left: 265px;
+}
+
+button.click .xmark {
+  display: block;
+}
+
+button.click .bars {
+  display: none;
+}
+
+#principale-menu {
+  transition: 0.3s ease;
+}
+
+#principale-menu.click::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+/* ----------------------------------------------- */
+
+nav {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  color: black;
+  z-index: 10;
+  background-color: white;
+  transition: 0.3s ease;
+
+  left: -252px;
+  /* suivant click du bouton */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  overflow-y: auto;
+}
+
+nav.click {
+  left: 0px;
+}
+
+/* --- */
+
+nav ul {
+  width: 100%;
+}
+
+nav li {
+  line-height: 70px;
+  /* permet d'avoir la hauteur voulu + aligner le texte */
+  font-weight: 600;
+  border-bottom: 1px solid black;
+}
+
+nav a {
+  position: relative;
+  font-size: 1.5rem;
+  display: block;
+  /* prend toute la largeur et hauteur */
+  transition: ease-in 0.3s;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+/* --- */
+
+.icons-applis {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 50px auto;
+}
+
+.icons-applis a {
+  transition: ease-out 0.3s;
+}
+
+.icons-applis a:hover {
+  fill: var(--orange);
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom {
+  margin-bottom: 20px;
+}
+
+.copyright {
+  font-size: 0.7rem;
+  padding: 0 0.5rem;
+}
