@@ -5,16 +5,18 @@ function Favoris({ fav }) {
   return (
     <div>
       <div>
-        <h2>VOS FAVORIS</h2>
+        <h2 className="favorisTitle">VOS FAVORIS</h2>
       </div>
-      {fav.map((musicF) => {
-        return (
-          <a href="http://localhost:3000/">
-            {musicF.img} {musicF.artiste} / {musicF.titre} / {musicF.duree} /{" "}
-            {musicF.favoris} {musicF.btn} <br />
-          </a>
-        );
-      })}
+      <div className="aBlock">
+        {fav.map((musicF) => {
+          return (
+            <a href="http://localhost:3000/">
+              {musicF.img} {musicF.artiste} / {musicF.titre} / {musicF.duree} /{" "}
+              {musicF.favoris} {musicF.btn} <br />
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 }

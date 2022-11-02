@@ -5,7 +5,7 @@ body {
       rgba(146, 102, 61, 0.2)
     ),
     #ffffff;
-  background-image: url(../assets/vinyle.png);
+  background-image: url("https://cdn.discordapp.com/attachments/1031509947487363165/1035467965061144617/Vinyle2.png");
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
@@ -35,10 +35,6 @@ h2 {
   color: var(--orange);
 }
 
-a {
-  list-style-type: disc;
-}
-
 .lastListen {
   margin-top: 20px;
   font-family: var(--ffTexte);
@@ -63,8 +59,14 @@ a {
   vertical-align: middle;
 }
 
-p {
+a {
   margin-bottom: 15px;
+}
+
+.favorisTitle,
+.lastListenTitle {
+  margin-top: 13%;
+  margin-bottom: 10%;
 }
 
 .caret-right-circle {
@@ -99,10 +101,48 @@ p {
   .lastListen {
     background: none;
     box-shadow: none;
+    color: white;
+    margin-top: 50px;
   }
 
-  body {
+  .titleName {
+    color: white;
+    font-size: 105px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .blockMusic {
+    margin-top: 70px;
     display: flex;
+  }
+
+  img {
+    margin-bottom: 20px;
+  }
+
+  .aBlock {
+  }
+
+  .titleAndLast {
+    display: inline-block;
+    margin-left: 10%;
+  }
+
+  .pieceOfMusic {
+    margin-left: 15%;
+  }
+
+  .favorisTitle {
+    margin-bottom: 10%;
+    font-size: 70px;
+  }
+
+  .lastListenTitle {
+    font-size: 55px;
+    margin-bottom: 10%;
   }
 }
 
