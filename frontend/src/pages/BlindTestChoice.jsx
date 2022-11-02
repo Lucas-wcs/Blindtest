@@ -71,7 +71,7 @@ function BlindTestChoice() {
   return (
     <div className="test-selection">
       <Title />
-      <Toggle />
+
       <div className="section">
         <div className="music-filter">
           <ButtonContainer array={years} />
@@ -81,6 +81,7 @@ function BlindTestChoice() {
           <ButtonContainer array={ourChoice} />
         </div>
       </div>
+      <Toggle />
     </div>
   );
 }

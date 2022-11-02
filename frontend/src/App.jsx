@@ -1,4 +1,4 @@
-import "./BlindTestChoice.css"
+import "./BlindTestChoice.css";
 
 import BlindTestChoice from "@pages/BlindTestChoice.jsx";
 

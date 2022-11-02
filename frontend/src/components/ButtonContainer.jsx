@@ -11,7 +11,6 @@ function ButtonContainer({ array }) {
       {array.map((arr) => (
         <Buttons name={arr.name} id={arr.id} />
       ))}
-      ;
     </div>
   );
 }
