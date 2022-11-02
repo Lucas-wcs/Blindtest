@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 
 *,
@@ -8,7 +7,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 
 :root {
   --blanc: white;
@@ -42,5 +40,4 @@ body {
   min-height: 100vh;
   text-align: center;
   padding-bottom: 2rem;
-
 }
