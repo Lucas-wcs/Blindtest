@@ -3,18 +3,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-h1 {
-  font-family: var(--ffTitre);
-  color: var(--noir);
-  padding-top: 70px;
-  font-size: 3rem;
-  text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
-    1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
-    4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
-    4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
-    7px 6px 1px gray;
+  margin: 0 1rem;
 }
 
 h1 span {
@@ -24,18 +13,14 @@ h1 span {
 .container-block {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-
   gap: 20px;
-  margin: 0 1rem;
 }
 
 .accueil-bloc {
   background-color: var(--beige);
   box-shadow: -5px 5px 0 var(--orange);
   padding: 1rem;
-  position: relative;
 }
 
 .accueil-bloc h2 {
@@ -48,7 +33,7 @@ h1 span {
 
 /* --- */
 
-.row {
+.img-but {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
@@ -59,6 +44,7 @@ h1 span {
 
 img {
   width: 100%;
+  object-fit: cover;
   border: 2px solid white;
 }
 
@@ -86,16 +72,18 @@ img {
 
 @media screen and (min-width: 800px) {
   body {
-    background: url(../assets/vinyleAccueil.jpg) center no-repeat;
+    background: url(../assets/vinyleAccueil.jpg) center no-repeat fixed;
     background-size: cover;
     z-index: -1;
-    color: white;
-    min-width: 100%;
-    padding: 0 1rem;
   }
 
   h1 {
-    font-size: 7.5rem;
+    color: white !important;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(5rem, 10vw, 40rem);
   }
 
   .container-block {
@@ -104,15 +92,17 @@ img {
     justify-content: space-around;
     align-items: center;
 
-    margin-top: 7vh;
-    gap: 20px;
+    position: absolute;
+    bottom: 2%;
     width: 100%;
   }
-}
 
-@media screen and (min-width: 1900px) {
-  .container-block {
-    position: absolute;
-    bottom: 50px;
+  .accueil-bloc {
+    width: 33%;
+  }
+
+  .accueil-bloc h2,
+  .accueil-bloc a {
+    font-size: clamp(1rem, 3vw, 20rem);
   }
 }
