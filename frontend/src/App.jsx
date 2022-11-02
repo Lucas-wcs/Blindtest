@@ -1,14 +1,11 @@
-import Btpage from "./pages/Btpage";
-
+import Accueil from "./pages/Accueil";
 
 import "./App.css";
-
 
 function App() {
   return (
     <div className="App">
-      <Btpage />
-      
+      <Accueil />
     </div>
   );
 }
