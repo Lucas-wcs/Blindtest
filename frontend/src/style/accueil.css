@@ -21,7 +21,6 @@ h1 span {
   background-color: var(--beige);
   box-shadow: -5px 5px 0 var(--orange);
   padding: 1rem;
-  position: relative;
 }
 
 .accueil-bloc h2 {
@@ -79,9 +78,7 @@ img {
   }
 
   h1 {
-    /* font-size: 7rem; */
     color: white !important;
-
     position: absolute;
     top: 20%;
     left: 50%;
@@ -100,12 +97,12 @@ img {
     width: 100%;
   }
 
+  .accueil-bloc {
+    width: 33%;
+  }
+
   .accueil-bloc h2,
   .accueil-bloc a {
     font-size: clamp(1rem, 3vw, 20rem);
-  }
-
-  .accueil-bloc {
-    width: 30%;
   }
 }
