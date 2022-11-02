@@ -1,4 +1,4 @@
-import "./Btpage.css";
+import "../style/Btpage.css";
 import React, { useState } from "react";
 
 function Btpage() {
