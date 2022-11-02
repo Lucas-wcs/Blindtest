@@ -4,6 +4,8 @@ import Recherche from "./pages/Recherche";
 // import User from "./pages/User";
 // import BlindTestChoice from "./pages/BlindTestChoice";
 
+import "./App.css";
+
 function App() {
   return (
     <div className="App">

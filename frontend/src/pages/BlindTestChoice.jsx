@@ -1,7 +1,9 @@
 import React from "react";
+
 import Title from "@components/Title";
 import Toggle from "@components/Toggle";
 import ButtonContainer from "@components/ButtonContainer";
+
 
 const years = [
   {
@@ -80,7 +82,9 @@ function BlindTestChoice() {
           <ButtonContainer array={ourChoice} />
         </div>
       </div>
+
       <Toggle />
+
     </div>
   );
 }
