@@ -1,11 +1,17 @@
-import "./BlindTestChoice.css";
-
-import BlindTestChoice from "@pages/BlindTestChoice.jsx";
+// import Accueil from "./pages/Accueil";
+import Recherche from "./pages/Recherche";
+// import Btpage from "./pages/Btpage";
+// import User from "./pages/User";
+// import BlindTestChoice from "./pages/BlindTestChoice";
 
 function App() {
   return (
     <div className="App">
-      <BlindTestChoice />
+      {/* <Accueil /> */}
+      <Recherche />
+      {/* <Btpage /> */}
+      {/* <User /> */}
+      {/* <BlindTestChoice /> */}
     </div>
   );
 }

@@ -71,7 +71,6 @@ function BlindTestChoice() {
   return (
     <div className="test-selection">
       <Title />
-
       <div className="section">
         <div className="music-filter">
           <ButtonContainer array={years} />
