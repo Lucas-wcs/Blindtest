@@ -14,7 +14,7 @@ function Btpage() {
           <div className="pochette">
             <img
               src="https://i.discogs.com/W4bMsFIhfx4xQgX4L1lD7PwtYyaqMgaC30DmSSVu9E4/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1OTYw/Ni0xNDUwMzg5NDI1/LTg4NTIuanBlZw.jpeg"
-              alt="empty"
+              alt="pochette"
             />
           </div>
           <div className="buttons">

@@ -12,7 +12,7 @@ function Menu() {
   };
 
   return (
-    <div>
+    <div id="principale-menu" className={isActive ? "click" : null}>
       <button
         type="button"
         className={isActive ? "click" : null}
