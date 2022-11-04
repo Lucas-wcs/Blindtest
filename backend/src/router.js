@@ -1,13 +1,16 @@
-const express = require("express");
+// const router = require("express").Router();
+// const datas = require("../datas");
 
-const router = express.Router();
+// router.get("/", (req, res) => {
+//   res.json(datas).status(200);
+// });
 
-const itemControllers = require("./controllers/itemControllers");
+// router.get("/:id", (req, res) => {
+//   res.json(datas.filter((music) => music.id === req.params.id)).status(200);
+// });
 
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
+// router.get("/image/:filename", (req, res) => {
+//   res.sendFile(`./public/mp3/${req.params.filename}`, { root: "./" });
+// });
 
-module.exports = router;
+// module.exports = router;

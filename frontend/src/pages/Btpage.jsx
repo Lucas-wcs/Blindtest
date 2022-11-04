@@ -1,21 +1,25 @@
 import "../style/Btpage.css";
-import AnswerContainer from "@components/btpage/AnswerContainer";
+// import AnswerContainer from "@components/btpage/AnswerContainer";
 import TitleBt from "@components/btpage/TitleBt";
-import Pochette from "@components/btpage/Pochette";
+// import Pochette from "@components/btpage/Pochette";
 import ButtonScore from "@components/btpage/ButtonScore";
+// import { useState } from "react";
+// import axios from "axios";
 
 function Btpage() {
-  const test = [
-    {
-      name: "Michael Jackson",
-      title: "Smooth Criminal",
-      pochette:
-        "https://images.pexels.com/photos/10096370/pexels-photo-10096370.jpeg?cs=srgb&dl=pexels-karolis-samuolis-10096370.jpg&fm=jpg",
-    },
-    { name: "ACDC", title: "Highway To Hell", pochette: "bernard" },
-    { name: "2Pac", title: "Can't C Me", pochette: "polo" },
-    { name: "Lady Gaga", title: "Poker Face", pochette: "polo" },
-  ];
+  // const [pochette, setPochette] = useState("");
+  // const [answer, setAnswer] = useState("michel");
+  // const getSong = () => {
+  //   axios
+  //     .get("http://localhost:5000/api/music")
+  //     .then((response) => response.data)
+  //     .then((data) => {
+  //       setPochette(data[0].pochette);
+  //       console.log(data[0].pochette);
+  //       setAnswer(data[0].name);
+  //       console.log(data[0].name);
+  //     });
+  // };
   return (
     <div className="btpage">
       <TitleBt />
@@ -23,8 +27,8 @@ function Btpage() {
         <span className="scoreMobile">
           <ButtonScore />
         </span>
-        <Pochette pochette="https://images.pexels.com/photos/3867522/pexels-photo-3867522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-        <AnswerContainer array={test} />
+        {/* <Pochette pochette={pochette} /> */}
+        {/* <AnswerContainer array={answer} /> */}
       </div>
       <span className="scoreDesktop">
         <ButtonScore />
