@@ -6,7 +6,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "boxicons";
 
 function Menu() {
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(false);
   const toggle = () => {
     setActive(!isActive);
   };
