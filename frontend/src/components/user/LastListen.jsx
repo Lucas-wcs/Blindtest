@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Player from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 function LastListen({ lastEcoute }) {
   return (
@@ -9,25 +11,19 @@ function LastListen({ lastEcoute }) {
       </div>
       <div className="aBlock">
         {lastEcoute.map((music) => {
+          // console.log(music.mp3);
           return (
-
-
-           
-
             <div>
               <img src={music.pochette} alt="pochette" />
-              <p>{music.titre}  {music.artiste}</p>
-              <audio src={music.mp3}></audio>
+              <p>
+                {music.titre} {music.artiste}
+              </p>
+              <Player
+                style={{ borderRadius: "1rem" }}
+                src={`http://localhost:5000/mp3/${music.mp3}`}
+                showJumpControls={false}
+              />
             </div>
-
-          
-
-
-
-            // <a href="http://localhost:3000/">
-            //   {music.img} {music.title} / {music.artist} / {music.pieceToListen}{" "}
-            //   {music.btn} <br />
-            // </a>
           );
         })}
       </div>
