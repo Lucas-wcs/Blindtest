@@ -4,7 +4,6 @@ import Title from "@components/Title";
 import Toggle from "@components/Toggle";
 import ButtonContainer from "@components/ButtonContainer";
 
-
 const years = [
   {
     name: "60's & 70's",
@@ -84,7 +83,6 @@ function BlindTestChoice() {
       </div>
 
       <Toggle />
-
     </div>
   );
 }

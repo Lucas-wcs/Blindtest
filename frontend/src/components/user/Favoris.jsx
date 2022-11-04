@@ -10,10 +10,11 @@ function Favoris({ fav }) {
       <div className="aBlock">
         {fav.map((musicF) => {
           return (
-            <a href="http://localhost:3000/">
-              {musicF.img} {musicF.artiste} / {musicF.titre} / {musicF.duree} /{" "}
-              {musicF.favoris} {musicF.btn} <br />
-            </a>
+            <div>
+            <img src={musicF.pochette} alt="pochette" />
+            <p>{musicF.titre}  {musicF.artiste}</p>
+          </div>
+           
           );
         })}
       </div>

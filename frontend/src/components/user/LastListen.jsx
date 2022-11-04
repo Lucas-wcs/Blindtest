@@ -10,10 +10,24 @@ function LastListen({ lastEcoute }) {
       <div className="aBlock">
         {lastEcoute.map((music) => {
           return (
-            <a href="http://localhost:3000/">
-              {music.img} {music.title} / {music.artist} / {music.pieceToListen}{" "}
-              {music.btn} <br />
-            </a>
+
+
+           
+
+            <div>
+              <img src={music.pochette} alt="pochette" />
+              <p>{music.titre}  {music.artiste}</p>
+              <audio src={music.mp3}></audio>
+            </div>
+
+          
+
+
+
+            // <a href="http://localhost:3000/">
+            //   {music.img} {music.title} / {music.artist} / {music.pieceToListen}{" "}
+            //   {music.btn} <br />
+            // </a>
           );
         })}
       </div>

@@ -1,6 +1,7 @@
 // import Accueil from "./pages/Accueil";
 // import Recherche from "./pages/Recherche";
 // import Btpage from "./pages/Btpage";
+import axios from "axios";
 import User from "./pages/User";
 // import BlindTestChoice from "./pages/BlindTestChoice";
 
