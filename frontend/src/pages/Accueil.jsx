@@ -15,20 +15,30 @@ function App() {
   React.useEffect(() => {
     let i;
     let i2;
+    let ilast;
+    let i2last;
     setInterval(() => {
       axios
         .get("http://localhost:5000/api/music")
         .then((response) => response.data)
         .then((data) => {
-          i = Math.floor(Math.random() * 68);
-          i2 = i + 34;
-          if (i2 >= 69) {
-            i2 -= 69;
+          i = Math.floor(Math.random() * 69);
+          while (i === ilast) {
+            i = Math.floor(Math.random() * 69);
           }
+
+          i2 = Math.floor(Math.random() * 69);
+          while (i2 === i || i2 === i2last) {
+            i2 = Math.floor(Math.random() * 69);
+          }
+
+          ilast = i;
+          i2last = i2;
+
+          // i et i2 => jamais les memes
           setPochette(data[i].pochette);
           setPochette2(data[i2].pochette);
         });
-      // pochette1 et pochette2 => jamais les memes
     }, 3000);
   }, []);
 

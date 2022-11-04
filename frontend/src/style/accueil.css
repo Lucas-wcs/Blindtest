@@ -46,7 +46,7 @@ h1 span {
 
 img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border: 2px solid white;
 }
 
