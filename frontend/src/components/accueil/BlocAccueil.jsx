@@ -5,7 +5,7 @@ function BlocAccueil({ h2, pochette }) {
   return (
     <div className="accueil-bloc">
       <h2>{h2}</h2>
-      <div className="row">
+      <div className="img-but">
         <img src={pochette} alt={pochette} />
         <a href="./blindtest">LET'S GO</a>
       </div>

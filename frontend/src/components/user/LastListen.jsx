@@ -5,13 +5,14 @@ function LastListen({ lastEcoute }) {
   return (
     <div>
       <div>
-        <h2>DERNIERE ECOUTE</h2>
+        <h2 className="lastListenTitle">DERNIERE ECOUTE</h2>
       </div>
-      <div>
+      <div className="aBlock">
         {lastEcoute.map((music) => {
           return (
             <a href="http://localhost:3000/">
-              {music.title} || {music.artist} || {music.pieceToListen} <br />
+              {music.img} {music.title} / {music.artist} / {music.pieceToListen}{" "}
+              {music.btn} <br />
             </a>
           );
         })}

@@ -1,6 +1,6 @@
 import React from "react";
 import "../style/accueil.css";
-import Menu from "../Menu";
+import Menu from "../components/Menu";
 import BlocAccueil from "../components/accueil/BlocAccueil";
 
 function App() {
