@@ -41,7 +41,6 @@ function Menu() {
         <div className="bottom">
           <div className="icons-applis">
             <a
-              className="test"
               href="https://fr-fr.facebook.com/"
               target="_blank"
               rel="noreferrer"
@@ -49,7 +48,6 @@ function Menu() {
               <box-icon type="logo" name="facebook-square" />
             </a>
             <a
-              className="test"
               href="https://twitter.com/?lang=fr"
               target="_blank"
               rel="noreferrer"
@@ -57,7 +55,6 @@ function Menu() {
               <box-icon type="logo" name="twitter" />
             </a>
             <a
-              className="test"
               href="https://www.instagram.com/?hl=fr"
               target="_blank"
               rel="noreferrer"
