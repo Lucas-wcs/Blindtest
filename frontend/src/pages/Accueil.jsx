@@ -5,7 +5,7 @@ import BlocAccueil from "../components/accueil/BlocAccueil";
 
 function App() {
   return (
-    <div>
+    <div className="pageaccueil">
       <Menu />
       <main>
         <h1>
