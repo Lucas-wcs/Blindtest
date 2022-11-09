@@ -1,8 +1,9 @@
 import React from "react";
-import Title from "../components/btchoice/Title";
-import Toggle from "../components/btchoice/Toggle";
-import ButtonContainer from "../components/btchoice/ButtonContainer";
-import "../style/bdchoice.css";
+
+import Title from "@components/Title";
+import Toggle from "@components/Toggle";
+import ButtonContainer from "@components/ButtonContainer";
+
 
 const years = [
   {
@@ -72,7 +73,6 @@ function BlindTestChoice() {
   return (
     <div className="test-selection">
       <Title />
-      <Toggle />
       <div className="section">
         <div className="music-filter">
           <ButtonContainer array={years} />
@@ -82,6 +82,9 @@ function BlindTestChoice() {
           <ButtonContainer array={ourChoice} />
         </div>
       </div>
+
+      <Toggle />
+
     </div>
   );
 }
