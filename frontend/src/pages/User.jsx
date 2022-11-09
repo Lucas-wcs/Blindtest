@@ -401,7 +401,7 @@ function User() {
   // ];
 
   return (
-    <div>
+    <div className="pageUser">
       <header>
         <p>HEADER</p>
       </header>
