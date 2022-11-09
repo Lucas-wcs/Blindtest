@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Accueil />} />
-        <Route path="recherche" element={<Recherche />} />
+        <Route path="/recherche" element={<Recherche />} />
         <Route path="/choice" element={<BlindTestChoice />} />
         <Route path="/test" element={<Btpage />} />
         <Route path="/user" element={<User />} />
