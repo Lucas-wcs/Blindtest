@@ -4,9 +4,9 @@ import "./Menu.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import "boxicons";
 
 import { BiUserCircle } from "react-icons/bi";
+import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 
 function Menu() {
   const [isActive, setActive] = useState(false);
@@ -53,21 +53,21 @@ function Menu() {
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon type="logo" name="facebook-square" />
+              <BsTwitter />
             </a>
             <a
               href="https://twitter.com/?lang=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon type="logo" name="twitter" />
+              <BsFacebook />
             </a>
             <a
               href="https://www.instagram.com/?hl=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon type="logo" name="instagram" />
+              <BsInstagram />
             </a>
           </div>
 
