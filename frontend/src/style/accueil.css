@@ -1,4 +1,4 @@
-main {
+.pageaccueil main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,11 +6,11 @@ main {
   margin: 0 1rem;
 }
 
-h1 span {
+.pageaccueil h1 span {
   color: var(--orange);
 }
 
-.container-block {
+.pageaccueil .container-block {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,14 +18,14 @@ h1 span {
   width: 100%;
 }
 
-.accueil-bloc {
+.pageaccueil .accueil-bloc {
   background-color: var(--beige);
   box-shadow: -5px 5px 0 var(--orange);
   padding: 1rem;
   width: 100%;
 }
 
-.accueil-bloc h2 {
+.pageaccueil .accueil-bloc h2 {
   color: var(--noir);
   font-style: italic;
   text-transform: uppercase;
@@ -35,7 +35,7 @@ h1 span {
 
 /* --- */
 
-.img-but {
+.pageaccueil .img-but {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
@@ -44,7 +44,7 @@ h1 span {
   height: 100%;
 }
 
-img {
+.pageaccueil img {
   width: 100%;
   object-fit: contain;
   border: 2px solid white;
@@ -52,7 +52,7 @@ img {
 
 /* --- */
 
-.accueil-bloc a {
+.pageaccueil .accueil-bloc a {
   font-size: 2rem;
   background-color: var(--bleu);
   color: var(--blanc);
@@ -64,7 +64,7 @@ img {
   transition: 0.3s linear;
 }
 
-.accueil-bloc a:hover {
+.pageaccueil .accueil-bloc a:hover {
   transform: scale(1.07);
   box-shadow: 0px 0px 5px black;
 }
@@ -73,13 +73,13 @@ img {
 /* --- responsive --- */
 
 @media screen and (min-width: 800px) {
-  body {
+  .pageaccueil body {
     background: url(../assets/vinyleAccueil.jpg) center no-repeat fixed;
     background-size: cover;
     z-index: -1;
   }
 
-  h1 {
+  .pageaccueil h1 {
     color: white !important;
     position: absolute;
     top: 20%;
@@ -88,7 +88,7 @@ img {
     font-size: clamp(5rem, 10vw, 40rem);
   }
 
-  .container-block {
+  .pageaccueil .container-block {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -99,12 +99,12 @@ img {
     width: 100%;
   }
 
-  .accueil-bloc {
+  .pageaccueil .accueil-bloc {
     width: 33%;
   }
 
-  .accueil-bloc h2,
-  .accueil-bloc a {
+  .pageaccueil .accueil-bloc h2,
+  .pageaccueil .accueil-bloc a {
     font-size: clamp(1rem, 3vw, 20rem);
   }
 }
