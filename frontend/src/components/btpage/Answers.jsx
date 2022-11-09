@@ -1,20 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Answers({ name, title }) {
+function Answers({ artiste, titre }) {
   return (
     <div className="answerButton">
-      <button type="button">
-        {name}
+      <button value={titre} type="button">
+        {`${artiste} :`}
         <br />
-        {title}
+        {titre}
       </button>
     </div>
   );
 }
 
 Answers.propTypes = {
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  artiste: PropTypes.string.isRequired,
+  titre: PropTypes.string.isRequired,
 };
 export default Answers;

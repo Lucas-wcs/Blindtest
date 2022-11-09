@@ -38,15 +38,24 @@ body {
 .titleBt h1 {
   padding-top: 0;
 }
+.btpagemain {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px;
+}
 body {
   min-height: 100vh;
   background-color: var(--bg);
+  display: flex;
+  justify-content: center;
 }
 
 .quizz {
   background-color: var(--bleu);
   width: 80vw;
-  height: 500px;
+  height: 550px;
   margin: 30px;
   justify-content: space-around;
   grid-template-columns: 1fr;
@@ -55,10 +64,9 @@ body {
   grid-row-gap: 12px;
   box-shadow: -5px 5px 0px 0px #ec7e40;
 }
+
 .quizz img {
-  width: 65%;
-  min-width: 250px;
-  margin: auto;
+  margin: 0 auto;
 }
 .quizz button {
   font-size: x-large;
@@ -104,6 +112,7 @@ body {
 .scoreDesktop {
   display: none;
 }
+
 @media screen and (min-width: 800px) {
   body {
     background-image: url(../assets/vinyle.png);
@@ -111,6 +120,7 @@ body {
     background-size: 100%;
     background-attachment: fixed;
     background-position: left;
+    display: unset;
   }
 
   .quizz {
@@ -128,7 +138,7 @@ body {
     display: block;
   }
   .quizz img {
-    width: 100%;
+    width: 80%;
     border: #d7c392 solid 5px;
     margin-top: 15px;
   }
@@ -139,9 +149,13 @@ body {
     display: none;
   }
   .buttonScore {
-    margin-top: 20%;
+    margin-left: 16px;
   }
   .buttonScore button {
-    font-size: 60px;
+    font-size: 50px;
+  }
+  .timeout {
+    font-size: x-large;
+    color: red;
   }
 }

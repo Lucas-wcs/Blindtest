@@ -6,12 +6,7 @@ function AnswerContainer({ array }) {
   return (
     <div className="answer-container">
       {array.map((arr) => (
-        <Answers
-          name={arr.name}
-          title={arr.title}
-          id={arr.id}
-          pochette={arr.pochette}
-        />
+        <Answers artiste={arr.artiste} titre={arr.titre} />
       ))}
     </div>
   );
