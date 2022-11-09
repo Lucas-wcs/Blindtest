@@ -15,12 +15,14 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
 
 .pageaccueil .accueil-bloc {
   background-color: var(--beige);
   box-shadow: -5px 5px 0 var(--orange);
   padding: 1rem;
+  width: 100%;
 }
 
 .pageaccueil .accueil-bloc h2 {
@@ -44,7 +46,7 @@
 
 .pageaccueil img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border: 2px solid white;
 }
 

@@ -6,6 +6,7 @@ import BlindTestChoice from "./pages/BlindTestChoice";
 import Btpage from "./pages/Btpage";
 import User from "./pages/User";
 
+
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/user" element={<User />} />
       </Routes>
     </BrowserRouter>
+
   );
 }
 
