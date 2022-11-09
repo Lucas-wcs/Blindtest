@@ -5,7 +5,7 @@ import Pochette from "@components/btpage/Pochette";
 import ButtonScore from "@components/btpage/ButtonScore";
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import CounterTime from "./CounterTime";
+import CounterTime from "../components/btpage/CounterTime"
 // import TimeOut from "./TimeOut";
 
 function Btpage() {
@@ -38,7 +38,7 @@ function Btpage() {
         y = i;
         setAnswer([data[i], data[i2], data[i3], data[i + 1]]);
         setScore((oldScore) => oldScore + 1);
-        setPochette(data[y]);
+        
       });
   }, []);
   return (
@@ -52,7 +52,7 @@ function Btpage() {
           {pochette !== "" && <Pochette pochette={pochette} />}
           {answer !== [] && <AnswerContainer array={answer} />}
         </div>
-        {/* {timer ?<CounterTime />:<TimeOut/>} */}
+        <CounterTime />
         <span className="scoreDesktop">
           <ButtonScore score={score} />
         </span>

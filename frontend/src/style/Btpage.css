@@ -35,24 +35,24 @@ body {
   color: var(--noir);
   font-family: var(--ffTexte);
 }
-.titleBt h1 {
+.btpage .titleBt h1 {
   padding-top: 0;
 }
-.btpagemain {
+.btpage .btpagemain {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-around;
   margin: 30px;
 }
-body {
+.btpage body {
   min-height: 100vh;
   background-color: var(--bg);
   display: flex;
   justify-content: center;
 }
 
-.quizz {
+.btpage .quizz {
   background-color: var(--bleu);
   width: 80vw;
   height: 550px;
@@ -65,15 +65,15 @@ body {
   box-shadow: -5px 5px 0px 0px #ec7e40;
 }
 
-.quizz img {
+.btpage .quizz img {
   margin: 0 auto;
 }
-.quizz button {
+.btpage .quizz button {
   font-size: x-large;
   margin: 10px;
   background-color: var(--beige);
 }
-.points {
+.btpage .points {
   background-color: var(--bleu);
   width: 80vw;
   height: 250px;
@@ -83,33 +83,33 @@ body {
   align-items: center;
   box-shadow: -5px 5px 0px 0px #ec7e40;
 }
-.points button {
+.btpage .points button {
   font-size: 60px;
   background-color: var(--beige);
 }
-.buttonScore button {
+.btpage .buttonScore button {
   font-size: 30px;
   background-color: var(--beige);
 }
-.buttons {
+.btpage .buttons {
   margin-bottom: 30px;
 }
-.answer-container {
+.btpage .answer-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 15px;
 }
-.answerButton button {
+.btpage .answerButton button {
   width: 90%;
 }
-.buttonScore {
+.btpage .buttonScore {
   height: max-content;
 }
-.scoreMobile {
+.btpage .scoreMobile {
   height: max-content;
 }
-.scoreDesktop {
+.btpage .scoreDesktop {
   display: none;
 }
 
@@ -123,7 +123,7 @@ body {
     display: unset;
   }
 
-  .quizz {
+  .btpage .quizz {
     float: right;
     width: 500px;
     background-color: unset;
@@ -134,28 +134,32 @@ body {
     grid-column-gap: 15px;
     grid-row-gap: 10px;
   }
-  .scoreDesktop {
+  .btpage .scoreDesktop {
     display: block;
   }
-  .quizz img {
+  .btpage .quizz img {
     width: 80%;
     border: #d7c392 solid 5px;
     margin-top: 15px;
   }
-  .answerButton button {
+  .btpage .answerButton button {
     width: 100%;
   }
-  .scoreMobile {
+  .btpage .scoreMobile {
     display: none;
   }
-  .buttonScore {
+  .btpage .buttonScore {
     margin-left: 16px;
   }
-  .buttonScore button {
+  .btpage .buttonScore button {
     font-size: 50px;
   }
-  .timeout {
+  .btpage .timeout {
     font-size: x-large;
-    color: red;
+    
   }
+  .btpage .timer{
+  font-size: 50px;
+  color: red;
+}
 }
