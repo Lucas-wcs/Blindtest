@@ -50,17 +50,8 @@ function App() {
           BLINDTE<span>S</span>T
         </h1>
         <div className="container-block">
-          <BlocAccueil
-            h2="blindtest"
-            pochette="https://e-cdn-images.dzcdn.net/images/cover/e50540d7f752c93e0695ebae272be0c3/264x264-000000-80-0-0.jpg"
-            lien="/choice"
-          />
-          <BlocAccueil
-            h2="recherche"
-            pochette="https://e-cdn-images.dzcdn.net/images/cover/af32df247aac316125d0f413c1819681/264x264-000000-80-0-0.jpg"
-            lien="/recherche"
-          />
-
+          <BlocAccueil h2="blindtest" pochette={pochette} lien="/choice" />
+          <BlocAccueil h2="recherche" pochette={pochette2} lien="/recherche" />
         </div>
       </main>
     </div>

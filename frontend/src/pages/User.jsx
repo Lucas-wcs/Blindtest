@@ -3,6 +3,7 @@ import MyTitle from "../components/user/MyTitle";
 import LastListen from "../components/user/LastListen";
 import Favoris from "../components/user/Favoris";
 import "../style/User.css";
+import Menu from "../components/Menu";
 
 function User() {
   // const [artiste, setArtiste] = useState("");
@@ -399,9 +400,7 @@ function User() {
 
   return (
     <div className="pageUser">
-      <header>
-        <p>HEADER</p>
-      </header>
+      <Menu />
       <div className="blockMusic">
         <div className="titleAndLast">
           <div className="titleUser">

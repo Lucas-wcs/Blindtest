@@ -3,6 +3,7 @@ import Title from "@components/Title";
 import Toggle from "@components/Toggle";
 import ButtonContainer from "@components/ButtonContainer";
 import "../style/BlindTestChoice.css";
+import Menu from "../components/Menu";
 
 const years = [
   {
@@ -71,6 +72,7 @@ const ourChoice = [
 function BlindTestChoice() {
   return (
     <div className="test-selection">
+      <Menu />
       <Title />
       <div className="section">
         <div className="music-filter">

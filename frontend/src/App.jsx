@@ -1,10 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Accueil from "./pages/Accueil";
 import Recherche from "./pages/Recherche";
 import BlindTestChoice from "./pages/BlindTestChoice";
@@ -12,8 +9,7 @@ import Btpage from "./pages/Btpage";
 import User from "./pages/User";
 import "./App.css";
 
-
-
+function App() {
   const [List, setList] = useState([]);
   const [songList, setSongList] = useState([]);
 
@@ -85,13 +81,22 @@ import "./App.css";
     }
   }
 
-
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Accueil />} />
-        <Route path="/recherche" element={songList !== undefined && (
-        <Recherche songList={songList} update={update()} update2={update2()} />
+        <Route
+          path="/recherche"
+          element={
+            songList !== undefined && (
+              <Recherche
+                songList={songList}
+                update={update()}
+                update2={update2()}
+              />
+            )
+          }
+        />
         <Route path="/choice" element={<BlindTestChoice />} />
         <Route path="/test" element={<Btpage />} />
         <Route path="/user" element={<User />} />
