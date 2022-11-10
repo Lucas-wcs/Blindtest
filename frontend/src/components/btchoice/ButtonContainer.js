@@ -1,6 +1,6 @@
 import React from "react";
+import Buttons from "@components/btchoice/Buttons.jsx";
 import PropTypes from "prop-types";
-import Buttons from "./Buttons";
 
 function ButtonContainer({ array }) {
   return (
@@ -11,7 +11,6 @@ function ButtonContainer({ array }) {
       {array.map((arr) => (
         <Buttons name={arr.name} id={arr.id} />
       ))}
-      ;
     </div>
   );
 }

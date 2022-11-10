@@ -1,110 +1,129 @@
-body {
-  background: linear-gradient(
-      0deg,
-      rgba(146, 102, 61, 0.2),
-      rgba(146, 102, 61, 0.2)
-    ),
-    #ffffff;
-  background-image: url(../assets/vinyle.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-  background-position: left;
-}
-
-h1 {
-  text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
-    1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
-    4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
-    4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
-    7px 6px 1px gray;
-
-  font-size: 50px;
-}
-
-h2 {
+.pageUser h2 {
   margin-bottom: 20px;
 }
 
-.titleName {
+.pageUser .titleName {
   text-align: center;
   font-family: var(--ffTitre);
 }
 
-.spanS {
+.pageUser .spanS {
   color: var(--orange);
 }
 
-a {
-  list-style-type: disc;
-}
-
-.lastListen {
-  margin-top: 20px;
+.pageUser .lastListen {
   font-family: var(--ffTexte);
   text-align: center;
   background-color: var(--beige);
   box-shadow: var(--orange) -7px 7px;
-  padding: 20px;
   width: 80%;
   justify-content: center;
   margin-left: 10%;
 }
 
-.pieceOfMusic {
+.pageUser .pieceOfMusic {
   margin-top: 20px;
   font-family: var(--ffTexte);
   text-align: center;
 }
 
-.imgMusic {
-  width: 50px;
-  height: 50px;
+.pageUser .imgMusic {
+  width: 120px;
+  height: 120px;
   vertical-align: middle;
+  margin-bottom: 15px;
+  border-radius: 10%;
+  border: solid 4px black;
 }
 
-p {
+.pageUser .titleAndArtist {
   margin-bottom: 15px;
 }
 
-.caret-right-circle {
-  color: red;
+.pageUser .favorisTitle,
+.pageUser .lastListenTitle {
+  margin-top: 13%;
+  margin-bottom: 10%;
+  color: white;
 }
 
-@media (max-width: 319px) {
+.pageUser .musicDivBlock {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-bottom: solid 5px black;
+  padding: 10px;
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
-}
-
-@media (min-width: 375px) and (max-width: 424px) {
-}
-
-@media (min-width: 425px) and (max-width: 767px) {
+.pageUser .MusicPlayerBox {
+  background-color: var(--bleu);
+  border-radius: 1rem;
 }
 
 @media (max-width: 767px) {
-  body {
+  body .pageUser {
     background-image: none;
   }
 }
 
-@media (min-width: 768px) and (max-width: 768px) {
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
-}
-
 @media (min-width: 1024px) {
-  .lastListen {
+  body .pageUser {
+    background-image: url(../assets/vinyle.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: left;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .pageUser .lastListen {
     background: none;
     box-shadow: none;
+    color: white;
   }
 
-  body {
+  .pageUser .titleName {
+    color: black;
+    font-size: 105px;
+  }
+
+  .pageUser h2 {
+    font-size: 40px;
+  }
+
+  .pageUser .blockMusic {
     display: flex;
   }
-}
 
-@media (width: 1024px) {
+  .pageUser img {
+    margin-bottom: 20px;
+  }
+
+  .pageUser .imgMusic {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pageUser .titleAndLast {
+    display: inline-block;
+    margin-left: 10%;
+  }
+
+  .pageUser .pieceOfMusic {
+    margin-left: 15%;
+  }
+
+  .pageUser .favorisTitle {
+    margin-bottom: 10%;
+    font-size: 70px;
+  }
+
+  .pageUser .lastListenTitle {
+    font-size: 55px;
+    margin-bottom: 10%;
+  }
+
+  .pageUser .musicDivBlock {
+    border: none;
+  }
 }

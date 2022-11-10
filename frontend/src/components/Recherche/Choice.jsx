@@ -1,73 +1,38 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Choice() {
+function Choice({ update, update2 }) {
   return (
     <div>
       <div className="buttons">
-        <fieldset className="choice">
-          <legend>Genre</legend>
+        <div className="select_filter">
+          <select
+            name="Epoque"
+            id="epoque-select"
+            onChange={(event) => update(event.target.value)}
+          >
+            <option value="all">All</option>
+            <option value="2011">Actuel</option>
+            <option value="2000">Annee 2000-2010</option>
+            <option value="1990">Annee 1990-1999</option>
+            <option value="1980">Annee 1980-1989</option>
+            <option value="1960">Annee 1960-1979</option>
+          </select>
 
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Rock" />
-            <label htmlFor="huey"> Rock</label>
-          </div>
+          <select
+            name="Genre"
+            id="genre-select"
+            onChange={(event) => update2(event.target.value)}
+          >
+            <option value="all">All</option>
+            <option value="rap">Rap</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="electro">Electro</option>
+            <option value="film">Film</option>
+          </select>
+        </div>
 
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Pop" />
-            <label htmlFor="dewey"> Pop</label>
-          </div>
-
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Film" />
-            <label htmlFor="louie"> Film</label>
-          </div>
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Rap" />
-            <label htmlFor="louie"> Rap</label>
-          </div>
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Electro" />
-            <label htmlFor="louie"> Electro</label>
-          </div>
-        </fieldset>
-
-        <fieldset className="choice">
-          <legend>Epoque</legend>
-
-          <div>
-            <input type="checkbox" id="check" name="drone" value="actuel" />
-            <label htmlFor="huey"> Actuel</label>
-          </div>
-
-          <div>
-            <input
-              type="checkbox"
-              id="check"
-              name="drone"
-              value="annee_2000-2010"
-            />
-            <label htmlFor="dewey"> Annee 2000-2010</label>
-          </div>
-
-          <div>
-            <input
-              type="checkbox"
-              id="check"
-              name="drone"
-              value="annee_1990-2000"
-            />
-            <label htmlFor="louie"> Annee 1990-2000</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="check"
-              name="drone"
-              value="annee_1960-2000"
-            />
-            <label htmlFor="louie"> Annee 1960-2000</label>
-          </div>
-        </fieldset>
         <input
           type="text"
           className="searchbox"
@@ -78,11 +43,18 @@ function Choice() {
         />
       </div>
 
-      <button type="button" className="go">
+      <button
+        type="button"
+        className="go"
+        onClick={(event) => update(event.target.value)}
+      >
         GO !
       </button>
     </div>
   );
 }
-
+Choice.propTypes = {
+  update: PropTypes.string.isRequired,
+  update2: PropTypes.string.isRequired,
+};
 export default Choice;
