@@ -1,14 +1,12 @@
-import React, { useState } from "react";
 import Title from "@components/Title";
 import Toggle from "@components/Toggle";
 import ButtonContainer from "@components/ButtonContainer";
-import "../style/BlindTestChoice.css"
+import "../style/BlindTestChoice.css";
 
 const years = [
   {
     name: "60's & 70's",
     id: "button1",
-
   },
   {
     name: "80's",
@@ -69,12 +67,7 @@ const ourChoice = [
   },
 ];
 
-
-
-
 function BlindTestChoice() {
-  
- 
   return (
     <div className="test-selection">
       <Title />
@@ -83,16 +76,18 @@ function BlindTestChoice() {
           <ButtonContainer array={years} />
           <ButtonContainer array={kind} />
         </div>
-        
+
         <div className="our-tests">
           <ButtonContainer array={ourChoice} />
         </div>
       </div>
       <div className="buttons-downside">
         <Toggle />
-        <button className="send">GO !</button>
+        <button type="button" className="send">
+          GO !
+        </button>
       </div>
-     </div>
+    </div>
   );
 }
 

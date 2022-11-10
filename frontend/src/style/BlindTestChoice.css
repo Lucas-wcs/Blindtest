@@ -54,7 +54,6 @@ h1 {
   margin: 5% 10%;
   box-shadow: -5px 5px 0 var(--orange);
   padding-bottom: 1rem;
-  
 }
 
 .test-selection .title {
@@ -89,19 +88,17 @@ h1 {
 }
 
 .test-selection .eachbutton input {
-  display: none; 
-
+  display: none;
 }
 
 .test-selection .eachbutton label {
-display: block;
-background-color: var(--beige);
+  display: block;
+  background-color: var(--beige);
 }
 
 .test-selection .eachbutton input:checked + label {
   background-color: var(--orange);
 }
-
 
 .test-selection .buttons-container input {
   width: 5%;
@@ -111,12 +108,10 @@ background-color: var(--beige);
   text-align: center;
 }
 
-
 .test-selection .toggle-containerBlue {
   width: 50%;
   height: 4.5rem;
   margin: auto;
-  
 }
 
 .test-selection .toggle-containerOrange {
@@ -150,7 +145,6 @@ background-color: var(--beige);
   margin: 2% 0 0 37%;
 }
 
-
 @media only screen and (min-width: 800px) {
   body {
     color: var(--noir);
@@ -163,8 +157,6 @@ background-color: var(--beige);
     background-position: left;
   }
 
-
-  
   .test-selection .music-filter {
     display: flex;
     width: 60%;
@@ -183,7 +175,6 @@ background-color: var(--beige);
     clear: both;
     height: 100%;
     margin-left: 4rem;
-  
   }
 
   .test-selection .eachbutton label {
@@ -193,20 +184,15 @@ background-color: var(--beige);
     font-size: 1.3rem;
     border-radius: 1rem;
     line-height: 3rem;
-    
   }
 
-     
-   
   .test-selection .eachbutton input:checked + label {
     background-color: var(--beige);
   }
 
-
-
   .test-selection #button1 + label,
-  #button6 + label{
-      margin-left: 2rem;
+  #button6 + label {
+    margin-left: 2rem;
   }
 
   .test-selection #button2 + label,
@@ -214,7 +200,7 @@ background-color: var(--beige);
     margin-left: 3.5rem;
   }
 
-  .test-selection  #button3 + label,
+  .test-selection #button3 + label,
   #button8 + label {
     margin-left: 4rem;
   }
@@ -224,7 +210,7 @@ background-color: var(--beige);
     margin-left: 3.5rem;
   }
 
-  .test-selection .eachbutton label{
+  .test-selection .eachbutton label {
     width: 80%;
     margin: 0;
     display: flex;
@@ -236,7 +222,6 @@ background-color: var(--beige);
   .test-selection .eachbutton input:checked + label {
     background-color: var(--orange);
   }
-
 
   .test-selection #tests-titles {
     color: var(--orange);
@@ -251,8 +236,6 @@ background-color: var(--beige);
     width: 30%;
     display: flex;
     justify-content: center;
-    
-   
   }
 
   .test-selection .our-tests label {
@@ -261,19 +244,17 @@ background-color: var(--beige);
     background-color: var(--beige);
     font-size: 1.3rem;
     box-shadow: -5px 5px 0 var(--orange);
- 
   }
   .test-selection .toggle-containerBlue {
     width: 40%;
-    margin: 0 13rem
-    }
+    margin: 0 13rem;
+  }
 
   .test-selection .toggle-containerOrange {
     width: 40%;
-    margin: 0 13rem
-    }
+    margin: 0 13rem;
+  }
 
-  
   .test-selection #toggleBlue {
     width: 100%;
     height: 80%;
@@ -282,7 +263,7 @@ background-color: var(--beige);
     font-size: 1.3rem;
     border: none;
     box-shadow: -5px 5px 0 var(--orange);
-   }
+  }
 
   .test-selection #toggleOrange {
     width: 90%;
@@ -300,19 +281,16 @@ background-color: var(--beige);
     font-size: 1.8rem;
     font-family: var(--ffTitre);
   }
-    
-    
+
   .test-selection .send {
     width: 20%;
     height: 3.5rem;
     background-color: var(--orange);
     font-size: 1.8rem;
-    margin: 2% 6% 0 0
-   }
-  
+    margin: 2% 6% 0 0;
+  }
 
   .test-selection .buttons-downside {
-    display: flex;  
-    }
-
+    display: flex;
+  }
 }

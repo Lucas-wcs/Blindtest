@@ -1,22 +1,15 @@
 // import Accueil from "./pages/Accueil";
-//import Recherche from "./pages/Recherche";
+// import Recherche from "./pages/Recherche";
 // import Btpage from "./pages/Btpage";
 // import User from "./pages/User";
-import axios from "axios";
+
 import BlindTestChoice from "./pages/BlindTestChoice";
-import React, {useState} from 'react';
-import { useEffect } from "react";
-import "./style/BlindTestChoice.css"
-
-
-
+import "./style/BlindTestChoice.css";
 
 function App() {
   /* const [songList, setSongList] = useState(true); */
 
-
-
- /*  {songList
+  /*  {songList
     .filter((song) => song.includes(years.name))
     .map((song) => (
       <p>{user}</p>
@@ -35,11 +28,13 @@ function App() {
   return (
     <div className="App">
       {/* <Accueil /> */}
-      {/*<songList !== undefined && Recherche songList={songList}/>*/}
+      {/* <songList !== undefined && Recherche songList={songList}/> */}
       {/* <Btpage /> */}
       {/* <User /> */}
-       {/* songList !== true &&  */<BlindTestChoice /*songList={songList}*//>}
-      
+      {
+        /* songList !== true &&  */ <BlindTestChoice /* songList={songList} */
+        />
+      }
     </div>
   );
 }

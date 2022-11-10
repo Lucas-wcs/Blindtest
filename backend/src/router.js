@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  res.json(datas.filter((music) => music.id == req.params.id)).status(200);
+  res.json(datas.filter((music) => music.id === req.params.id)).status(200);
 });
 
 router.get("/:filename", (req, res) => {
