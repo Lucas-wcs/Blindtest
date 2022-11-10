@@ -1,3 +1,4 @@
+import React from "react";
 import Title from "@components/Title";
 import Toggle from "@components/Toggle";
 import ButtonContainer from "@components/ButtonContainer";
@@ -81,6 +82,7 @@ function BlindTestChoice() {
           <ButtonContainer array={ourChoice} />
         </div>
       </div>
+
       <div className="buttons-downside">
         <Toggle />
         <button type="button" className="send">
