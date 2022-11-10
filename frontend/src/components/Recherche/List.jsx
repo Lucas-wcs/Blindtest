@@ -1,16 +1,29 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function List() {
+function List({ src, titre, date }) {
   return (
     <div className="searchright">
-      <img
-        className="imglist"
-        src="https://i1.sndcdn.com/artworks-B01mbRGG2psS-0-t500x500.jpg"
-        alt="pochette album"
-      />
-      <p>Plus d'information..</p>
+      <a
+        title="play"
+        target="_blank"
+        href="..\backend\public\mp3\all_along_the_watchtower.mp3"
+      >
+        <img
+          className="imgplaylist"
+          src="https://www.pngmart.com/files/3/Play-Button-Transparent-PNG.png"
+          alt="pochette album"
+        />
+      </a>
+      <img className="imglist" src={src} alt="pochette album" />
+      <h3>{titre}</h3>
+      <p>{date}</p>
     </div>
   );
 }
-
+List.propTypes = {
+  src: PropTypes.string.isRequired,
+  titre: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
 export default List;
