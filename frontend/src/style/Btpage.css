@@ -30,6 +30,7 @@
 
 .btpage .quizz img {
   margin: 0 auto;
+  width: 250px;
 }
 .btpage .quizz button {
   font-size: x-large;

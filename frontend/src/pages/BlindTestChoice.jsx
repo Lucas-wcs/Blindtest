@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "@components/Title";
-import Toggle from "@components/Toggle";
-import ButtonContainer from "@components/ButtonContainer";
+import Title from "@components/btchoice/Title";
+import Toggle from "@components/btchoice/Toggle";
+import ButtonContainer from "@components/btchoice/ButtonContainer";
 import "../style/BlindTestChoice.css";
 import Menu from "../components/Menu";
 

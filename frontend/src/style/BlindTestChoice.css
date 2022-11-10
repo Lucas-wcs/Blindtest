@@ -106,6 +106,7 @@
     background-attachment: fixed;
     background-position: left;
     background-size: cover;
+    min-height: 100vh;
   }
 
   .test-selection .music-filter {
