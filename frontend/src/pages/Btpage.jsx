@@ -5,7 +5,7 @@ import Pochette from "@components/btpage/Pochette";
 import ButtonScore from "@components/btpage/ButtonScore";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import CounterTime from "../components/btpage/CounterTime"
+import CounterTime from "../components/btpage/CounterTime";
 // import TimeOut from "./TimeOut";
 
 function Btpage() {
@@ -36,9 +36,11 @@ function Btpage() {
           i3 = Math.floor(Math.random() * 15);
         }
         y = i;
-        setAnswer([data[i], data[i2], data[i3], data[i + 1]]);
+        setAnswer([data[i], data[i2], data[i3], data[y + 1]]);
+        setPochette(
+          "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        );
         setScore((oldScore) => oldScore + 1);
-        
       });
   }, []);
   return (
@@ -48,13 +50,19 @@ function Btpage() {
         <div className="quizz">
           <span className="scoreMobile">
             <ButtonScore />
+            <CounterTime />
           </span>
-          {pochette !== "" && <Pochette pochette={pochette} />}
+          <span className="counterDesktop">
+            <CounterTime />
+          </span>
+          {pochette !== "" && (
+            <Pochette pochette={pochette} setPochette={setPochette} />
+          )}
           {answer !== [] && <AnswerContainer array={answer} />}
         </div>
-        <CounterTime />
+
         <span className="scoreDesktop">
-          <ButtonScore score={score} />
+          <ButtonScore score={score} setScore={setScore} />
         </span>
       </div>
     </div>

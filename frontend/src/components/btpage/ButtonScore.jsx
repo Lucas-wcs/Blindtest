@@ -1,9 +1,9 @@
 import React from "react";
 
-function ButtonScore(score) {
+function ButtonScore() {
   return (
     <div className="buttonScore">
-      <button type="button">{`Score : ${score}`}</button>
+      <p>Score : 0</p>
     </div>
   );
 }

@@ -37,13 +37,13 @@ body {
 }
 .btpage .titleBt h1 {
   padding-top: 0;
+  font-size: 50px;
 }
 .btpage .btpagemain {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-around;
-  margin: 30px;
 }
 .btpage body {
   min-height: 100vh;
@@ -67,6 +67,8 @@ body {
 
 .btpage .quizz img {
   margin: 0 auto;
+  min-width: 250px;
+  width: 70%;
 }
 .btpage .quizz button {
   font-size: x-large;
@@ -105,12 +107,39 @@ body {
 }
 .btpage .buttonScore {
   height: max-content;
+  outline: 0.5rem solid var(--beige);
+  border-radius: 12px;
+  color: #d7c392;
+  font-weight: bold;
+  font-size: large;
+  width: 150px;
+  padding: 5px;
 }
 .btpage .scoreMobile {
   height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 16px;
 }
-.btpage .scoreDesktop {
+.btpage .scoreDesktop,
+.btpage .counterDesktop {
   display: none;
+}
+.btpage .timer {
+  color: #d7c392;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 0.5rem outset var(--bg); */
+  outline: 0.5rem solid var(--beige);
+  /* box-shadow: 0 0 0 2rem var(--beige); */
+  border-radius: 12px;
+  width: 150px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: large;
 }
 
 @media screen and (min-width: 800px) {
@@ -125,14 +154,15 @@ body {
 
   .btpage .quizz {
     float: right;
-    width: 500px;
+    width: 550px;
     background-color: unset;
     box-shadow: none;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 15px;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-column-gap: 0px;
     grid-row-gap: 10px;
+    margin: 0;
   }
   .btpage .scoreDesktop {
     display: block;
@@ -148,18 +178,43 @@ body {
   .btpage .scoreMobile {
     display: none;
   }
-  .btpage .buttonScore {
-    margin-left: 16px;
-  }
-  .btpage .buttonScore button {
-    font-size: 50px;
+  .btpage .scoreDesktop .buttonScore {
+    width: 200px;
+    height: 200px;
+    outline: 0.5rem solid var(--beige);
+    border-radius: 50%;
+    color: #d7c392;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 5px;
+    border: 0.5rem outset var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
   }
   .btpage .timeout {
     font-size: x-large;
-    
   }
-  .btpage .timer{
-  font-size: 50px;
-  color: red;
-}
+  .btpage .timer {
+    color: #d7c392;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5rem outset var(--bg);
+    outline: 0.5rem solid var(--beige);
+    /* box-shadow: 0 0 0 2rem var(--beige); */
+    border-radius: 12px;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+    width: 280px;
+    height: 20px;
+    font-weight: bold;
+    font-size: xx-large;
+  }
+  .btpage .counterDesktop {
+    display: flex;
+    justify-content: center;
+  }
 }
