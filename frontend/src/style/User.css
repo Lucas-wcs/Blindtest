@@ -5,14 +5,14 @@ body {
       rgba(146, 102, 61, 0.2)
     ),
     #ffffff;
-  background-image: url(../assets/vinyle.png);
+  background-image: url("https://cdn.discordapp.com/attachments/1031509947487363165/1035467965061144617/Vinyle2.png");
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
   background-position: left;
 }
 
-h1 {
+.pageUser h1 {
   text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
     1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
     4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
@@ -22,24 +22,20 @@ h1 {
   font-size: 50px;
 }
 
-h2 {
+.pageUser h2 {
   margin-bottom: 20px;
 }
 
-.titleName {
+.pageUser .titleName {
   text-align: center;
   font-family: var(--ffTitre);
 }
 
-.spanS {
+.pageUser .spanS {
   color: var(--orange);
 }
 
-a {
-  list-style-type: disc;
-}
-
-.lastListen {
+.pageUser .lastListen {
   margin-top: 20px;
   font-family: var(--ffTexte);
   text-align: center;
@@ -51,24 +47,49 @@ a {
   margin-left: 10%;
 }
 
-.pieceOfMusic {
+.pageUser .pieceOfMusic {
   margin-top: 20px;
   font-family: var(--ffTexte);
   text-align: center;
 }
 
-.imgMusic {
-  width: 50px;
-  height: 50px;
+.pageUser .imgMusic {
+  width: 120px;
+  height: 120px;
   vertical-align: middle;
+  margin-bottom: 15px;
+  border-radius: 10%;
+  border: solid 4px black;
 }
 
-p {
+.pageUser .titleAndArtist {
   margin-bottom: 15px;
 }
 
-.caret-right-circle {
+.pageUser a {
+  margin-bottom: 15px;
+}
+
+.pageUser .favorisTitle,
+.pageUser .lastListenTitle {
+  margin-top: 13%;
+  margin-bottom: 10%;
+}
+
+.pageUser .caret-right-circle {
   color: red;
+}
+
+.pageUser .musicDivBlock {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-bottom: solid 5px black;
+  padding: 10px;
+}
+
+.pageUser .MusicPlayerBox {
+  background-color: var(--bleu);
+  border-radius: 1rem;
 }
 
 @media (max-width: 319px) {
@@ -84,7 +105,7 @@ p {
 }
 
 @media (max-width: 767px) {
-  body {
+  .pageUser body {
     background-image: none;
   }
 }
@@ -96,13 +117,60 @@ p {
 }
 
 @media (min-width: 1024px) {
-  .lastListen {
+  .pageUser .lastListen {
     background: none;
     box-shadow: none;
+    color: white;
+    margin-top: 50px;
   }
 
-  body {
+  .pageUser .titleName {
+    color: white;
+    font-size: 105px;
+  }
+
+  .pageUser h2 {
+    font-size: 40px;
+  }
+
+  .pageUser .blockMusic {
+    margin-top: 70px;
     display: flex;
+  }
+
+  .pageUser img {
+    margin-bottom: 20px;
+  }
+
+  .pageUser .aBlock {
+  }
+
+  .pageUser .imgMusic {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pageUser .titleAndLast {
+    display: inline-block;
+    margin-left: 10%;
+  }
+
+  .pageUser .pieceOfMusic {
+    margin-left: 15%;
+  }
+
+  .pageUser .favorisTitle {
+    margin-bottom: 10%;
+    font-size: 70px;
+  }
+
+  .pageUser .lastListenTitle {
+    font-size: 55px;
+    margin-bottom: 10%;
+  }
+
+  .pageUser .musicDivBlock {
+    border: none;
   }
 }
 

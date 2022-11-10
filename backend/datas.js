@@ -276,7 +276,8 @@ const api = [
   },
   {
     id: 29,
-    pochette: "https://soundcloud.com/official-p-nk/so-what-1",
+    pochette:
+      "https://e-cdns-images.dzcdn.net/images/cover/edc98c2ed15d4c73b74a1f81fa55e74a/264x264-000000-80-0-0.jpg",
     titre: "so what",
     artiste: "pink",
     date: 2008,
@@ -285,7 +286,8 @@ const api = [
   },
   {
     id: 30,
-    pochette: "https://soundcloud.com/avrillavigne/when-youre-gone",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/3e150c4bd64c9a0f2e2ccfa97dbe0936/264x264-000000-80-0-0.jpg",
     titre: "when you're gone",
     artiste: "avril lavigne",
     date: 2007,
@@ -294,7 +296,8 @@ const api = [
   },
   {
     id: 31,
-    pochette: "https://soundcloud.com/nellyfurtado/say-it-right-main",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/fbd6d06c71d72755bba27af0b1e3c88e/264x264-000000-80-0-0.jpg",
     titre: "say it right",
     artiste: "nelly furtado",
     date: 2006,
@@ -303,16 +306,18 @@ const api = [
   },
   {
     id: 32,
-    pochette: "https://soundcloud.com/kellyclarksonofficial/catch-my-breath",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/fb3e84c17d1540ba2c5f8d6c4b66bb84/264x264-000000-80-0-0.jpg",
     titre: "catch my breath",
-    artiste: "kelly klarkson",
+    artiste: "kelly clarkson",
     date: 2012,
     genre: "pop",
     mp3: "catch_my_breath.mp3",
   },
   {
     id: 33,
-    pochette: "https://soundcloud.com/de-palmas/jen-r-ve-encore-radio-edit",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/597103d46e52eb20cf5da4207bcc6b89/264x264-000000-80-0-0.jpg",
     titre: "j'en reve encore",
     artiste: "gerald de palmas",
     date: 2000,
@@ -321,7 +326,8 @@ const api = [
   },
   {
     id: 34,
-    pochette: "https://i1.sndcdn.com/artworks-dwSdHSyBZegJ-0-t500x500.jpg",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/bd904e47db5549124f099c1fef304dc9/264x264-000000-80-0-0.jpg",
     titre: "(You drive me) crazy",
     artiste: "britney spears",
     date: 1999,
@@ -330,7 +336,8 @@ const api = [
   },
   {
     id: 35,
-    pochette: "https://soundcloud.com/spice-girls-official/wannabe-radio-edit",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/ba4d6b08d01a59c34e14a8cd5727c6fb/264x264-000000-80-0-0.jpg",
     titre: "Wannabe",
     artiste: "Spice Girls",
     date: 1996,
@@ -340,7 +347,7 @@ const api = [
   {
     id: 36,
     pochette:
-      "https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-4",
+      "https://e-cdn-images.dzcdn.net/images/cover/a15f1506bd41a3aa13030498d1d585e6/264x264-000000-80-0-0.jpg",
     titre: "Never Gonna Give You Up",
     artiste: "Rick Astley",
     date: 1987,
@@ -349,7 +356,8 @@ const api = [
   },
   {
     id: 37,
-    pochette: "https://soundcloud.com/aqua-official/barbie-girl",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/65b3059cc7445df016d897615412f781/264x264-000000-80-0-0.jpg",
     titre: "Barbie Girl",
     artiste: "Aqua",
     date: 1997,
@@ -359,7 +367,7 @@ const api = [
   {
     id: 38,
     pochette:
-      "https://soundcloud.com/vengaboys-official/boom-boom-boom-boom-airplay",
+      "https://e-cdn-images.dzcdn.net/images/cover/41e71f8047038de8d35f1e378c518cf7/264x264-000000-80-0-0.jpg",
     titre: "boom, boom, boom, boom !!",
     artiste: "Vengaboys",
     date: 1998,
@@ -369,7 +377,7 @@ const api = [
   {
     id: 39,
     pochette:
-      "https://soundcloud.com/dj-kakes/beatles-come-together-kakes-re-intepretation",
+      "https://e-cdn-images.dzcdn.net/images/cover/aa94ab293730bb7845d2aa8c672b2c29/264x264-000000-80-0-0.jpg",
     titre: "Come together",
     artiste: "The Beatles",
     date: 1969,
@@ -378,7 +386,8 @@ const api = [
   },
   {
     id: 40,
-    pochette: "https://soundcloud.com/bobdylan/like-a-rolling-stone-1",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/96193f14db0501c035bd43ab93960317/264x264-000000-80-0-0.jpg",
     titre: "Like a rolling stone",
     artiste: "Bob Dylan",
     date: 1965,
@@ -387,7 +396,8 @@ const api = [
   },
   {
     id: 41,
-    pochette: "https://soundcloud.com/beegees/night-fever-3",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/315772aec36013c1c0653d9dee37cffd/264x264-000000-80-0-0.jpg",
     titre: "Saturday Night Fever",
     artiste: "Bee Gees",
     date: 1978,
@@ -396,7 +406,8 @@ const api = [
   },
   {
     id: 42,
-    pochette: "https://soundcloud.com/madonna/like-a-virgin-album-version",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/3836708e2d450cdaa61341112b972228/264x264-000000-80-0-0.jpg",
     titre: "Like a virgin",
     artiste: "Madonna",
     date: 1984,
@@ -405,7 +416,8 @@ const api = [
   },
   {
     id: 43,
-    pochette: "https://soundcloud.com/cultureclubofficial/karma-chameleon",
+    pochette:
+      "https://e-cdn-images.dzcdn.net/images/cover/d81a729eef520198f77d3de7e0fb6458/264x264-000000-80-0-0.jpg",
     titre: "Karma chameleon",
     artiste: "Culture Club",
     date: 1983,

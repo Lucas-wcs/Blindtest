@@ -1,11 +1,14 @@
-import "./App.css";
-// import Accueil from "./pages/Accueil";
-// import Btpage from "./pages/Btpage";
-// import User from "./pages/User";
-import axios from "axios";
-// import BlindTestChoice from "./pages/BlindTestChoice";
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
+
+import Accueil from "./pages/Accueil";
 import Recherche from "./pages/Recherche";
+import BlindTestChoice from "./pages/BlindTestChoice";
+import Btpage from "./pages/Btpage";
+import User from "./pages/User";
+
+import "./App.css";
 
 function App() {
   const [List, setList] = useState([]);
@@ -80,15 +83,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {/* <Accueil /> */}
-      {songList !== undefined && (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Accueil />} />
+        <Route path="/recherche" element={songList !== undefined && (
         <Recherche songList={songList} update={update()} update2={update2()} />
-      )}
-      {/* { <Btpage /> }
-      { <User /> }
-      {<BlindTestChoice/>} */}
-    </div>
+        <Route path="/choice" element={<BlindTestChoice />} />
+        <Route path="/test" element={<Btpage />} />
+        <Route path="/user" element={<User />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
