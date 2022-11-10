@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Menu.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import "boxicons";
+
+import { BiUserCircle } from "react-icons/bi";
+import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 
 function Menu() {
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(false);
   const toggle = () => {
     setActive(!isActive);
   };
@@ -14,6 +17,7 @@ function Menu() {
   return (
     <div id="principale-menu" className={isActive ? "click" : null}>
       <button
+        id="button-menu"
         type="button"
         className={isActive ? "click" : null}
         onClick={toggle}
@@ -22,47 +26,48 @@ function Menu() {
         <FontAwesomeIcon icon={faXmark} className="xmark" />
       </button>
 
+      <Link to="/user">
+        <BiUserCircle id="button-user" />
+      </Link>
+
       <nav className={isActive ? "click" : null}>
         <ul>
           <li>
-            <a href="./accueil.html">Accueil</a>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
-            <a href="./blindtest.html">Choix Blind Test</a>
+            <Link to="/recherche">Rechercher</Link>
           </li>
           <li>
-            <a href="./rechercher.html">Rechercher</a>
+            <Link to="/choice">Choix Blind Test</Link>
           </li>
           <li>
-            <a href="./user.html">User</a>
+            <Link to="/user">User</Link>
           </li>
         </ul>
 
         <div className="bottom">
           <div className="icons-applis">
             <a
-              className="test"
               href="https://fr-fr.facebook.com/"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon type="logo" name="facebook-square" />
+              <BsTwitter />
             </a>
             <a
-              className="test"
               href="https://twitter.com/?lang=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon type="logo" name="twitter" />
+              <BsFacebook />
             </a>
             <a
-              className="test"
               href="https://www.instagram.com/?hl=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon name="instagram-alt" type="logo" />
+              <BsInstagram />
             </a>
           </div>
 

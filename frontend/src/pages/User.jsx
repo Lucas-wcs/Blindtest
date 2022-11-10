@@ -3,9 +3,6 @@ import MyTitle from "../components/user/MyTitle";
 import LastListen from "../components/user/LastListen";
 import Favoris from "../components/user/Favoris";
 import "../style/User.css";
-import "../App.css";
-import "boxicons";
-// import axios from "axios";
 
 function User() {
   // const [artiste, setArtiste] = useState("");
