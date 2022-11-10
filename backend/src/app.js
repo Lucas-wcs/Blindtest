@@ -25,6 +25,12 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 // API routes
 app.use("/api/music", musicRoutes);
 
+app.use("/login", (req, res) => {
+  res.send({
+    token: "test123",
+  });
+});
+
 // Redirect all requests to the REACT app
 const reactIndexFile = path.join(
   __dirname,

@@ -18,6 +18,7 @@
     "react-dom": "^18.0.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
+    "react-h5-audio-player": "^3.8.6",
     "template-fullstack": "file:.."
   },
   "devDependencies": {

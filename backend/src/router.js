@@ -9,7 +9,7 @@ router.get("/:id", (req, res) => {
   res.json(datas.filter((music) => music.id === req.params.id)).status(200);
 });
 
-router.get("/image/:filename", (req, res) => {
+router.get("/:filename", (req, res) => {
   res.sendFile(`./public/mp3/${req.params.filename}`, { root: "./" });
 });
 
