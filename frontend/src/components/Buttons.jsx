@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 function Buttons({ name, id }) {
+ 
+  
   return (
     <div className="eachbutton">
-      <button id={id} type="button">
+      
+      <input type="checkbox" id={id} name={id} onChange={(e) => e.target.value}></input>
+      <label for={id}>{name}</label>  
+      </div>
+  /*     <button id={id} type="button" >
         {name}
-      </button>
-    </div>
+      </button> */
+   
   );
 }
 

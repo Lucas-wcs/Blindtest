@@ -49,56 +49,83 @@ h1 {
 
 /*css dani*/
 
-.buttons-container {
+.test-selection .buttons-container {
   background-color: var(--bleu);
   margin: 5% 10%;
   box-shadow: -5px 5px 0 var(--orange);
+  padding-bottom: 1rem;
+  
 }
 
-.title {
+.test-selection .title {
   text-align: center;
   margin: 4%;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: var(--ffTitre);
 }
 
-#tests-titles {
+.test-selection #tests-titles {
   color: var(--blanc);
   font-size: 2rem;
   font-family: var(--ffTexte);
   padding: 4%;
 }
 
-.eachbutton {
+.test-selection .eachbutton:checked {
   width: 80%;
   height: 4.5rem;
   margin: 2% auto;
+  background-color: var();
+  text-align: center;
+  line-height: 3.5rem;
 }
 
-.buttons-container button {
-  width: 100%;
-  height: 100%;
-  background-color: var(--beige);
-  font-size: 2rem;
-}
-
-.toggle-containerBlue {
+.test-selection .eachbutton {
   width: 80%;
   height: 4.5rem;
-  margin: 2% auto;
-  box-shadow: -5px 5px 0 var(--orange);
-  margin-bottom: 5%;
+  margin: 1% auto;
+  text-align: center;
+  line-height: 4.5rem;
 }
 
-.toggle-containerOrange {
-  width: 65%;
+.test-selection .eachbutton input {
+  display: none; 
+
+}
+
+.test-selection .eachbutton label {
+display: block;
+background-color: var(--beige);
+}
+
+.test-selection .eachbutton input:checked + label {
+  background-color: var(--orange);
+}
+
+
+.test-selection .buttons-container input {
+  width: 5%;
+  height: 10%;
+  background-color: var(--orange);
+  font-size: 5rem;
+  text-align: center;
+}
+
+
+.test-selection .toggle-containerBlue {
+  width: 50%;
   height: 4.5rem;
-  margin: 2% auto;
-  box-shadow: -5px 5px 0 var(--beige);
-  margin-bottom: 5%;
+  margin: auto;
+  
 }
 
-#toggleBlue {
+.test-selection .toggle-containerOrange {
+  width: 50%;
+  height: 4.5rem;
+  margin: auto;
+}
+
+.test-selection #toggleBlue {
   width: 100%;
   height: 100%;
   background-color: var(--bleu);
@@ -106,7 +133,7 @@ h1 {
   font-size: 1.5rem;
 }
 
-#toggleOrange {
+.test-selection #toggleOrange {
   width: 100%;
   height: 100%;
   background-color: var(--orange);
@@ -114,166 +141,178 @@ h1 {
   font-size: 1.5rem;
 }
 
+.test-selection .send {
+  width: 25%;
+  height: 3.5rem;
+  background-color: var(--orange);
+  font-size: 1.8rem;
+  border: solid;
+  margin: 2% 0 0 37%;
+}
+
+
 @media only screen and (min-width: 800px) {
   body {
     color: var(--noir);
     font-family: var(--ffTexte);
     background-color: var(--bg);
-    background-image: url(vinyle-left-side.png);
+    background-image: url(../assets/vinyle.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
     background-position: left;
   }
 
-  .music-filter {
+
+  
+  .test-selection .music-filter {
     display: flex;
     width: 60%;
   }
 
-  .buttons-container {
+  .test-selection .buttons-container {
     background-color: unset;
     margin: 0;
     box-shadow: unset;
     width: 100%;
   }
 
-  .section {
+  .test-selection .section {
     display: flex;
     justify-content: space-around;
     clear: both;
     height: 100%;
     margin-left: 4rem;
-    margin-top: 1.5rem;
+  
   }
 
-  .buttons-container button {
-    width: 60%;
+  .test-selection .eachbutton label {
     height: 60%;
-    background-color: var(--orange);
-    box-shadow: -5px 5px 0 #d7c392;
+    background-color: var(--beige);
+    box-shadow: -5px 5px 0 var(--bleu);
     font-size: 1.3rem;
     border-radius: 1rem;
+    line-height: 3rem;
+    
   }
 
-  #button1,
-  #button3,
-  #button5,
-  #button7,
-  #button9 {
+     
+   
+  .test-selection .eachbutton input:checked + label {
     background-color: var(--beige);
-    box-shadow: -5px 5px 0 var(--orange);
-    border-color: var(--beige);
   }
 
-  #button2,
-  #button4,
-  #button6,
-  #button8,
-  #button10 {
-    background-color: var(--orange);
-    box-shadow: -5px 5px 0 var(--beige);
-    border-color: var(--orange);
+
+
+  .test-selection #button1 + label,
+  #button6 + label{
+      margin-left: 2rem;
   }
 
-  #button1,
-  #button6 {
-    margin-left: 1rem;
+  .test-selection #button2 + label,
+  #button7 + label {
+    margin-left: 3.5rem;
   }
 
-  #button2,
-  #button7 {
-    margin-left: 2.5rem;
+  .test-selection  #button3 + label,
+  #button8 + label {
+    margin-left: 4rem;
   }
 
-  #button3,
-  #button8 {
-    margin-left: 3rem;
+  .test-selection #button4 + label,
+  #button9 + label {
+    margin-left: 3.5rem;
   }
 
-  #button4,
-  #button9 {
-    margin-left: 2.5rem;
-  }
-
-  .eachbutton {
-    width: 100%;
-    height: 3.5rem;
+  .test-selection .eachbutton label{
+    width: 80%;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 2rem;
   }
 
-  #tests-titles {
+  .test-selection .eachbutton input:checked + label {
+    background-color: var(--orange);
+  }
+
+
+  .test-selection #tests-titles {
     color: var(--orange);
     font-size: 2rem;
     font-family: var(--ffTexte);
-    padding: 4%;
+    padding: 3%;
   }
 
-  .our-tests {
+  .test-selection .our-tests {
     background-color: var(--bleu);
     box-shadow: -5px 5px 0 var(--orange);
     width: 30%;
     display: flex;
     justify-content: center;
-    margin-top: 3%;
-    padding-bottom: 2rem;
+    
+   
   }
 
-  .our-tests button {
+  .test-selection .our-tests label {
     min-width: 13rem;
-    height: 70%;
+    height: 64%;
     background-color: var(--beige);
     font-size: 1.3rem;
-    border-radius: unset;
-    box-shadow: unset;
-    border: unset;
-  }
-  .toggle-containerBlue {
-    width: 28.85%;
-    height: 3rem;
     box-shadow: -5px 5px 0 var(--orange);
-    float: right;
-    margin-right: 2.4%;
-    margin-bottom: 0;
-    margin-top: 3rem;
+ 
   }
+  .test-selection .toggle-containerBlue {
+    width: 40%;
+    margin: 0 13rem
+    }
 
-  .toggle-containerOrange {
-    width: 29%;
-    height: 3rem;
-    box-shadow: -5px 5px 0 var(--beige);
-    float: right;
-    margin-right: 2.3%;
-    margin-bottom: 0;
-    background-color: var(--orange);
-    margin-top: 3rem;
-  }
+  .test-selection .toggle-containerOrange {
+    width: 40%;
+    margin: 0 13rem
+    }
 
-  #toggleBlue {
+  
+  .test-selection #toggleBlue {
     width: 100%;
-    height: 100%;
+    height: 80%;
     background-color: var(--bleu);
     color: var(--blanc);
     font-size: 1.3rem;
     border: none;
-  }
+    box-shadow: -5px 5px 0 var(--orange);
+   }
 
-  #toggleOrange {
-    width: 100%;
-    height: 100%;
+  .test-selection #toggleOrange {
+    width: 90%;
+    height: 80%;
     background-color: var(--orange);
     color: var(--noir);
     font-size: 1.3rem;
     border: none;
+    box-shadow: -5px 5px 0 var(--beige);
   }
 
-  .title {
+  .test-selection .title {
     text-align: center;
     margin: 0.5%;
     font-size: 1.8rem;
     font-family: var(--ffTitre);
   }
+    
+    
+  .test-selection .send {
+    width: 20%;
+    height: 3.5rem;
+    background-color: var(--orange);
+    font-size: 1.8rem;
+    margin: 2% 6% 0 0
+   }
+  
+
+  .test-selection .buttons-downside {
+    display: flex;  
+    }
+
 }
