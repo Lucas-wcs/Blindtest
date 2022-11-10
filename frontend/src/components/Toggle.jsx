@@ -16,7 +16,7 @@ function Toggle() {
         type="button"
         onClick={chooseDifficulty}
       >
-        Clique pour : {difficulty ? "FACILE" : "DIFFICILE"}
+        {difficulty ? "FACILE" : "DIFFICILE"}
       </button>
     </div>
   );

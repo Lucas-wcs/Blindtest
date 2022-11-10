@@ -1,8 +1,8 @@
 import React from "react";
-
 import Title from "@components/Title";
 import Toggle from "@components/Toggle";
 import ButtonContainer from "@components/ButtonContainer";
+import "../style/BlindTestChoice.css";
 
 const years = [
   {
@@ -77,12 +77,18 @@ function BlindTestChoice() {
           <ButtonContainer array={years} />
           <ButtonContainer array={kind} />
         </div>
+
         <div className="our-tests">
           <ButtonContainer array={ourChoice} />
         </div>
       </div>
 
-      <Toggle />
+      <div className="buttons-downside">
+        <Toggle />
+        <button type="button" className="send">
+          GO !
+        </button>
+      </div>
     </div>
   );
 }
