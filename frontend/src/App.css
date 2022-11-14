@@ -39,7 +39,6 @@ body {
   background-color: var(--bg);
   min-height: 100vh;
   text-align: center;
-  padding-bottom: 2rem;
 }
 
 h1 {
@@ -51,4 +50,10 @@ h1 {
     4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
     4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
     7px 6px 1px gray;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    padding-top: 0px;
+  }
 }

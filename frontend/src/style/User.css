@@ -1,18 +1,4 @@
-body {
-  background: linear-gradient(
-      0deg,
-      rgba(146, 102, 61, 0.2),
-      rgba(146, 102, 61, 0.2)
-    ),
-    #ffffff;
-  background-image: url("https://cdn.discordapp.com/attachments/1031509947487363165/1035467965061144617/Vinyle2.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-  background-position: left;
-}
-
-h1 {
+.pageUser h1 {
   text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
     1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
     4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
@@ -22,20 +8,20 @@ h1 {
   font-size: 50px;
 }
 
-h2 {
+.pageUser h2 {
   margin-bottom: 20px;
 }
 
-.titleName {
+.pageUser .titleName {
   text-align: center;
   font-family: var(--ffTitre);
 }
 
-.spanS {
+.pageUser .spanS {
   color: var(--orange);
 }
 
-.lastListen {
+.pageUser .lastListen {
   margin-top: 20px;
   font-family: var(--ffTexte);
   text-align: center;
@@ -47,104 +33,108 @@ h2 {
   margin-left: 10%;
 }
 
-.pieceOfMusic {
+.pageUser .pieceOfMusic {
   margin-top: 20px;
   font-family: var(--ffTexte);
   text-align: center;
 }
 
-.imgMusic {
-  width: 50px;
-  height: 50px;
+.pageUser .imgMusic {
+  width: 120px;
+  height: 120px;
   vertical-align: middle;
+  margin-bottom: 15px;
+  border-radius: 10%;
+  border: solid 4px black;
 }
 
-a {
+.pageUser .titleAndArtist {
   margin-bottom: 15px;
 }
 
-.favorisTitle,
-.lastListenTitle {
+.pageUser a {
+  margin-bottom: 15px;
+}
+
+.pageUser .favorisTitle,
+.pageUser .lastListenTitle {
   margin-top: 13%;
   margin-bottom: 10%;
 }
 
-.caret-right-circle {
+.pageUser .caret-right-circle {
   color: red;
 }
 
-@media (max-width: 319px) {
+.pageUser .musicDivBlock {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-bottom: solid 5px black;
+  padding: 10px;
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
-}
-
-@media (min-width: 375px) and (max-width: 424px) {
-}
-
-@media (min-width: 425px) and (max-width: 767px) {
+.pageUser .MusicPlayerBox {
+  background-color: var(--bleu);
+  border-radius: 1rem;
 }
 
 @media (max-width: 767px) {
-  body {
+  body .pageUser {
     background-image: none;
   }
 }
 
-@media (min-width: 768px) and (max-width: 768px) {
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
-}
-
 @media (min-width: 1024px) {
-  .lastListen {
+  .pageUser .lastListen {
     background: none;
     box-shadow: none;
     color: white;
     margin-top: 50px;
   }
 
-  .titleName {
+  .pageUser .titleName {
     color: white;
     font-size: 105px;
   }
 
-  h2 {
+  .pageUser h2 {
     font-size: 40px;
   }
 
-  .blockMusic {
+  .pageUser .blockMusic {
     margin-top: 70px;
     display: flex;
   }
 
-  img {
+  .pageUser img {
     margin-bottom: 20px;
   }
 
-  .aBlock {
+  .pageUser .imgMusic {
+    width: 250px;
+    height: 250px;
   }
 
-  .titleAndLast {
+  .pageUser .titleAndLast {
     display: inline-block;
     margin-left: 10%;
   }
 
-  .pieceOfMusic {
+  .pageUser .pieceOfMusic {
     margin-left: 15%;
   }
 
-  .favorisTitle {
+  .pageUser .favorisTitle {
     margin-bottom: 10%;
     font-size: 70px;
   }
 
-  .lastListenTitle {
+  .pageUser .lastListenTitle {
     font-size: 55px;
     margin-bottom: 10%;
   }
-}
 
-@media (width: 1024px) {
+  .pageUser .musicDivBlock {
+    border: none;
+  }
 }

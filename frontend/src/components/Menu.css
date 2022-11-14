@@ -51,7 +51,7 @@
 }
 
 #principale-menu #button-menu.click {
-  left: 265px;
+  left: 235px;
 }
 
 #principale-menu #button-menu.click .xmark {
@@ -78,14 +78,14 @@
 
 #principale-menu nav {
   position: fixed;
-  width: 250px;
+  width: 220px;
   height: 100%;
   color: black;
   z-index: 10;
   background-color: white;
   transition: 0.3s ease;
 
-  left: -252px;
+  left: -220px;
   /* suivant click du bouton */
 
   display: flex;

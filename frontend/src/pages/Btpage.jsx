@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import CounterTime from "../components/btpage/CounterTime";
 // import TimeOut from "./TimeOut";
+import Menu from "../components/Menu";
 
 function Btpage() {
   const [pochette, setPochette] = useState(
@@ -37,14 +38,15 @@ function Btpage() {
         }
         y = i;
         setAnswer([data[i], data[i2], data[i3], data[y + 1]]);
-        setPochette(
-          "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        );
+        // // setPochette(
+        //   "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        // );
         setScore((oldScore) => oldScore + 1);
       });
   }, []);
   return (
     <div className="btpage">
+      <Menu />
       <TitleBt />
       <div className="btpagemain">
         <div className="quizz">

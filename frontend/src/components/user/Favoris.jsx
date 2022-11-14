@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Player from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 function Favoris({ fav }) {
   return (
@@ -8,12 +10,19 @@ function Favoris({ fav }) {
         <h2 className="favorisTitle">VOS FAVORIS</h2>
       </div>
       <div className="aBlock">
-        {fav.map((musicF) => {
+        {fav.map((music) => {
           return (
-            <a href="http://localhost:3000/">
-              {musicF.img} {musicF.artiste} / {musicF.titre} / {musicF.duree} /{" "}
-              {musicF.favoris} {musicF.btn} <br />
-            </a>
+            <div className="musicDivBlock">
+              <img className="imgMusic" src={music.pochette} alt="pochette" />
+              <p className="titleAndArtist">
+                {music.titre} / {music.artiste}
+              </p>
+              <Player
+                className="MusicPlayerBox"
+                src={`http://localhost:5000/mp3/${music.mp3}`}
+                showJumpControls={false}
+              />
+            </div>
           );
         })}
       </div>

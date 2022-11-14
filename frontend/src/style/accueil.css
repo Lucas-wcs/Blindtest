@@ -73,7 +73,7 @@
 /* --- responsive --- */
 
 @media screen and (min-width: 800px) {
-  .pageaccueil body {
+  body {
     background: url(../assets/vinyleAccueil.jpg) center no-repeat fixed;
     background-size: cover;
     z-index: -1;
