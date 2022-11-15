@@ -127,7 +127,7 @@ const api = [
     artiste: "daft punk",
     date: 2014,
     genre: "electro",
-    mp3: "instantCrush.mp3",
+    mp3: "instant_crush.mp3",
   },
   {
     id: 14,

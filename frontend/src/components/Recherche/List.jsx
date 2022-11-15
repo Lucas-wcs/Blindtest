@@ -1,29 +1,44 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Player from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
-function List({ src, titre, date }) {
+function List({ src, titre, date, audio, artiste, setBigAlbum }) {
   return (
     <div className="searchright">
-      <a
-        title="play"
-        target="_blank"
-        href="..\backend\public\mp3\all_along_the_watchtower.mp3"
+      <Player
+        className="MusicPlayerBox"
+        src={`http://localhost:5000/mp3/${audio}`}
+        showJumpControls={false}
+        autoPlay={false}
+        autoPlayAfterSrcChange={false}
+      />
+
+      <button
+        type="button"
+        onClick={() => setBigAlbum([src, titre, artiste, date, audio])}
       >
         <img
-          className="imgplaylist"
-          src="https://www.pngmart.com/files/3/Play-Button-Transparent-PNG.png"
+          className="imglist"
+          src={src}
           alt="pochette album"
+          loading="lazy"
         />
-      </a>
-      <img className="imglist" src={src} alt="pochette album" />
+      </button>
       <h3>{titre}</h3>
+      <p>{artiste}</p>
       <p>{date}</p>
     </div>
   );
 }
+
 List.propTypes = {
   src: PropTypes.string.isRequired,
   titre: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.number.isRequired,
+  audio: PropTypes.string.isRequired,
+  artiste: PropTypes.string.isRequired,
+  setBigAlbum: PropTypes.func.isRequired,
 };
+
 export default List;
