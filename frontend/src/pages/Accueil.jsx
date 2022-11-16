@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../style/accueil.css";
 import axios from "axios";
-import Menu from "../components/Menu";
 import BlocAccueil from "../components/accueil/BlocAccueil";
 
 function App() {
@@ -44,7 +43,6 @@ function App() {
 
   return (
     <div className="pageaccueil">
-      <Menu />
       <main>
         <h1>
           BLINDTE<span>S</span>T

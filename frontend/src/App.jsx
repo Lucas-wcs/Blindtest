@@ -7,6 +7,7 @@ import Recherche from "./pages/Recherche";
 import BlindTestChoice from "./pages/BlindTestChoice";
 import Btpage from "./pages/Btpage";
 import User from "./pages/User";
+import Menu from "./components/Menu";
 import "./App.css";
 
 // !!!
@@ -179,43 +180,47 @@ function App() {
   // envoyer la liste optenu (listChoice) dans la page de test
   return (
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Accueil />} />
-        <Route
-          path="/recherche"
-          element={
-            songList !== undefined && (
-              <Recherche
-                songList={songList}
-                setAnnee={setAnnee}
-                setGenre={setGenre}
-                setCherche={setCherche}
+      <div>
+        <Menu />
+        <Routes>
+          <Route exact path="/" element={<Accueil />} />
+          <Route
+            path="/recherche"
+            element={
+              songList !== undefined && (
+                <Recherche
+                  songList={songList}
+                  setAnnee={setAnnee}
+                  setGenre={setGenre}
+                  setCherche={setCherche}
+                />
+              )
+            }
+          />
+          {/* ------------------------ */}
+          <Route
+            path="/choice"
+            element={
+              <BlindTestChoice
+                setGenreChoice={setGenreChoice}
+                genreChoice={genreChoice}
+                setAnneeChoice={setAnneeChoice}
+                anneeChoice={anneeChoice}
+                listChoice={listChoice}
               />
-            )
-          }
-        />
-        {/* ------------------------ */}
-        <Route
-          path="/choice"
-          element={
-            <BlindTestChoice
-              setGenreChoice={setGenreChoice}
-              genreChoice={genreChoice}
-              setAnneeChoice={setAnneeChoice}
-              anneeChoice={anneeChoice}
-            />
-          }
-        />
-        {/* --- */}
-        <Route
-          path="/test"
-          element={
-            listChoice.length !== 0 && <Btpage listChoice={listChoice} />
-          }
-        />
-        {/* ------------------------ */}
-        <Route path="/user" element={<User myLastListening={list} />} />
-      </Routes>
+            }
+          />
+          {/* --- */}
+          <Route
+            path="/test"
+            element={
+              listChoice.length !== 0 && <Btpage listChoice={listChoice} />
+            }
+          />
+          {/* ------------------------ */}
+          <Route path="/user" element={<User myLastListening={list} />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

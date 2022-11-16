@@ -2,7 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import Answers from "./Answers";
 
-function AnswerContainer({ array, setScore, answer, counterStart }) {
+function AnswerContainer({
+  array,
+  setScore,
+  answer,
+  counterStart,
+  setChange,
+  change,
+}) {
   // array = tout l'objet
   return (
     <div className="answer-container">
@@ -13,6 +20,8 @@ function AnswerContainer({ array, setScore, answer, counterStart }) {
           setScore={setScore}
           answer={answer}
           counterStart={counterStart}
+          setChange={setChange}
+          change={change}
         />
       ))}
     </div>
@@ -25,5 +34,7 @@ AnswerContainer.propTypes = {
   setScore: PropTypes.func.isRequired,
   answer: PropTypes.string.isRequired,
   counterStart: PropTypes.bool.isRequired,
+  setChange: PropTypes.func.isRequired,
+  change: PropTypes.bool.isRequired,
 };
 export default AnswerContainer;

@@ -4,7 +4,6 @@ import Title from "../components/Recherche/Title";
 import List from "../components/Recherche/List";
 import Filter from "../components/Recherche/Filter";
 import "../style/recherche.css";
-import Menu from "../components/Menu";
 
 function Recherche({ songList, setAnnee, setGenre, setCherche }) {
   const [bigAlbum, setBigAlbum] = useState([
@@ -17,7 +16,6 @@ function Recherche({ songList, setAnnee, setGenre, setCherche }) {
 
   return (
     <div className="rech">
-      <Menu />
       <div className="all">
         <div className="title">
           <Title bigAlbum={bigAlbum} />

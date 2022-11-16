@@ -6,7 +6,6 @@ import Title from "@components/btchoice/Title";
 import Toggle from "@components/btchoice/Toggle";
 import ButtonContainer from "@components/btchoice/ButtonContainer";
 import "../style/BlindTestChoice.css";
-import Menu from "../components/Menu";
 
 const years = [
   {
@@ -77,10 +76,10 @@ function BlindTestChoice({
   genreChoice,
   setAnneeChoice,
   anneeChoice,
+  listChoice,
 }) {
   return (
     <div className="test-selection">
-      <Menu />
       <Title />
       <div className="section">
         <div className="music-filter">
@@ -104,9 +103,11 @@ function BlindTestChoice({
       <div className="buttons-downside">
         <Toggle />
 
-        <button type="button" className="send">
-          <Link to="/test">GO !</Link>
-        </button>
+        {listChoice.length >= 4 ? (
+          <button type="button" className="send">
+            <Link to="/test">GO !</Link>
+          </button>
+        ) : null}
       </div>
     </div>
   );
@@ -135,6 +136,7 @@ BlindTestChoice.propTypes = {
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ])
   ).isRequired,
+  listChoice: PropTypes.string.isRequired,
 };
 
 export default BlindTestChoice;
