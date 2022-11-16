@@ -3,6 +3,7 @@ import LastListen from "../components/user/LastListen";
 import Favoris from "../components/user/Favoris";
 import "../style/User.css";
 import "../App.css";
+// import Menu from "../components/Menu";
 
 function User() {
   const myLastListening = [
@@ -15,6 +16,7 @@ function User() {
       date: "1984",
       genre: "film",
       mp3: "ghostbusters.mp3",
+      isFavorite: false,
     },
     {
       id: 2,
@@ -25,6 +27,7 @@ function User() {
       date: "2011",
       genre: "rap",
       mp3: "la_terre_est_ronde.mp3",
+      isFavorite: false,
     },
     {
       id: 19,
@@ -35,6 +38,7 @@ function User() {
       date: "1972",
       genre: "film",
       mp3: "love_theme_from.mp3",
+      isFavorite: false,
     },
     {
       id: 4,
@@ -45,6 +49,7 @@ function User() {
       date: "2019",
       genre: "rap",
       mp3: "au_dd.mp3",
+      isFavorite: false,
     },
     {
       id: 5,
@@ -55,6 +60,7 @@ function User() {
       date: "2017",
       genre: "rap",
       mp3: "life.mp3",
+      isFavorite: false,
     },
   ];
 
@@ -68,6 +74,7 @@ function User() {
       date: "2015",
       genre: "electro",
       mp3: "faded.mp3",
+      isFavorite: true,
     },
     {
       id: 7,
@@ -78,6 +85,7 @@ function User() {
       date: "2016",
       genre: "electro",
       mp3: "alone.mp3",
+      isFavorite: true,
     },
     {
       id: 8,
@@ -88,6 +96,7 @@ function User() {
       date: "2013",
       genre: "electro",
       mp3: "animals.mp3",
+      isFavorite: true,
     },
     {
       id: 9,
@@ -98,6 +107,7 @@ function User() {
       date: "2015",
       genre: "electro",
       mp3: "unity.mp3",
+      isFavorite: true,
     },
     {
       id: 10,
@@ -108,6 +118,7 @@ function User() {
       date: "2019",
       genre: "electro",
       mp3: "japan.mp3",
+      isFavorite: true,
     },
     {
       id: 11,
@@ -118,6 +129,7 @@ function User() {
       date: "2014",
       genre: "electro",
       mp3: "resonance.mp3",
+      isFavorite: true,
     },
     {
       id: 12,
@@ -128,6 +140,7 @@ function User() {
       date: "2013",
       genre: "electro",
       mp3: "turn_down_for_what.mp3",
+      isFavorite: true,
     },
     {
       id: 13,
@@ -138,6 +151,7 @@ function User() {
       date: "2014",
       genre: "electro",
       mp3: "instantCrush.mp3",
+      isFavorite: true,
     },
     {
       id: 14,
@@ -148,14 +162,13 @@ function User() {
       date: "2015",
       genre: "electro",
       mp3: "intoxicated.mp3",
+      isFavorite: true,
     },
   ];
 
   return (
     <div className="pageUser">
-      <header>
-        <p>HEADER</p>
-      </header>
+      <header>{/* <Menu /> */}</header>
       <div className="blockMusic">
         <div className="titleAndLast">
           <div className="titleUser">

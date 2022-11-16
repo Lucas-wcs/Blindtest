@@ -4,6 +4,12 @@ import Player from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
 function LastListen({ lastEcoute }) {
+  // const [isFavorite, setIsFavorite] = React.useState(lastEcoute.isFavorite);
+
+  // function handleClickFavorite() {
+  //   setIsFavorite(!isFavorite);
+  // }
+
   return (
     <div>
       <div>
@@ -17,6 +23,13 @@ function LastListen({ lastEcoute }) {
               <p className="titleAndArtist">
                 {music.titre} / {music.artiste}
               </p>
+
+              {/* <div
+                id="favorite"
+                onClick={handleClickFavorite}
+                className={isFavorite ? "isFavorite" : "notFavorite"}
+              /> */}
+
               <Player
                 className="MusicPlayerBox"
                 src={`http://localhost:5000/mp3/${music.mp3}`}
