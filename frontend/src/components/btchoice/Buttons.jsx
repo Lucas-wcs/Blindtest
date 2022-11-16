@@ -15,7 +15,7 @@ function Buttons({ name, id, handleOnChange }) {
 }
 
 Buttons.propTypes = {
-  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  name: PropTypes.oneOfType(PropTypes.string, PropTypes.number).isRequired,
   id: PropTypes.number.isRequired,
   handleOnChange: PropTypes.func.isRequired,
 };

@@ -53,14 +53,14 @@ function Menu() {
               target="_blank"
               rel="noreferrer"
             >
-              <BsTwitter />
+              <BsFacebook />
             </a>
             <a
               href="https://twitter.com/?lang=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <BsFacebook />
+              <BsTwitter />
             </a>
             <a
               href="https://www.instagram.com/?hl=fr"
