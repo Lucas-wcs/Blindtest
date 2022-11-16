@@ -37,6 +37,8 @@
   font-size: x-large;
   margin: 10px;
   background-color: var(--beige);
+  border: orange 3px solid;
+  border-radius: 20px;
 }
 .btpage .points {
   background-color: var(--bleu);
@@ -132,8 +134,9 @@
   }
   .btpage .quizz img {
     width: 80%;
-    border: #d7c392 solid 5px;
+    border: orange solid 5px;
     margin-top: 15px;
+    outline: 0.5rem solid var(--beige);
   }
   .btpage .answerButton button {
     width: 100%;
@@ -146,11 +149,11 @@
     height: 200px;
     outline: 0.5rem solid var(--beige);
     border-radius: 50%;
-    color: #d7c392;
+    color: var(--bleu);
     font-weight: bold;
     font-size: 40px;
     padding: 5px;
-    border: 0.5rem outset var(--bg);
+    border: 0.5rem outset orange;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,11 +163,11 @@
     font-size: x-large;
   }
   .btpage .timer {
-    color: #d7c392;
+    color: var(--bleu);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.5rem outset var(--bg);
+    border: 0.5rem outset orange;
     outline: 0.5rem solid var(--beige);
     /* box-shadow: 0 0 0 2rem var(--beige); */
     border-radius: 12px;

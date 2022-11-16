@@ -15,6 +15,7 @@ function Btpage() {
   );
   const [answer, setAnswer] = useState([]);
   const [score, setScore] = useState(0);
+  // const [song, setSong] = useState([]);
   // const [timer,setTimer] = useState(true)
   useEffect(() => {
     let i;
@@ -44,6 +45,8 @@ function Btpage() {
         setScore((oldScore) => oldScore + 1);
       });
   }, []);
+
+  useEffect(() => {}, []);
   return (
     <div className="btpage">
       <Menu />
