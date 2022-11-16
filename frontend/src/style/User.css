@@ -1,4 +1,4 @@
-body {
+.pageUser body {
   background: linear-gradient(
       0deg,
       rgba(146, 102, 61, 0.2),
@@ -18,7 +18,6 @@ body {
     4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
     4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
     7px 6px 1px gray;
-
   font-size: 50px;
 }
 
@@ -92,28 +91,10 @@ body {
   border-radius: 1rem;
 }
 
-@media (max-width: 319px) {
-}
-
-@media (min-width: 320px) and (max-width: 374px) {
-}
-
-@media (min-width: 375px) and (max-width: 424px) {
-}
-
-@media (min-width: 425px) and (max-width: 767px) {
-}
-
 @media (max-width: 767px) {
   .pageUser body {
     background-image: none;
   }
-}
-
-@media (min-width: 768px) and (max-width: 768px) {
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
 }
 
 @media (min-width: 1024px) {
@@ -140,9 +121,6 @@ body {
 
   .pageUser img {
     margin-bottom: 20px;
-  }
-
-  .pageUser .aBlock {
   }
 
   .pageUser .imgMusic {
@@ -172,7 +150,4 @@ body {
   .pageUser .musicDivBlock {
     border: none;
   }
-}
-
-@media (width: 1024px) {
 }
