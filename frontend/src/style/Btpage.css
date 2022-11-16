@@ -30,8 +30,7 @@
 
 .btpage .quizz img {
   margin: 0 auto;
-  min-width: 250px;
-  width: 70%;
+  width: 250px;
 }
 .btpage .quizz button {
   font-size: x-large;
@@ -138,6 +137,11 @@
     margin-top: 15px;
     outline: 0.5rem solid var(--beige);
   }
+
+  .btpage button {
+    cursor: pointer;
+  }
+
   .btpage .answerButton button {
     width: 100%;
   }

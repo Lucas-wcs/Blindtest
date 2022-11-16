@@ -21,6 +21,7 @@ function Favoris({ fav }) {
                 className="MusicPlayerBox"
                 src={`http://localhost:5000/mp3/${music.mp3}`}
                 showJumpControls={false}
+                autoPlayAfterSrcChange={false}
               />
             </div>
           );

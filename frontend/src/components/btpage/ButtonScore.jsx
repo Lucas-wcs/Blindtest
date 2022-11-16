@@ -1,11 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function ButtonScore() {
+function ButtonScore({ score }) {
   return (
     <div className="buttonScore">
-      <p>Score : 0</p>
+      <button type="button">Score : {score}</button>
     </div>
   );
 }
+
+ButtonScore.propTypes = {
+  score: PropTypes.number.isRequired,
+};
 
 export default ButtonScore;

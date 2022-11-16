@@ -1,71 +1,113 @@
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "../style/Btpage.css";
+// import axios from "axios";
+// import TimeOut from "./TimeOut";
+
 import AnswerContainer from "@components/btpage/AnswerContainer";
 import TitleBt from "@components/btpage/TitleBt";
 import Pochette from "@components/btpage/Pochette";
 import ButtonScore from "@components/btpage/ButtonScore";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import Player from "react-h5-audio-player";
 import CounterTime from "../components/btpage/CounterTime";
-// import TimeOut from "./TimeOut";
-import Menu from "../components/Menu";
 
-function Btpage() {
-  const [pochette, setPochette] = useState(
-    "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-  );
-  const [answer, setAnswer] = useState([]);
-  const [score, setScore] = useState(0);
-  // const [song, setSong] = useState([]);
-  // const [timer,setTimer] = useState(true)
+import "react-h5-audio-player/lib/styles.css";
+
+// filtrer par genre pour avoir des réponses convenables
+
+function Btpage({ listChoice }) {
+  // listChoice > 4
+  const pochette =
+    "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  const [counterStart, setCounterStart] = useState(false); // true/false counterTimer est activé
+
+  const [answers, setAnswers] = useState([]); // les 4 choix
+  const [score, setScore] = useState(0); // le score +1 quand bon
+  const [answer, setAnswer] = useState(""); // la bonne réponse
+  const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
+
+  const [change, setChange] = useState(false);
   useEffect(() => {
-    let i;
-    let i2;
-    let i3;
-    let y;
+    // console.log(`chang${change}`);
+    // console.log("listChoice");
+    // console.log(listChoice);
+    const max = listChoice.length;
 
-    axios
-      .get("http://localhost:5000/api/music")
-      .then((response) => response.data)
-      .then((data) => {
-        i = Math.floor(Math.random() * 15);
+    const i1 = Math.floor(Math.random() * max);
+    let i2 = Math.floor(Math.random() * max);
+    while (i2 === i1) {
+      i2 = Math.floor(Math.random() * max);
+    }
+    let i3 = Math.floor(Math.random() * max);
+    while (i3 === i1 || i3 === i2) {
+      i3 = Math.floor(Math.random() * max);
+    }
+    let i4 = Math.floor(Math.random() * max);
+    while (i4 === i1 || i4 === i2 || i4 === i3) {
+      i4 = Math.floor(Math.random() * max);
+    }
 
-        i2 = Math.floor(Math.random() * 15);
-        while (i2 === i) {
-          i2 = Math.floor(Math.random() * 15);
-        }
-        i3 = Math.floor(Math.random() * 15);
-        while (i3 === i || i3 === i2) {
-          i3 = Math.floor(Math.random() * 15);
-        }
-        y = i;
-        setAnswer([data[i], data[i2], data[i3], data[y + 1]]);
-        // // setPochette(
-        //   "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        // );
-        setScore((oldScore) => oldScore + 1);
-      });
-  }, []);
+    // la bonne réponse => le titre
+    // mettre Answers en random =>
+    const random = Math.floor(Math.random() * 4) + 1;
+    if (random === 1) {
+      setAnswer(listChoice[i1].titre);
+      setAudio(listChoice[i1].mp3);
+    } else if (random === 2) {
+      setAnswer(listChoice[i2].titre);
+      setAudio(listChoice[i2].mp3);
+    } else if (random === 3) {
+      setAnswer(listChoice[i3].titre);
+      setAudio(listChoice[i3].mp3);
+    } else {
+      setAnswer(listChoice[i4].titre);
+      setAudio(listChoice[i4].mp3);
+    }
 
-  useEffect(() => {}, []);
+    setAnswers([
+      listChoice[i1],
+      listChoice[i2],
+      listChoice[i3],
+      listChoice[i4],
+    ]);
+  }, [listChoice, change]);
+
   return (
     <div className="btpage">
-      <Menu />
       <TitleBt />
       <div className="btpagemain">
         <div className="quizz">
           <span className="scoreMobile">
-            <ButtonScore />
-            <CounterTime />
+            <ButtonScore score={score} />
           </span>
-          <span className="counterDesktop">
-            <CounterTime />
-          </span>
-          {pochette !== "" && (
-            <Pochette pochette={pochette} setPochette={setPochette} />
-          )}
-          {answer !== [] && <AnswerContainer array={answer} />}
-        </div>
+          <Pochette pochette={pochette} />
 
+          {/* --- */}
+
+          <AnswerContainer
+            array={answers}
+            setScore={setScore}
+            answer={answer}
+            counterStart={counterStart}
+            setChange={setChange}
+            change={change}
+          />
+
+          <Player
+            className="MusicPlayerBox"
+            src={`http://localhost:5000/mp3/${audio}`}
+            showJumpControls={false}
+            autoPlay={false}
+            autoPlayAfterSrcChange={false}
+          />
+        </div>
+        <CounterTime
+          change={change}
+          setCounterStart={setCounterStart}
+          counterStart={counterStart}
+        />
+
+        {/* --- */}
         <span className="scoreDesktop">
           <ButtonScore score={score} setScore={setScore} />
         </span>
@@ -74,4 +116,20 @@ function Btpage() {
   );
 }
 
+Btpage.propTypes = {
+  listChoice: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
+};
+
 export default Btpage;
+
+// ??? le tableau answers à un useEffect de retard

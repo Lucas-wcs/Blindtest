@@ -44,28 +44,73 @@
 
 .rech .listglobal {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  gap: 2rem;
 }
 
-.rech .searchright {
-  transition: transform 0.1s;
-  width: 120px;
-  height: 200px;
-  margin: 5%;
+.rech .allSong {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+
+.rech .searchright {
+  transition: 0.3s;
+  width: 150px;
+  height: 320px;
+
+  display: flex;
+  flex-direction: column;
+
   background-color: var(--bleu);
   text-align: center;
-  box-shadow: -5px 5px 0px 0px #ec7e40;
+  box-shadow: -5px 5px 0px 0px var(--orange);
+
+  position: relative;
 }
 .rech .searchright:hover {
   transform: scale(0.95);
 }
+
+.rech .MusicPlayerBox {
+  height: 25%;
+}
+
+.rech .searchright img {
+  cursor: pointer;
+}
+
+.rech .searchright h3 {
+  margin-bottom: 0.5rem;
+  padding: 0 0.25rem;
+}
+
+/* --- */
+
 .rech .searchleft {
   text-align: center;
+}
+
+.rech .bigSong {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--orange);
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.rech .bigSong img {
+  width: 60%;
+}
+
+.rech .bigSong .MusicPlayerBox {
+  width: 90%;
+  border-radius: 20px;
 }
 
 .rech p {
@@ -108,21 +153,15 @@
     background-size: 100%;
     background-attachment: fixed;
     background-position: left;
+    background-size: cover;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    min-height: 100vh;
   }
-  .rech .title {
+  .rech .searchleft {
     position: fixed;
-    grid-area: 1 / 1 / 2 / 2;
-  }
-
-  .rech .listglobal {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  .rech .imgfirst {
-    display: none;
   }
 }

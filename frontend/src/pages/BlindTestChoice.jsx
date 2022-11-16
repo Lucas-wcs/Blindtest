@@ -1,98 +1,142 @@
 import React from "react";
-import Title from "@components/Title";
-import Toggle from "@components/Toggle";
-import ButtonContainer from "@components/ButtonContainer";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
+import Title from "@components/btchoice/Title";
+import Toggle from "@components/btchoice/Toggle";
+import ButtonContainer from "@components/btchoice/ButtonContainer";
 import "../style/BlindTestChoice.css";
-import Menu from "../components/Menu";
 
 const years = [
   {
-    name: "60's & 70's",
-    id: "button1",
+    name: "1960 & 1970",
+    id: 1,
   },
   {
-    name: "80's",
-    id: "button2",
+    name: 1980,
+    id: 2,
   },
   {
-    name: "90's",
-    id: "button3",
+    name: 1990,
+    id: 3,
   },
   {
-    name: "2000's",
-    id: "button4",
+    name: 2000,
+    id: 4,
   },
   {
-    name: "2010's",
-    id: "button5",
+    name: 2010,
+    id: 5,
   },
 ];
 
 const kind = [
   {
-    name: "Rock",
-    id: "button6",
+    name: "rock",
+    id: 6,
   },
   {
-    name: "Pop",
-    id: "button7",
+    name: "pop",
+    id: 7,
   },
   {
-    name: "Film",
-    id: "button8",
+    name: "film",
+    id: 8,
   },
   {
-    name: "Rap",
-    id: "button9",
+    name: "rap",
+    id: 9,
   },
   {
-    name: "Electro",
-    id: "button10",
+    name: "electro",
+    id: 10,
   },
 ];
 
-const ourChoice = [
-  {
-    name: "Daddy C.",
-  },
-  {
-    name: "Jeremy",
-  },
-  {
-    name: "Valentin",
-  },
-  {
-    name: "Matthieu",
-  },
-  {
-    name: "Dani",
-  },
-];
+// const ourChoice = [
+//   {
+//     name: "Daddy C.",
+//   },
+//   {
+//     name: "Jeremy",
+//   },
+//   {
+//     name: "Valentin",
+//   },
+//   {
+//     name: "Matthieu",
+//   },
+//   {
+//     name: "Dani",
+//   },
+// ];
 
-function BlindTestChoice() {
+function BlindTestChoice({
+  setGenreChoice,
+  genreChoice,
+  setAnneeChoice,
+  anneeChoice,
+  listChoice,
+}) {
   return (
     <div className="test-selection">
-      <Menu />
       <Title />
       <div className="section">
         <div className="music-filter">
-          <ButtonContainer array={years} />
-          <ButtonContainer array={kind} />
+          <ButtonContainer
+            array={years}
+            choice={anneeChoice}
+            setChoice={setAnneeChoice}
+          />
+          <ButtonContainer
+            array={kind}
+            choice={genreChoice}
+            setChoice={setGenreChoice}
+          />
         </div>
 
         <div className="our-tests">
-          <ButtonContainer array={ourChoice} />
+          {/* <ButtonContainer array={ourChoice} /> */}
         </div>
       </div>
 
       <div className="buttons-downside">
         <Toggle />
-        <button type="button" className="send">
-          GO !
-        </button>
+
+        {listChoice.length >= 4 ? (
+          <button type="button" className="send">
+            <Link to="/test">GO !</Link>
+          </button>
+        ) : null}
       </div>
     </div>
   );
 }
+
+BlindTestChoice.propTypes = {
+  setGenreChoice: PropTypes.func.isRequired,
+  setAnneeChoice: PropTypes.func.isRequired,
+
+  genreChoice: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
+  anneeChoice: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ])
+  ).isRequired,
+  listChoice: PropTypes.string.isRequired,
+};
 
 export default BlindTestChoice;
