@@ -1,28 +1,31 @@
-// import Answers from "@components/btpage/Answers";
-import React, { useEffect, useState } from "react";
+// import PropTypes from "prop-types";
+import React, { useState, useEffect } from "react";
 
-function CounterTime() {
-  const startingSecondes = 10;
+function CounterTime(setCounterStart, counterStart, change) {
+  // lancer la musique en meme temps que le click du button
+  // autoriser à répondre seulement quand timer démarré
+
+  // console.log(change);
+  const startingSecondes = 5;
   const [secondes, setSecondes] = useState(startingSecondes);
-  const [display, setDisplay] = useState(true);
+  let interval = 0;
+
+  // const [start, setStart] = useState(false);
   useEffect(() => {
-    // console.log("timer started!");
-    const interval = setInterval(() => {
-      // console.log("timer is décrementing");
-      if (secondes > 0) {
-        setSecondes((prevState) => prevState - 1);
-      }
+    // console.log(change);
+    // console.log("new");
+    setSecondes(startingSecondes);
+    interval = setInterval(() => {
+      setSecondes((prevState) => prevState - 1);
     }, 1000);
+
     return () => clearInterval(interval);
-  }, []);
-  // useEffect(() => {
-  if (secondes === 0) {
-    return setDisplay(false);
-  }
-  // }, [secondes]);
+  }, [change]);
+  // pourquoi change est undefined
+
   return (
     <div className="timer">
-      <p>{display ? secondes : "Time Out"}</p>
+      <p>{secondes > 0 ? secondes : "Time Out"}</p>
     </div>
   );
 }

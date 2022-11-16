@@ -1,25 +1,23 @@
 import PropTypes from "prop-types";
 
-function Buttons({ name, id }) {
+function Buttons({ name, id, handleOnChange }) {
   return (
     <div className="eachbutton">
       <input
         type="checkbox"
+        name={name}
         id={id}
-        name={id}
-        onChange={(e) => e.target.value}
+        onChange={() => handleOnChange(name)}
       />
       <label htmlFor={id}>{name}</label>
     </div>
-    /*     <button id={id} type="button" >
-        {name}
-      </button> */
   );
 }
 
 Buttons.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  id: PropTypes.number.isRequired,
+  handleOnChange: PropTypes.func.isRequired,
 };
 
 export default Buttons;

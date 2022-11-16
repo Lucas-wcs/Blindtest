@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Choice from "./Choice";
 
-function Filter({ update, update2 }) {
+function Filter({ setAnnee, setGenre, setCherche }) {
   const [openFilter, setOpenFilter] = useState(false);
 
   return (
@@ -17,12 +17,19 @@ function Filter({ update, update2 }) {
       >
         Ouvrir les filtres
       </button>
-      {openFilter && <Choice update={update} update2={update2} />}
+      {openFilter && (
+        <Choice
+          setAnnee={setAnnee}
+          setGenre={setGenre}
+          setCherche={setCherche}
+        />
+      )}
     </div>
   );
 }
 Filter.propTypes = {
-  update: PropTypes.string.isRequired,
-  update2: PropTypes.string.isRequired,
+  setAnnee: PropTypes.func.isRequired,
+  setGenre: PropTypes.func.isRequired,
+  setCherche: PropTypes.func.isRequired,
 };
 export default Filter;
