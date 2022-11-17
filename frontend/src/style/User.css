@@ -55,8 +55,35 @@
 }
 
 .pageUser .MusicPlayerBox {
-  background-color: var(--bleu);
+  background-color: white;
   border-radius: 1rem;
+}
+
+.pageUser .isFavorite {
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
+  background-size: 100%;
+  display: inline-block;
+}
+
+.pageUser .notFavorite {
+  width: 40px;
+  height: 40px;
+  border: solid 3px black;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
+  background-size: 100%;
+  display: inline-block;
+}
+
+.pageUser .disconnectBtn {
+  padding: 15px;
+  width: 120px;
+  height: 50px;
+  background-color: var(--orange);
+  border-radius: 50%;
+  margin-top: 5%;
+  display: inline-block;
 }
 
 @media (max-width: 767px) {
@@ -67,7 +94,7 @@
 
 @media (min-width: 1024px) {
   body .pageUser {
-    background-image: url(../assets/vinyle.png);
+    background-image: url(../assets/musicFondBlindtest.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -125,5 +152,13 @@
 
   .pageUser .musicDivBlock {
     border: none;
+  }
+
+  .pageUser .MusicPlayerBox {
+    background-color: var(--beige);
+  }
+
+  .pageUser .disconnectBtn {
+    margin-top: 1%;
   }
 }

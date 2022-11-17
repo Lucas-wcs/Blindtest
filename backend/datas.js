@@ -8,6 +8,7 @@ const api = [
     date: 2020,
     genre: "rap",
     mp3: "bande_organisee.mp3",
+    isFavorite: false,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const api = [
     date: 2011,
     genre: "rap",
     mp3: "la_terre_est_ronde.mp3",
+    isFavorite: false,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const api = [
     date: 2018,
     genre: "rap",
     mp3: "desaccorde.mp3",
+    isFavorite: false,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const api = [
     date: 2019,
     genre: "rap",
     mp3: "au_dd.mp3",
+    isFavorite: false,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const api = [
     date: 2017,
     genre: "rap",
     mp3: "life.mp3",
+    isFavorite: false,
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ const api = [
     date: 2015,
     genre: "electro",
     mp3: "faded.mp3",
+    isFavorite: false,
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ const api = [
     date: 2016,
     genre: "electro",
     mp3: "alone.mp3",
+    isFavorite: false,
   },
   {
     id: 8,
@@ -78,6 +85,7 @@ const api = [
     date: 2013,
     genre: "electro",
     mp3: "animals.mp3",
+    isFavorite: false,
   },
   {
     id: 9,
@@ -88,6 +96,7 @@ const api = [
     date: 2015,
     genre: "electro",
     mp3: "unity.mp3",
+    isFavorite: false,
   },
   {
     id: 10,
@@ -98,6 +107,7 @@ const api = [
     date: 2019,
     genre: "electro",
     mp3: "japan.mp3",
+    isFavorite: false,
   },
   {
     id: 11,
@@ -108,6 +118,7 @@ const api = [
     date: 2014,
     genre: "electro",
     mp3: "resonance.mp3",
+    isFavorite: false,
   },
   {
     id: 12,
@@ -118,6 +129,7 @@ const api = [
     date: 2013,
     genre: "electro",
     mp3: "turn_down_for_what.mp3",
+    isFavorite: false,
   },
   {
     id: 13,
@@ -128,6 +140,7 @@ const api = [
     date: 2014,
     genre: "electro",
     mp3: "instant_crush.mp3",
+    isFavorite: false,
   },
   {
     id: 14,
@@ -138,6 +151,7 @@ const api = [
     date: 2015,
     genre: "electro",
     mp3: "intoxicated.mp3",
+    isFavorite: false,
   },
   {
     id: 15,
@@ -148,6 +162,7 @@ const api = [
     date: 2013,
     genre: "electro",
     mp3: "wake_me_up.mp3",
+    isFavorite: false,
   },
   {
     id: 16,
@@ -158,6 +173,7 @@ const api = [
     date: 2001,
     genre: "film",
     mp3: "all_star.mp3",
+    isFavorite: false,
   },
   {
     id: 17,
@@ -168,6 +184,7 @@ const api = [
     date: 1984,
     genre: "film",
     mp3: "ghostbusters.mp3",
+    isFavorite: false,
   },
   {
     id: 18,
@@ -178,6 +195,7 @@ const api = [
     date: 2003,
     genre: "film",
     mp3: "he_s_a_pirate.mp3",
+    isFavorite: false,
   },
   {
     id: 19,
@@ -188,6 +206,7 @@ const api = [
     date: 1972,
     genre: "film",
     mp3: "love_theme_from.mp3",
+    isFavorite: false,
   },
   {
     id: 20,
@@ -198,6 +217,7 @@ const api = [
     date: 2018,
     genre: "film",
     mp3: "shallow.mp3",
+    isFavorite: false,
   },
   {
     id: 21,
@@ -207,6 +227,7 @@ const api = [
     date: 1994,
     genre: "film",
     mp3: "you_never_can_tell.mp3",
+    isFavorite: false,
   },
   {
     id: 22,
@@ -216,6 +237,7 @@ const api = [
     date: 1978,
     genre: "film",
     mp3: "you_re_the_one_that_i_want.mp3",
+    isFavorite: false,
   },
   {
     id: 23,
@@ -225,6 +247,7 @@ const api = [
     date: 1991,
     genre: "film",
     mp3: "la_famille_adams.mp3",
+    isFavorite: false,
   },
   {
     id: 24,
@@ -234,6 +257,7 @@ const api = [
     date: 2007,
     genre: "film",
     mp3: "liberee_delivree.mp3",
+    isFavorite: false,
   },
   {
     id: 25,
@@ -243,6 +267,7 @@ const api = [
     date: 1994,
     genre: "film",
     mp3: "histoire_de_la_vie.mp3",
+    isFavorite: false,
   },
   {
     id: 26,
@@ -253,6 +278,7 @@ const api = [
     date: 1983,
     genre: "film",
     mp3: "flashdance.mp3",
+    isFavorite: false,
   },
   {
     id: 27,
@@ -263,6 +289,7 @@ const api = [
     date: 1986,
     genre: "film",
     mp3: "full_monty.mp3",
+    isFavorite: false,
   },
   {
     id: 28,
@@ -273,6 +300,7 @@ const api = [
     date: 1987,
     genre: "film",
     mp3: "dirty_dancing.mp3",
+    isFavorite: false,
   },
   {
     id: 29,
@@ -283,6 +311,7 @@ const api = [
     date: 2008,
     genre: "pop",
     mp3: "so_what.mp3",
+    isFavorite: false,
   },
   {
     id: 30,
@@ -293,6 +322,7 @@ const api = [
     date: 2007,
     genre: "pop",
     mp3: "when_youre_gone.mp3",
+    isFavorite: false,
   },
   {
     id: 31,
@@ -303,6 +333,7 @@ const api = [
     date: 2006,
     genre: "pop",
     mp3: "say_it_right.mp3",
+    isFavorite: false,
   },
   {
     id: 32,
@@ -313,6 +344,7 @@ const api = [
     date: 2012,
     genre: "pop",
     mp3: "catch_my_breath.mp3",
+    isFavorite: false,
   },
   {
     id: 33,
@@ -323,6 +355,7 @@ const api = [
     date: 2000,
     genre: "pop",
     mp3: "jen_reve_encore.mp3",
+    isFavorite: false,
   },
   {
     id: 34,
@@ -333,6 +366,7 @@ const api = [
     date: 1999,
     genre: "pop",
     mp3: "crazy.mp3",
+    isFavorite: false,
   },
   {
     id: 35,
@@ -343,6 +377,7 @@ const api = [
     date: 1996,
     genre: "pop",
     mp3: "wannabe.mp3",
+    isFavorite: false,
   },
   {
     id: 36,
@@ -353,6 +388,7 @@ const api = [
     date: 1987,
     genre: "pop",
     mp3: "never_gonna_give_you_up.mp3",
+    isFavorite: false,
   },
   {
     id: 37,
@@ -363,6 +399,7 @@ const api = [
     date: 1997,
     genre: "pop",
     mp3: "barbie_girl.mp3",
+    isFavorite: false,
   },
   {
     id: 38,
@@ -373,6 +410,7 @@ const api = [
     date: 1998,
     genre: "pop",
     mp3: "boom.mp3",
+    isFavorite: false,
   },
   {
     id: 39,
@@ -383,6 +421,7 @@ const api = [
     date: 1969,
     genre: "pop",
     mp3: "come_together.mp3",
+    isFavorite: false,
   },
   {
     id: 40,
@@ -393,6 +432,7 @@ const api = [
     date: 1965,
     genre: "pop",
     mp3: "like_a_rolling_stone.mp3",
+    isFavorite: false,
   },
   {
     id: 41,
@@ -403,6 +443,7 @@ const api = [
     date: 1978,
     genre: "pop",
     mp3: "saturday_night_fever.mp3",
+    isFavorite: false,
   },
   {
     id: 42,
@@ -413,6 +454,7 @@ const api = [
     date: 1984,
     genre: "pop",
     mp3: "like_a_virgin.mp3",
+    isFavorite: false,
   },
   {
     id: 43,
@@ -423,6 +465,7 @@ const api = [
     date: 1983,
     genre: "pop",
     mp3: "karma_chameleon.mp3",
+    isFavorite: false,
   },
   {
     id: 44,
@@ -432,6 +475,7 @@ const api = [
     date: 2018,
     genre: "rap",
     mp3: "sicko_mode.mp3",
+    isFavorite: false,
   },
   {
     id: 45,
@@ -441,6 +485,7 @@ const api = [
     date: 2018,
     genre: "rap",
     mp3: "gods_plan.mp3",
+    isFavorite: false,
   },
   {
     id: 46,
@@ -451,6 +496,7 @@ const api = [
     date: 2008,
     genre: "rap",
     mp3: "ice_ice_baby.mp3",
+    isFavorite: false,
   },
   {
     id: 47,
@@ -460,6 +506,7 @@ const api = [
     date: 2007,
     genre: "rap",
     mp3: "x_gon_it_to_ya.mp3",
+    isFavorite: false,
   },
   {
     id: 48,
@@ -469,6 +516,7 @@ const api = [
     date: 2005,
     genre: "rap",
     mp3: "candy_shop.mp3",
+    isFavorite: false,
   },
   {
     id: 49,
@@ -478,6 +526,7 @@ const api = [
     date: 2003,
     genre: "rap",
     mp3: "in_da_club.mp3",
+    isFavorite: false,
   },
   {
     id: 50,
@@ -487,6 +536,7 @@ const api = [
     date: 2003,
     genre: "rap",
     mp3: "poppin_them_thangs.mp3",
+    isFavorite: false,
   },
   {
     id: 51,
@@ -496,6 +546,7 @@ const api = [
     date: 2001,
     genre: "rap",
     mp3: "it_was_a_good_day.mp3",
+    isFavorite: false,
   },
   {
     id: 52,
@@ -505,6 +556,7 @@ const api = [
     date: 1999,
     genre: "rap",
     mp3: "still_dre.mp3",
+    isFavorite: false,
   },
   {
     id: 53,
@@ -514,6 +566,7 @@ const api = [
     date: 1996,
     genre: "rap",
     mp3: "ambitionz_az_a_ridah.mp3",
+    isFavorite: false,
   },
   {
     id: 54,
@@ -523,6 +576,7 @@ const api = [
     date: 1995,
     genre: "rap",
     mp3: "gangstas_paradise.mp3",
+    isFavorite: false,
   },
   {
     id: 55,
@@ -532,6 +586,7 @@ const api = [
     date: 1978,
     genre: "rock",
     mp3: "highway_to_hell.mp3",
+    isFavorite: false,
   },
   {
     id: 56,
@@ -541,6 +596,7 @@ const api = [
     date: 1967,
     genre: "rock",
     mp3: "light_my_fire.mp3",
+    isFavorite: false,
   },
   {
     id: 57,
@@ -550,6 +606,7 @@ const api = [
     date: 1968,
     genre: "rock",
     mp3: "all_along_the_watchtower.mp3",
+    isFavorite: false,
   },
   {
     id: 58,
@@ -559,6 +616,7 @@ const api = [
     date: 1964,
     genre: "rock",
     mp3: "viva_las_vegas.mp3",
+    isFavorite: false,
   },
   {
     id: 59,
@@ -568,6 +626,7 @@ const api = [
     date: 1987,
     genre: "rock",
     mp3: "sweet_child_o_mine.mp3",
+    isFavorite: false,
   },
   {
     id: 60,
@@ -577,6 +636,7 @@ const api = [
     date: 2010,
     genre: "rock",
     mp3: "starlight.mp3",
+    isFavorite: false,
   },
   {
     id: 61,
@@ -586,6 +646,7 @@ const api = [
     date: 1986,
     genre: "rock",
     mp3: "livin_on_a_prayer.mp3",
+    isFavorite: false,
   },
   {
     id: 62,
@@ -595,6 +656,7 @@ const api = [
     date: 2006,
     genre: "rock",
     mp3: "dani_california.mp3",
+    isFavorite: false,
   },
   {
     id: 63,
@@ -604,6 +666,7 @@ const api = [
     date: 1979,
     genre: "rock",
     mp3: "another_brick_in_the_wall.mp3",
+    isFavorite: false,
   },
   {
     id: 64,
@@ -613,6 +676,7 @@ const api = [
     date: 1989,
     genre: "rock",
     mp3: "poison.mp3",
+    isFavorite: false,
   },
   {
     id: 65,
@@ -622,6 +686,7 @@ const api = [
     date: 1982,
     genre: "rock",
     mp3: "eye_of_the_tiger.mp3",
+    isFavorite: false,
   },
   {
     id: 66,
@@ -631,6 +696,7 @@ const api = [
     date: 1969,
     genre: "rock",
     mp3: "fortunate_son.mp3",
+    isFavorite: false,
   },
   {
     id: 67,
@@ -640,6 +706,7 @@ const api = [
     date: 1984,
     genre: "rock",
     mp3: "rock_you_like_a_hurricane.mp3",
+    isFavorite: false,
   },
   {
     id: 68,
@@ -650,6 +717,7 @@ const api = [
     date: 1983,
     genre: "pop",
     mp3: "say_say_say.mp3",
+    isFavorite: false,
   },
   {
     id: 69,
@@ -660,6 +728,7 @@ const api = [
     date: 1987,
     genre: "pop",
     mp3: ".mp3",
+    isFavorite: false,
   },
 ];
 

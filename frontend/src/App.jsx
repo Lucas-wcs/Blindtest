@@ -8,6 +8,7 @@ import BlindTestChoice from "./pages/BlindTestChoice";
 import Btpage from "./pages/Btpage";
 import User from "./pages/User";
 import Menu from "./components/Menu";
+import Connexion from "./pages/Connexion";
 import "./App.css";
 
 function App() {
@@ -199,6 +200,8 @@ function App() {
           />
           {/* ------------------------ */}
           <Route path="/user" element={<User myLastListening={list} />} />
+
+          <Route path="/connexion" element={<Connexion />} />
         </Routes>
       </div>
     </BrowserRouter>

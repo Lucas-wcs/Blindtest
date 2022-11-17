@@ -32,7 +32,7 @@ function Menu({ setGenreChoice, setAnneeChoice }) {
         <FontAwesomeIcon icon={faXmark} className="xmark" />
       </button>
 
-      <Link to="/user">
+      <Link to="/connexion">
         <BiUserCircle id="button-user" />
       </Link>
 
