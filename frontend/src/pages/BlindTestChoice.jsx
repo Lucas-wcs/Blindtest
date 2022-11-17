@@ -107,13 +107,7 @@ function BlindTestChoice({
       </div>
 
       <div className="buttons-downside">
-<<<<<<< HEAD
            {listChoice.length >= 4 ? (
-=======
-        <Toggle />
-
-        {listChoice.length >= 5 ? (
->>>>>>> 160a9e48f80096c63f0d25755bac39b711683846
           <button type="button" className="send">
             <Link to="/test">GO !</Link>
           </button>
