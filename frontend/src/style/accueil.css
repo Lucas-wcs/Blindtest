@@ -73,10 +73,13 @@
 /* --- responsive --- */
 
 @media screen and (min-width: 800px) {
-  body {
-    background: url(../assets/music.jpg) center no-repeat fixed;
+  .pageaccueil body {
+    background-image: url(../assets/mur.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: left;
     background-size: cover;
-    z-index: -1;
   }
 
   .pageaccueil h1 {

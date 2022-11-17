@@ -5,13 +5,18 @@ css dani .test-selection .buttons-container {
   padding-bottom: 1rem;
 }
 
+span {
+  color: var(--orange);
+}
+
 .test-selection .title {
   text-align: center;
   font-size: 1.6rem;
   font-family: var(--ffTitre);
 }
 
-.test-selection .tests-titles {
+.test-selection .tests-titles,
+.title-our-test {
   color: var(--blanc);
   font-size: 2rem;
   font-family: var(--ffTexte);
@@ -30,9 +35,19 @@ css dani .test-selection .buttons-container {
 .test-selection .eachbutton {
   width: 80%;
   height: 4.5rem;
+  margin: 0% auto;
+  text-align: center;
+  line-height: 4.5rem;
+}
+
+.eachbutton-our-test button {
+  width: 80%;
+  height: 4.5rem;
   margin: 1% auto;
   text-align: center;
   line-height: 4.5rem;
+  background-color: var(--beige);
+  font-size: 1.6rem;
 }
 
 .test-selection .eachbutton input {
@@ -43,21 +58,23 @@ css dani .test-selection .buttons-container {
   display: block;
   background-color: var(--beige);
   cursor: pointer;
+  font-size: 1.6rem;
+  margin: 2% 0;
 }
 
 .test-selection .eachbutton input:checked + label {
   background-color: var(--orange);
 }
 
-.test-selection .buttons-container input {
+/* .test-selection .buttons-container input {
   width: 5%;
-  height: 10%;
+  height: 0%;
   background-color: var(--orange);
-  font-size: 5rem;
+  font-size: 8rem;
   text-align: center;
-}
+} */
 
-.test-selection .toggle-containerBlue {
+/* .test-selection .toggle-containerBlue {
   width: 50%;
   height: 4.5rem;
   margin: auto;
@@ -75,23 +92,23 @@ css dani .test-selection .buttons-container {
   background-color: var(--bleu);
   color: var(--blanc);
   font-size: 1.5rem;
-}
+} */
 
-.test-selection #toggleOrange {
+/* .test-selection #toggleOrange {
   width: 100%;
   height: 100%;
   background-color: var(--orange);
   color: var(--noir);
   font-size: 1.5rem;
-}
+} */
 
 .test-selection .send {
-  width: 25%;
-  height: 3.5rem;
+  width: 60%;
+  height: 4.5rem;
   background-color: var(--orange);
   font-size: 1.8rem;
   border: solid;
-  margin: 2% 0 0 37%;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 800px) {
@@ -106,6 +123,12 @@ css dani .test-selection .buttons-container {
     background-position: left;
     background-size: cover;
     min-height: 100vh;
+  }
+
+  .test-selection .title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: var(--ffTitre);
   }
 
   .test-selection .music-filter {
@@ -128,20 +151,25 @@ css dani .test-selection .buttons-container {
     margin-left: 4rem;
   }
 
+  .eachbutton-our-test button {
+    width: 80%;
+    height: 4rem;
+    margin: 1% auto;
+    text-align: center;
+    background-color: var(--beige);
+    font-size: 1.6rem;
+    line-height: 1rem;
+  }
+
   .test-selection .eachbutton label {
     height: 60%;
     background-color: var(--beige);
     box-shadow: -5px 5px 0 var(--bleu);
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     border-radius: 1rem;
     line-height: 3rem;
-
     width: 80%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 2rem;
   }
 
   .test-selection .eachbutton input:checked + label {
@@ -149,30 +177,29 @@ css dani .test-selection .buttons-container {
   }
 
   .test-selection #button1 + label,
-  #button6 + label {
-    margin-left: 2rem;
+  #button6 + label,
+  #button5 + label,
+  #button10 + label {
+    margin-left: 15%;
   }
 
   .test-selection #button2 + label,
-  #button7 + label {
-    margin-left: 3.5rem;
+  #button4 + label,
+  #button7 + label,
+  #button9 + label {
+    margin-left: 25%;
   }
 
   .test-selection #button3 + label,
   #button8 + label {
-    margin-left: 4rem;
-  }
-
-  .test-selection #button4 + label,
-  #button9 + label {
-    margin-left: 3.5rem;
+    margin-left: 35%;
   }
 
   .test-selection .tests-titles {
-    color: var(--orange);
+    color: var(--noir);
     font-size: 2rem;
     font-family: var(--ffTexte);
-    padding: 3%;
+    margin: 1%;
   }
 
   .test-selection .our-tests {
@@ -181,15 +208,9 @@ css dani .test-selection .buttons-container {
     width: 30%;
     display: flex;
     justify-content: center;
+    height: 20%;
   }
 
-  .test-selection .our-tests label {
-    min-width: 13rem;
-    height: 64%;
-    background-color: var(--beige);
-    font-size: 1.3rem;
-    box-shadow: -5px 5px 0 var(--orange);
-  }
   .test-selection .toggle-containerBlue {
     width: 40%;
     margin: 0 13rem;
@@ -200,8 +221,8 @@ css dani .test-selection .buttons-container {
     margin: 0 13rem;
   }
 
-  .test-selection #toggleBlue {
-    width: 100%;
+  /*   .test-selection #toggleBlue {
+    width: 20rem;
     height: 80%;
     background-color: var(--bleu);
     color: var(--blanc);
@@ -211,13 +232,14 @@ css dani .test-selection .buttons-container {
   }
 
   .test-selection #toggleOrange {
-    width: 90%;
+    width: 20rem;
     height: 80%;
     background-color: var(--orange);
     color: var(--noir);
     font-size: 1.3rem;
     border: none;
     box-shadow: -5px 5px 0 var(--beige);
+
   }
 
   .test-selection .title {
@@ -227,15 +249,12 @@ css dani .test-selection .buttons-container {
     font-family: var(--ffTitre);
   }
 
+
   .test-selection .send {
-    width: 20%;
+    width: 40%;
     height: 3.5rem;
     background-color: var(--orange);
     font-size: 1.8rem;
-    margin: 2% 6% 0 0;
-  }
-
-  .test-selection .buttons-downside {
-    display: flex;
+    margin: 1% 20%;
   }
 }
