@@ -10,12 +10,6 @@ import User from "./pages/User";
 import Menu from "./components/Menu";
 import "./App.css";
 
-// !!!
-// les console.log des tableaux donne les tableaux précédent mais sur la page c'est ok => voir recherche
-// FAUT VRAIMENT FAIRE UN CLEAN
-// faire les filtres de la page choix
-// !!!
-
 function App() {
   const [list, setList] = useState([]);
 
@@ -41,11 +35,7 @@ function App() {
       });
   }, []);
 
-  // filtre X3 cumulatifs
   useEffect(() => {
-    // console.log(annee);
-    // console.log(genre);
-    // console.log(cherche);
     if (annee === "all") {
       setSongList(
         list
@@ -80,7 +70,6 @@ function App() {
           )
       );
     }
-    // console.log(songList);
   }, [annee, genre, cherche]);
 
   // -------------------------------------------------------------------------------------
@@ -92,15 +81,7 @@ function App() {
   const [anneeChoice, setAnneeChoice] = useState([]);
   const [genreChoice, setGenreChoice] = useState([]);
 
-  // cumulatif => includes ||
-  // faire un tableau de set => passer dedans
-  // includes => case sensitive
-
   useEffect(() => {
-    // console.log("annee+genre : ");
-    // console.log(anneeChoice);
-    // console.log(genreChoice);
-
     if (anneeChoice.includes("1960 & 1970")) {
       // houla pas sûr de ça =>
       anneeChoice.push(1960, 1970);
@@ -119,9 +100,8 @@ function App() {
       setListChoice(list);
     }
 
-    // ---
     // si toutes les années et choix des genres (entre 1 et 4)
-    else if (anneeChoice.length === 0 || anneeChoice.length === 6)
+    else if (anneeChoice.length === 0 || anneeChoice.length === 6) {
       setListChoice(
         list.filter(
           (each) =>
@@ -131,7 +111,7 @@ function App() {
             each.genre.includes(genreChoice[3])
         )
       );
-    // ---
+    }
     // si tous les genres et choix des années (entre 1 et 5)
     else if (genreChoice.length === 0 || genreChoice.length === 5) {
       setListChoice(
@@ -146,7 +126,6 @@ function App() {
       );
     }
 
-    // ---
     // si genres (entre 1 et 4) et années (entre 1 et 5)
     else {
       setListChoice(
@@ -167,21 +146,16 @@ function App() {
         )
       );
     }
-
-    // console.log("listChoice : ");
-    // console.log(listChoice);
   }, [anneeChoice, genreChoice, list]);
 
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
 
-  // envoyer setAnneeChoice et setGenreChoice dans la page de choix
-  // envoyer la liste optenu (listChoice) dans la page de test
   return (
     <BrowserRouter>
       <div>
-        <Menu />
+        <Menu setGenreChoice={setGenreChoice} setAnneeChoice={setAnneeChoice} />
         <Routes>
           <Route exact path="/" element={<Accueil />} />
           <Route
@@ -214,7 +188,13 @@ function App() {
           <Route
             path="/test"
             element={
-              listChoice.length !== 0 && <Btpage listChoice={listChoice} />
+              listChoice.length !== 0 && (
+                <Btpage
+                  listChoice={listChoice}
+                  setGenreChoice={setGenreChoice}
+                  setAnneeChoice={setAnneeChoice}
+                />
+              )
             }
           />
           {/* ------------------------ */}
