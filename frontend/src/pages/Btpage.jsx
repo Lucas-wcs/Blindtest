@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "../style/Btpage.css";
-// import axios from "axios";
-// import TimeOut from "./TimeOut";
+import { Link } from "react-router-dom";
 
 import AnswerContainer from "@components/btpage/AnswerContainer";
 import TitleBt from "@components/btpage/TitleBt";
@@ -13,55 +12,64 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import CounterTime from "../components/btpage/CounterTime";
 import "react-h5-audio-player/lib/styles.css";
 
-// filtrer par genre pour avoir des réponses convenables
-
-function Btpage({ listChoice }) {
-  // listChoice > 4
+function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
   const pochette =
     "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
   const [counterStart, setCounterStart] = useState(false); // true/false counterTimer est activé
+  const [secondes, setSecondes] = useState(100); // secondes utilisé pour timer et afficher les réponses
+  const [nbTests, setNbTests] = useState(0); // secondes utilisé pour timer et afficher les réponses
+  const nbVoulu = 5;
 
   const [answers, setAnswers] = useState([]); // les 4 choix
   const [score, setScore] = useState(0); // le score +1 quand bon
   const [answer, setAnswer] = useState(""); // la bonne réponse
+  const [AnswerArtiste, setAnswerArtiste] = useState(""); // la bonne réponse
   const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
+  const [lastI, setLastI] = useState(false); // pour ne pas avoir 2 fois le meme son de suite
 
   const [change, setChange] = useState(false);
+
   useEffect(() => {
-    // console.log(`chang${change}`);
-    // console.log("listChoice");
-    // console.log(listChoice);
     const max = listChoice.length;
 
-    const i1 = Math.floor(Math.random() * max);
+    let i1 = Math.floor(Math.random() * max);
+    while (i1 === lastI) {
+      i1 = Math.floor(Math.random() * max);
+    }
     let i2 = Math.floor(Math.random() * max);
-    while (i2 === i1) {
+    while (i2 === lastI || i2 === i1) {
       i2 = Math.floor(Math.random() * max);
     }
     let i3 = Math.floor(Math.random() * max);
-    while (i3 === i1 || i3 === i2) {
+    while (i3 === lastI || i3 === i1 || i3 === i2) {
       i3 = Math.floor(Math.random() * max);
     }
     let i4 = Math.floor(Math.random() * max);
-    while (i4 === i1 || i4 === i2 || i4 === i3) {
+    while (i4 === lastI || i4 === i1 || i4 === i2 || i4 === i3) {
       i4 = Math.floor(Math.random() * max);
     }
 
-    // la bonne réponse => le titre
-    // mettre Answers en random =>
     const random = Math.floor(Math.random() * 4) + 1;
     if (random === 1) {
       setAnswer(listChoice[i1].titre);
+      setAnswerArtiste(listChoice[i1].artiste);
       setAudio(listChoice[i1].mp3);
+      setLastI(i1);
     } else if (random === 2) {
       setAnswer(listChoice[i2].titre);
+      setAnswerArtiste(listChoice[i2].artiste);
       setAudio(listChoice[i2].mp3);
+      setLastI(i2);
     } else if (random === 3) {
       setAnswer(listChoice[i3].titre);
+      setAnswerArtiste(listChoice[i3].artiste);
       setAudio(listChoice[i3].mp3);
+      setLastI(i3);
     } else {
       setAnswer(listChoice[i4].titre);
+      setAnswerArtiste(listChoice[i4].artiste);
       setAudio(listChoice[i4].mp3);
+      setLastI(i4);
     }
 
     setAnswers([
@@ -82,6 +90,15 @@ function Btpage({ listChoice }) {
         <div className="value">{remainingTime}</div>
       </div>
     );
+
+  const setter = () => {
+    setChange(!change);
+    setNbTests((old) => old + 1);
+  };
+
+  const resetTab = () => {
+    setGenreChoice([]);
+    setAnneeChoice([]);
   };
 
   return (
@@ -100,16 +117,55 @@ function Btpage({ listChoice }) {
 
           <Pochette pochette={pochette} />
 
-          {/* --- */}
+          {/* ------------------------------------------ */}
+          {secondes > 0 && nbTests < nbVoulu ? (
+            <AnswerContainer
+              array={answers}
+              setScore={setScore}
+              answer={answer}
+              counterStart={counterStart}
+              setChange={setChange}
+              change={change}
+              setSecondes={setSecondes}
+              setNbTests={setNbTests}
+            />
+          ) : null}
+          {secondes <= 0 && nbTests < nbVoulu ? (
+            <button type="button" onClick={() => setter()}>
+              Next Test
+            </button>
+          ) : null}
+          {nbTests >= nbVoulu ? (
+            <button type="button" onClick={() => resetTab()}>
+              <Link to="/choice">
+                <p>{`Your Score : ${score} / ${nbVoulu}`}</p>
+                <p>ON REJOUE ?</p>
+              </Link>
+            </button>
+          ) : null}
+          {/* ------------------------------------------ */}
 
-          <AnswerContainer
-            array={answers}
-            setScore={setScore}
-            answer={answer}
-            counterStart={counterStart}
-            setChange={setChange}
+          {nbTests < nbVoulu ? (
+            <Player
+              className="MusicPlayerBox"
+              src={`http://localhost:5000/mp3/${audio}`}
+              showJumpControls={false}
+              // autoPlay
+              // autoPlayAfterSrcChange
+              // mettre false pour dev et true en prod
+            />
+          ) : null}
+        </div>
+
+        {nbTests < nbVoulu ? (
+          <CounterTime
             change={change}
+            setCounterStart={setCounterStart}
+            counterStart={counterStart}
+            secondes={secondes}
+            setSecondes={setSecondes}
           />
+        ) : null}
 
           <Player
             className="MusicPlayerBox"
@@ -122,6 +178,14 @@ function Btpage({ listChoice }) {
 
         <div className="answer-resp" />
         {/* --- */}
+        {/* affiche reponse */}
+        {secondes <= 0 && nbTests < nbVoulu ? (
+          <div>
+            <p>{AnswerArtiste}</p>
+            <p>{answer}</p>
+          </div>
+        ) : null}
+
         <span className="scoreDesktop">
           <ButtonScore score={score} setScore={setScore} />
 
@@ -155,8 +219,8 @@ Btpage.propTypes = {
       PropTypes.string,
     ])
   ).isRequired,
+  setGenreChoice: PropTypes.func.isRequired,
+  setAnneeChoice: PropTypes.func.isRequired,
 };
 
 export default Btpage;
-
-// ??? le tableau answers à un useEffect de retard
