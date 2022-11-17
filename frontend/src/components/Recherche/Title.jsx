@@ -7,16 +7,16 @@ function Title({ bigAlbum }) {
   return (
     <div>
       <div className="searchleft">
-        <h1>
-          Recherche<span>s</span>
-        </h1>
+       
         <div className="bigSong">
           <Player
             className="MusicPlayerBox"
             src={`http://localhost:5000/mp3/${bigAlbum[4]}`}
             showJumpControls={false}
+            header = {null}
             autoPlay={false}
             autoPlayAfterSrcChange={false}
+            
           />
           <img
             className="imgfirst"
@@ -27,6 +27,7 @@ function Title({ bigAlbum }) {
           <p>{bigAlbum[2]}</p>
           <p>{bigAlbum[3]}</p>
         </div>
+       
       </div>
     </div>
   );

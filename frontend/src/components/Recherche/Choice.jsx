@@ -11,7 +11,7 @@ function Choice({ setAnnee, setGenre, setCherche }) {
             id="epoque-select"
             onChange={(event) => setAnnee(event.target.value)}
           >
-            <option value="all">All</option>
+            <option value="all">Toutes les époques</option>
             <option value="2010">Annee 2010-aujourd'hui</option>
             <option value="2000">Annee 2000-2009</option>
             <option value="1990">Annee 1990-1999</option>
@@ -25,7 +25,7 @@ function Choice({ setAnnee, setGenre, setCherche }) {
             id="genre-select"
             onChange={(event) => setGenre(event.target.value)}
           >
-            <option value="">All</option>
+            <option value="">Tous les genres</option>
             <option value="rap">Rap</option>
             <option value="pop">Pop</option>
             <option value="rock">Rock</option>
