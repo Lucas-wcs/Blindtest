@@ -92,25 +92,18 @@ h3 {
   color: var(--orange);
   z-index: 2;
 }
-.rech .searchright .rhap_volume-indicator,
-.rhap_progress-container,
-.rhap_volume-button,
-.rhap_time,
-.rhap_current-time,
-.rhap_repeat-button,
-.rhap_volume-indicator,
+.rech .searchright .rhap_volume-indicator, .rech .searchright
+.rhap_progress-container, .rech .searchright
+.rhap_volume-button,.rech .searchright
+.rhap_time,.rech .searchright
+.rhap_current-time,.rech .searchright
+.rhap_repeat-button,.rech .searchright
+.rhap_volume-indicator,.rech .searchright
 .rhap_volume-bar-area {
   color: transparent;
   display: none;
 }
-.rech .searchleft .rhap_loop--off,
-.rhap_container {
-  margin-bottom: 100px;
-  background-color: transparent;
-  position: absolute;
-  width: 0px;
-  height: 0px;
-}
+
 .rech .searchright .rhap_container {
   margin-left: 40px;
   margin-top: 35px;
