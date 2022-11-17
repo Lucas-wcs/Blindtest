@@ -8,8 +8,8 @@ import TitleBt from "@components/btpage/TitleBt";
 import Pochette from "@components/btpage/Pochette";
 import ButtonScore from "@components/btpage/ButtonScore";
 import Player from "react-h5-audio-player";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import CounterTime from "../components/btpage/CounterTime";
-
 import "react-h5-audio-player/lib/styles.css";
 
 function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
@@ -80,6 +80,17 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
     ]);
   }, [listChoice, change]);
 
+  const renderTime = ({ remainingTime }) => {
+    if (remainingTime === 0) {
+      return <div className="timer">Final</div>;
+    }
+
+    return (
+      <div className="timer">
+        <div className="value">{remainingTime}</div>
+      </div>
+    );
+
   const setter = () => {
     setChange(!change);
     setNbTests((old) => old + 1);
@@ -97,7 +108,13 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         <div className="quizz">
           <span className="scoreMobile">
             <ButtonScore score={score} />
+            <CounterTime
+              change={change}
+              setCounterStart={setCounterStart}
+              counterStart={counterStart}
+            />
           </span>
+
           <Pochette pochette={pochette} />
 
           {/* ------------------------------------------ */}
@@ -150,6 +167,17 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
           />
         ) : null}
 
+          <Player
+            className="MusicPlayerBox"
+            src={`http://localhost:5000/mp3/${audio}`}
+            showJumpControls={false}
+            autoPlay={false}
+            autoPlayAfterSrcChange={false}
+          />
+        </div>
+
+        <div className="answer-resp" />
+        {/* --- */}
         {/* affiche reponse */}
         {secondes <= 0 && nbTests < nbVoulu ? (
           <div>
@@ -159,7 +187,20 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         ) : null}
 
         <span className="scoreDesktop">
-          <ButtonScore score={score} />
+          <ButtonScore score={score} setScore={setScore} />
+
+          <div className="timer-wrapper">
+            <CountdownCircleTimer
+              isPlaying
+              duration={20}
+              colors={["#377D22", "#FFEF00", "#ec7e40", "#A30000"]}
+              colorsTime={[15, 10, 5, 0]}
+              onComplete={() => ({ shouldRepeat: false, delay: 5 })}
+              size={250}
+            >
+              {renderTime}
+            </CountdownCircleTimer>
+          </div>
         </span>
       </div>
     </div>

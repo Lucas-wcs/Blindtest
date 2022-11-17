@@ -17,7 +17,7 @@ function CounterTime({ change, secondes, setSecondes }) {
 
   return (
     <div className="timer">
-      <p>{secondes > 0 ? secondes : "Time Out"}</p>
+      <p>{secondes > 0 ? secondes : "Time Out !!"}</p>
     </div>
   );
 }
