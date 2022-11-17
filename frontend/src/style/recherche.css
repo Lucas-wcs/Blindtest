@@ -4,9 +4,8 @@ h3 {
   font-family: var(--ffTexte);
   width: 100%;
 }
-.rech .playbutton{
+.rech .playbutton {
   border-radius: 10px;
-  
 }
 /* .rech .isFavorite {
   width: 40px;
@@ -25,10 +24,10 @@ h3 {
 } */
 .rech .all {
   background-image: url(../assets/mur.jpg);
-  
+
   position: absolute;
   background-attachment: fixed;
- 
+
   background-size: cover;
 }
 .rech p {
@@ -59,7 +58,6 @@ h3 {
   justify-content: center;
   margin-inline: 0;
   flex-wrap: wrap;
- 
 }
 
 .rech .select_filter {
@@ -71,7 +69,6 @@ h3 {
   width: 100%;
   background-color: var(--bleu);
   border-radius: 10px;
-  
 }
 
 .rech .listglobal {
@@ -89,23 +86,28 @@ h3 {
   gap: 2rem 1rem;
 }
 
-.rech .rhap_button-clear  {
+.rech .rhap_button-clear {
   color: var(--orange);
   z-index: 2;
-  
 }
-.rech .searchright .rhap_volume-indicator, .rhap_progress-container, .rhap_volume-button, .rhap_time, .rhap_current-time, .rhap_repeat-button, .rhap_volume-indicator, .rhap_volume-bar-area{
+.rech .searchright .rhap_volume-indicator,
+.rhap_progress-container,
+.rhap_volume-button,
+.rhap_time,
+.rhap_current-time,
+.rhap_repeat-button,
+.rhap_volume-indicator,
+.rhap_volume-bar-area {
   color: transparent;
   display: none;
-  
 }
-.rech .searchleft .rhap_loop--off, .rhap_container{
+.rech .searchleft .rhap_loop--off,
+.rhap_container {
   margin-bottom: 100px;
   background-color: transparent;
   position: absolute;
   width: 0px;
   height: 0px;
-  
 }
 .rech .searchright .rhap_container {
   margin-left: 40px;
@@ -114,8 +116,6 @@ h3 {
   background-color: transparent;
   width: 0px;
   height: 0px;
-  
-  
 }
 .rech .searchright {
   transition: 0.3s;
@@ -150,9 +150,7 @@ h3 {
 
 /* --- */
 
-
 .rech .searchleft h1 {
-  
   margin-top: 70px;
   margin-bottom: 70px;
 }
@@ -213,21 +211,18 @@ h3 {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     min-height: 100vh;
-    
   }
   .rech .searchleft {
     position: fixed;
-   height: 100%;
-   width: 50%;
+    height: 100%;
+    width: 50%;
   }
 
   .rech .bigSong {
-  width: 60%;
-  margin: 150px 100px 150px 100px;
+    width: 60%;
+    margin: 150px 100px 150px 100px;
   }
   .rech .listglobal {
     margin-top: 80px;
   }
- 
 }
-
