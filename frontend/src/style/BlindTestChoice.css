@@ -1,6 +1,4 @@
-/*css dani*/
-
-.test-selection .buttons-container {
+css dani .test-selection .buttons-container {
   background-color: var(--bleu);
   margin: 5% 10%;
   box-shadow: -5px 5px 0 var(--orange);
@@ -241,7 +239,16 @@ span {
     font-size: 1.3rem;
     border: none;
     box-shadow: -5px 5px 0 var(--beige);
-  } */
+
+  }
+
+  .test-selection .title {
+    text-align: center;
+
+    font-size: 1.8rem;
+    font-family: var(--ffTitre);
+  }
+
 
   .test-selection .send {
     width: 40%;

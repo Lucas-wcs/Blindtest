@@ -16,7 +16,7 @@ function CounterTime({ change, secondes, setSecondes }) {
   }, [change]);
 
   return (
-    <div className="timer">
+    <div className="timerMobile">
       <p>{secondes > 0 ? secondes : "Time Out !!"}</p>
     </div>
   );

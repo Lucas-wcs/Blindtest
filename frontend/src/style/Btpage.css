@@ -1,3 +1,12 @@
+.btpage .master {
+  background-image: url(../assets/mur.jpg);
+  position: absolute;
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .btpage .titleBt h1 {
   padding-top: 0;
   font-size: 50px;
@@ -92,7 +101,7 @@
 .btpage .counterDesktop {
   display: none;
 }
-.btpage .timer {
+.btpage .timerMobile {
   color: #d7c392;
   display: flex;
   justify-content: center;
@@ -109,17 +118,23 @@
 
 @media screen and (min-width: 800px) {
   body .btpage {
+
     background-image: url(../assets/mur.png);
+
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
     background-position: left;
     display: unset;
   }
+  .btpage .btpagemain {
+    display: flex;
+    flex-direction: row;
+  }
 
   .btpage .quizz {
     float: right;
-    width: 550px;
+    width: 700px;
     background-color: unset;
     box-shadow: none;
     display: grid;
@@ -128,7 +143,9 @@
     grid-column-gap: 0px;
     grid-row-gap: 10px;
     margin: 0;
+    padding-right: 10px;
   }
+
   .btpage .scoreDesktop {
     display: flex;
     flex-direction: column-reverse;
@@ -151,7 +168,8 @@
     height: 100px;
     width: 300px;
   }
-  .btpage .scoreMobile {
+  .btpage .scoreMobile,
+  .btpage .timerMobile {
     display: none;
   }
   .btpage .scoreDesktop .buttonScore {
@@ -192,17 +210,34 @@
     width: 200px;
     height: 200px;
   }
-  .answer-resp {
+  .btpage .answer-resp {
+    margin-top: -50px;
     background-color: red;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 20px;
   }
-  .rhap_container {
+  .btpage .rhap_container {
+    display: none;
     background-color: transparent;
     border: var(--bg) 0.5px solid;
   }
-  .rhap_container button {
+  .btpage .rhap_container button {
     color: var(--bleu);
+  }
+  .btpage .answer-container {
+    padding: 10px;
+  }
+  .btpage .answer-resp img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .btpage .answer-name {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .btpage .false-answer {
+    color: red;
+    text-decoration: underline;
   }
 }
