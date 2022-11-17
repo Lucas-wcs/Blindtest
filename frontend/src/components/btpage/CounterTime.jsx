@@ -25,7 +25,7 @@ function CounterTime(setCounterStart, counterStart, change) {
 
   return (
     <div className="timer">
-      <p>{secondes > 0 ? secondes : "Time Out"}</p>
+      <p>{secondes > 0 ? secondes : "Time Out !!"}</p>
     </div>
   );
 }
