@@ -1,31 +1,26 @@
 import React from "react";
-import Buttons from "@components/btchoice/Buttons";
+import ButtonOurTests from "./ButtonOurTests";
 import PropTypes from "prop-types";
 
-function ButtonContainer({ array, choice, setChoice }) {
-  const handleOnChange = (what) => {
-    if (choice.includes(what)) {
-      setChoice((prev) => prev.filter((each) => each !== what));
-    } else {
-      setChoice((oldArray) => [...oldArray, what]);
-    }
-  };
-
+function ButtonContainerOT({array})
+ {
   return (
     <div className="buttons-container">
-      <h2 className="tests-titles">CHOISIS TON TEST</h2>
-      {array.map((each) => (
-        <Buttons
-          name={each.name}
-          id={each.id}
-          handleOnChange={handleOnChange}
-        />
+      <h2 className="title-our-test" id="tests-titles">
+        NOS TESTS
+      </h2>
+      {array && array.map((arr) => (
+        <ButtonOurTests name={arr.name} id={arr.id} />
       ))}
     </div>
   );
 }
 
-ButtonContainer.propTypes = {
+
+export default ButtonContainerOT;
+
+
+/* ButtonContainer.propTypes = {
   setChoice: PropTypes.func.isRequired,
 
   array: PropTypes.arrayOf(
@@ -48,5 +43,4 @@ ButtonContainer.propTypes = {
     ])
   ).isRequired,
 };
-
-export default ButtonContainer;
+ */

@@ -24,6 +24,7 @@ function App() {
   // -------------------------------------------------------------------------------------
   const [songList, setSongList] = useState([]);
   const [listChoice, setListChoice] = useState([]);
+  
 
   const [annee, setAnnee] = useState("all");
   const [genre, setGenre] = useState("");
@@ -40,7 +41,7 @@ function App() {
         setList(data);
       });
   }, []);
-
+  
   // filtre X3 cumulatifs
   useEffect(() => {
     // console.log(annee);
@@ -171,7 +172,27 @@ function App() {
     // console.log("listChoice : ");
     // console.log(listChoice);
   }, [anneeChoice, genreChoice, list]);
+  // -------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------
+/*   const daddyC = [2,
+    7,
+    10,
+    11,
+    24,
+    36,
+    38,
+    44,
+    55,
+    58]
 
+  const newArray = [] 
+
+  function setOutTests (array) {
+    array.forEach(element => {
+      newArray.push(list.find((music) => music.id==element))
+    });
+   */
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
