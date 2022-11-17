@@ -119,7 +119,7 @@
 
   .btpage .quizz {
     float: right;
-    width: 550px;
+    width: 700px;
     background-color: unset;
     box-shadow: none;
     display: grid;
@@ -128,7 +128,9 @@
     grid-column-gap: 0px;
     grid-row-gap: 10px;
     margin: 0;
+    padding-right: 10px;
   }
+
   .btpage .scoreDesktop {
     display: flex;
     flex-direction: column-reverse;
@@ -193,9 +195,10 @@
     height: 200px;
   }
   .answer-resp {
+    margin-top: -50px;
     background-color: red;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 20px;
   }
   .rhap_container {
@@ -204,5 +207,12 @@
   }
   .rhap_container button {
     color: var(--bleu);
+  }
+  .answer-container {
+    padding: 10px;
+  }
+  .answer-resp img {
+    width: 100%;
+    object-fit: cover;
   }
 }

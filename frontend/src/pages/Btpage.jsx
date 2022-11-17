@@ -25,6 +25,7 @@ function Btpage({ listChoice }) {
   const [score, setScore] = useState(0); // le score +1 quand bon
   const [answer, setAnswer] = useState(""); // la bonne réponse
   const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
+  const [pochetteAnswer, setPochetteAnswer] = useState("");
 
   const [change, setChange] = useState(false);
   useEffect(() => {
@@ -53,15 +54,19 @@ function Btpage({ listChoice }) {
     if (random === 1) {
       setAnswer(listChoice[i1].titre);
       setAudio(listChoice[i1].mp3);
+      setPochetteAnswer(listChoice[i1].pochette);
     } else if (random === 2) {
       setAnswer(listChoice[i2].titre);
       setAudio(listChoice[i2].mp3);
+      setPochetteAnswer(listChoice[i2].pochette);
     } else if (random === 3) {
       setAnswer(listChoice[i3].titre);
       setAudio(listChoice[i3].mp3);
+      setPochetteAnswer(listChoice[i3].pochette);
     } else {
       setAnswer(listChoice[i4].titre);
       setAudio(listChoice[i4].mp3);
+      setPochetteAnswer(listChoice[i4].pochette);
     }
 
     setAnswers([
@@ -120,7 +125,9 @@ function Btpage({ listChoice }) {
           />
         </div>
 
-        <div className="answer-resp" />
+        <div className="answer-resp">
+          <img src={pochetteAnswer} alt="pochette" />
+        </div>
         {/* --- */}
         <span className="scoreDesktop">
           <ButtonScore score={score} setScore={setScore} />
