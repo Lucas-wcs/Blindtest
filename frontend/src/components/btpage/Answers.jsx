@@ -1,15 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Answers({ artiste, titre, setScore, answer, setChange, change }) {
-  // dans la fonction pour augmenter le score mettre && TimerStart
+function Answers({
+  artiste,
+  titre,
+  setScore,
+  answer,
+  setChange,
+  change,
+  setSecondes,
+  setNbTests,
+}) {
   const isTrue = (e) => {
     e.preventDefault();
     if (e.target.value === answer) {
       setChange(!change);
       setScore((lastScore) => lastScore + 1);
+      setNbTests((old) => old + 1);
     } else {
-      setChange(!change);
+      setSecondes(-1);
     }
   };
 
@@ -31,5 +40,7 @@ Answers.propTypes = {
   answer: PropTypes.string.isRequired,
   setChange: PropTypes.func.isRequired,
   change: PropTypes.bool.isRequired,
+  setSecondes: PropTypes.func.isRequired,
+  setNbTests: PropTypes.func.isRequired,
 };
 export default Answers;

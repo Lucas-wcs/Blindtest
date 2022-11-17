@@ -74,7 +74,7 @@
 
 @media screen and (min-width: 800px) {
   body {
-    background: url(../assets/vinyleAccueil.jpg) center no-repeat fixed;
+    background: url(../assets/music.jpg) center no-repeat fixed;
     background-size: cover;
     z-index: -1;
   }
