@@ -1,17 +1,20 @@
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import Login from "../components/user/Login/Login";
 import useToken from "../components/user/useToken";
-import User from "./User";
 
 function Connexion() {
   const { token, setToken } = useToken();
 
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (token) {
+      navigate("/user");
+    }
+  }, [token]);
   return (
-    <div className="wrapper">
-      <User />
-    </div>
+    <div className="wrapper">{!token && <Login setToken={setToken} />}</div>
   );
 }
 
