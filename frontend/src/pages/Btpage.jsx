@@ -12,7 +12,7 @@ import CounterTime from "../components/btpage/CounterTime";
 
 import "react-h5-audio-player/lib/styles.css";
 
-function Btpage({ listChoice }) {
+function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
   const pochette =
     "https://images.pexels.com/photos/3831187/pexels-photo-3831187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
   const [counterStart, setCounterStart] = useState(false); // true/false counterTimer est activé
@@ -25,22 +25,27 @@ function Btpage({ listChoice }) {
   const [answer, setAnswer] = useState(""); // la bonne réponse
   const [AnswerArtiste, setAnswerArtiste] = useState(""); // la bonne réponse
   const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
+  const [lastI, setLastI] = useState(false); // pour ne pas avoir 2 fois le meme son de suite
 
   const [change, setChange] = useState(false);
+
   useEffect(() => {
     const max = listChoice.length;
 
-    const i1 = Math.floor(Math.random() * max);
+    let i1 = Math.floor(Math.random() * max);
+    while (i1 === lastI) {
+      i1 = Math.floor(Math.random() * max);
+    }
     let i2 = Math.floor(Math.random() * max);
-    while (i2 === i1) {
+    while (i2 === lastI || i2 === i1) {
       i2 = Math.floor(Math.random() * max);
     }
     let i3 = Math.floor(Math.random() * max);
-    while (i3 === i1 || i3 === i2) {
+    while (i3 === lastI || i3 === i1 || i3 === i2) {
       i3 = Math.floor(Math.random() * max);
     }
     let i4 = Math.floor(Math.random() * max);
-    while (i4 === i1 || i4 === i2 || i4 === i3) {
+    while (i4 === lastI || i4 === i1 || i4 === i2 || i4 === i3) {
       i4 = Math.floor(Math.random() * max);
     }
 
@@ -49,18 +54,22 @@ function Btpage({ listChoice }) {
       setAnswer(listChoice[i1].titre);
       setAnswerArtiste(listChoice[i1].artiste);
       setAudio(listChoice[i1].mp3);
+      setLastI(i1);
     } else if (random === 2) {
       setAnswer(listChoice[i2].titre);
       setAnswerArtiste(listChoice[i2].artiste);
       setAudio(listChoice[i2].mp3);
+      setLastI(i2);
     } else if (random === 3) {
       setAnswer(listChoice[i3].titre);
       setAnswerArtiste(listChoice[i3].artiste);
       setAudio(listChoice[i3].mp3);
+      setLastI(i3);
     } else {
       setAnswer(listChoice[i4].titre);
       setAnswerArtiste(listChoice[i4].artiste);
       setAudio(listChoice[i4].mp3);
+      setLastI(i4);
     }
 
     setAnswers([
@@ -74,6 +83,11 @@ function Btpage({ listChoice }) {
   const setter = () => {
     setChange(!change);
     setNbTests((old) => old + 1);
+  };
+
+  const resetTab = () => {
+    setGenreChoice([]);
+    setAnneeChoice([]);
   };
 
   return (
@@ -105,7 +119,7 @@ function Btpage({ listChoice }) {
             </button>
           ) : null}
           {nbTests >= nbVoulu ? (
-            <button type="button">
+            <button type="button" onClick={() => resetTab()}>
               <Link to="/choice">
                 <p>{`Your Score : ${score} / ${nbVoulu}`}</p>
                 <p>ON REJOUE ?</p>
@@ -119,8 +133,8 @@ function Btpage({ listChoice }) {
               className="MusicPlayerBox"
               src={`http://localhost:5000/mp3/${audio}`}
               showJumpControls={false}
-              autoPlay
-              autoPlayAfterSrcChange
+              // autoPlay
+              // autoPlayAfterSrcChange
               // mettre false pour dev et true en prod
             />
           ) : null}
@@ -164,6 +178,8 @@ Btpage.propTypes = {
       PropTypes.string,
     ])
   ).isRequired,
+  setGenreChoice: PropTypes.func.isRequired,
+  setAnneeChoice: PropTypes.func.isRequired,
 };
 
 export default Btpage;

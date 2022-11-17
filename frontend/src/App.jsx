@@ -101,7 +101,7 @@ function App() {
     }
 
     // si toutes les années et choix des genres (entre 1 et 4)
-    else if (anneeChoice.length === 0 || anneeChoice.length === 6)
+    else if (anneeChoice.length === 0 || anneeChoice.length === 6) {
       setListChoice(
         list.filter(
           (each) =>
@@ -111,6 +111,7 @@ function App() {
             each.genre.includes(genreChoice[3])
         )
       );
+    }
     // si tous les genres et choix des années (entre 1 et 5)
     else if (genreChoice.length === 0 || genreChoice.length === 5) {
       setListChoice(
@@ -154,7 +155,7 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Menu />
+        <Menu setGenreChoice={setGenreChoice} setAnneeChoice={setAnneeChoice} />
         <Routes>
           <Route exact path="/" element={<Accueil />} />
           <Route
@@ -187,7 +188,13 @@ function App() {
           <Route
             path="/test"
             element={
-              listChoice.length !== 0 && <Btpage listChoice={listChoice} />
+              listChoice.length !== 0 && (
+                <Btpage
+                  listChoice={listChoice}
+                  setGenreChoice={setGenreChoice}
+                  setAnneeChoice={setAnneeChoice}
+                />
+              )
             }
           />
           {/* ------------------------ */}

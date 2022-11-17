@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
+import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -8,10 +9,15 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { BiUserCircle } from "react-icons/bi";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 
-function Menu() {
+function Menu({ setGenreChoice, setAnneeChoice }) {
   const [isActive, setActive] = useState(false);
   const toggle = () => {
     setActive(!isActive);
+  };
+
+  const resetTab = () => {
+    setGenreChoice([]);
+    setAnneeChoice([]);
   };
 
   return (
@@ -39,7 +45,9 @@ function Menu() {
             <Link to="/recherche">Rechercher</Link>
           </li>
           <li>
-            <Link to="/choice">Choix Blind Test</Link>
+            <Link to="/choice" onClick={() => resetTab()}>
+              Choix Blind Test
+            </Link>
           </li>
           <li>
             <Link to="/user">User</Link>
@@ -80,5 +88,10 @@ function Menu() {
     </div>
   );
 }
+
+Menu.propTypes = {
+  setGenreChoice: PropTypes.func.isRequired,
+  setAnneeChoice: PropTypes.func.isRequired,
+};
 
 export default Menu;
