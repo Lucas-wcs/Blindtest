@@ -8,7 +8,7 @@ function Filter({ setAnnee, setGenre, setCherche }) {
   return (
     <div>
       <h1>
-        Re<span>c</span>herchez <span>d</span>es tit<span>r</span>es
+        Re<span>c</span>hercher <span>d</span>es tit<span>r</span>es
       </h1>
       <button
         type="button"

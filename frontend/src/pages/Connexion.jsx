@@ -1,31 +1,20 @@
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
-// import React, { useState } from "react";
-// import Dashboard from "../components/user/Dashboard/Dashboard";
-// import Preferences from "../components/user/Preferences/Preferences";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import Login from "../components/user/Login/Login";
 import useToken from "../components/user/useToken";
-import User from "./User";
 
 function Connexion() {
   const { token, setToken } = useToken();
 
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (token) {
+      navigate("/user");
+    }
+  }, [token]);
   return (
-    <div className="wrapper">
-      <User />
-      {/* <BrowserRouter>
-        <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/preferences">
-            <Preferences />
-          </Route>
-        </Switch>
-      </BrowserRouter> */}
-    </div>
+    <div className="wrapper">{!token && <Login setToken={setToken} />}</div>
   );
 }
 

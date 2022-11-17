@@ -103,7 +103,7 @@ function BlindTestChoice({
       <div className="buttons-downside">
         <Toggle />
 
-        {listChoice.length >= 4 ? (
+        {listChoice.length >= 5 ? (
           <button type="button" className="send">
             <Link to="/test">GO !</Link>
           </button>

@@ -1,5 +1,102 @@
+body {
+  background: linear-gradient(
+      0deg,
+      rgba(146, 102, 61, 0.2),
+      rgba(146, 102, 61, 0.2)
+    ),
+    #ffffff;
+  background-image: url("https://cdn.discordapp.com/attachments/1031509947487363165/1035467965061144617/Vinyle2.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: left;
+}
+
+.login-wrapper h1 {
+  text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
+    1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
+    4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
+    4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
+    7px 6px 1px gray;
+  font-size: 40px;
+  word-spacing: 1rem;
+}
+
 .login-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.login-wrapper .userNameConnexion {
+  font-size: 40px;
+  color: var(--bleu);
+  margin-top: 15%;
+  margin-bottom: 8%;
+}
+
+.login-wrapper .passwordUserConnexion {
+  font-size: 40px;
+  color: var(--bleu);
+  margin-top: 15%;
+  margin-bottom: 8%;
+}
+
+.login-wrapper .buttonSend {
+  padding: 15px;
+  margin-top: 10%;
+  background-color: var(--orange);
+}
+
+.login-wrapper ::placeholder {
+  text-align: center;
+}
+
+.login-wrapper input {
+  padding: 10px;
+}
+
+.login-wrapper button {
+  border: solid 2px black;
+  border-radius: 12%;
+  transition-duration: 0.4s;
+}
+
+.login-wrapper button:hover {
+  color: var(--orange);
+  background-color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width: 767px) {
+  .login-wrapper body {
+    background-image: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-wrapper h1 {
+    font-size: 50px;
+  }
+  .login-wrapper .formUser {
+    margin-top: 5%;
+    background-color: var(--beige);
+    padding: 5%;
+  }
+
+  .login-wrapper .userNameConnexion {
+    font-size: 40px;
+    margin-top: 10%;
+  }
+
+  .login-wrapper .passwordUserConnexion {
+    font-size: 40px;
+    margin-top: 10%;
+  }
+
+  .login-wrapper .buttonSend {
+    padding: 15px;
+    margin-top: 10%;
+  }
 }

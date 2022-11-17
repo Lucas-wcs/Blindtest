@@ -9,8 +9,9 @@ function AnswerContainer({
   counterStart,
   setChange,
   change,
+  setSecondes,
+  setNbTests,
 }) {
-  // array = tout l'objet
   return (
     <div className="answer-container">
       {array.map((arr) => (
@@ -22,6 +23,8 @@ function AnswerContainer({
           counterStart={counterStart}
           setChange={setChange}
           change={change}
+          setSecondes={setSecondes}
+          setNbTests={setNbTests}
         />
       ))}
     </div>
@@ -36,5 +39,7 @@ AnswerContainer.propTypes = {
   counterStart: PropTypes.bool.isRequired,
   setChange: PropTypes.func.isRequired,
   change: PropTypes.bool.isRequired,
+  setSecondes: PropTypes.func.isRequired,
+  setNbTests: PropTypes.func.isRequired,
 };
 export default AnswerContainer;

@@ -1,19 +1,12 @@
-// import PropTypes from "prop-types";
-import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import React, { useEffect } from "react";
 
-function CounterTime(setCounterStart, counterStart, change) {
-  // lancer la musique en meme temps que le click du button
-  // autoriser à répondre seulement quand timer démarré
-
-  // console.log(change);
+function CounterTime({ change, secondes, setSecondes }) {
   const startingSecondes = 5;
-  const [secondes, setSecondes] = useState(startingSecondes);
+  // 20 en prod
   let interval = 0;
 
-  // const [start, setStart] = useState(false);
   useEffect(() => {
-    // console.log(change);
-    // console.log("new");
     setSecondes(startingSecondes);
     interval = setInterval(() => {
       setSecondes((prevState) => prevState - 1);
@@ -21,7 +14,6 @@ function CounterTime(setCounterStart, counterStart, change) {
 
     return () => clearInterval(interval);
   }, [change]);
-  // pourquoi change est undefined
 
   return (
     <div className="timer">
@@ -29,5 +21,11 @@ function CounterTime(setCounterStart, counterStart, change) {
     </div>
   );
 }
+
+CounterTime.propTypes = {
+  change: PropTypes.bool.isRequired,
+  secondes: PropTypes.number.isRequired,
+  setSecondes: PropTypes.func.isRequired,
+};
 
 export default CounterTime;
