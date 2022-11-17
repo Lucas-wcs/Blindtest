@@ -27,7 +27,7 @@ h3 {
 
   position: absolute;
   background-attachment: fixed;
-  width:100%;
+  width: 100%;
   background-size: cover;
 }
 .rech p {
@@ -85,7 +85,6 @@ h3 {
   justify-content: center;
   gap: 2rem 1rem;
   margin-bottom: 10px;
- 
 }
 
 .rech .rhap_button-clear {
@@ -118,7 +117,6 @@ h3 {
   background-color: transparent;
   width: 0px;
   height: 0px;
-  
 }
 .rech .searchright {
   transition: 0.3s;
