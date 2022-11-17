@@ -108,14 +108,12 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
 
   return (
     <div className="btpage">
-
       <div className="master">
-      
         <TitleBt />
         <div className="btpagemain">
           <span className="scoreDesktop">
             <ButtonScore score={score} setScore={setScore} />
-            
+
             <div className="timer-wrapper">
               <CountdownCircleTimer
                 isPlaying
