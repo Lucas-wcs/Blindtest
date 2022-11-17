@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 
 function CounterTime({ change, secondes, setSecondes }) {
-  const startingSecondes = 5;
+  const startingSecondes = 20;
   // 20 en prod
   let interval = 0;
 
@@ -16,7 +16,7 @@ function CounterTime({ change, secondes, setSecondes }) {
   }, [change]);
 
   return (
-    <div className="timer">
+    <div className="timerMobile">
       <p>{secondes > 0 ? secondes : "Time Out !!"}</p>
     </div>
   );

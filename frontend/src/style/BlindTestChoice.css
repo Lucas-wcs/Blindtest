@@ -1,6 +1,4 @@
-/*css dani*/
-
-.test-selection .buttons-container {
+css dani .test-selection .buttons-container {
   background-color: var(--bleu);
   margin: 5% 10%;
   box-shadow: -5px 5px 0 var(--orange);
@@ -101,7 +99,7 @@
     color: var(--noir);
     font-family: var(--ffTexte);
     background-color: var(--bg);
-    background-image: url(../assets/vinyle.png);
+    background-image: url(../assets/mur.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -224,7 +222,7 @@
 
   .test-selection .title {
     text-align: center;
-    /* margin: 0.5%; */
+
     font-size: 1.8rem;
     font-family: var(--ffTitre);
   }
