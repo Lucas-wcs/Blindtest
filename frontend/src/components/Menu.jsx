@@ -50,7 +50,7 @@ function Menu({ setGenreChoice, setAnneeChoice }) {
             </Link>
           </li>
           <li>
-            <Link to="/user">User</Link>
+            <Link to="/connexion">User</Link>
           </li>
         </ul>
 

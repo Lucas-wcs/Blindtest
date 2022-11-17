@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 
 function ButtonContainer({ array, choice, setChoice }) {
   const handleOnChange = (what) => {
-    if (choice.includes(what)) {
+    if (choice.includes(1960) && what === "1960 & 1970") {
+      setChoice((prev) =>
+        prev.filter((each) => each !== 1960 && each !== 1970)
+      );
+    } else if (choice.includes(what)) {
       setChoice((prev) => prev.filter((each) => each !== what));
     } else {
       setChoice((oldArray) => [...oldArray, what]);

@@ -19,7 +19,6 @@ function App() {
   // -------------------------------------------------------------------------------------
   const [songList, setSongList] = useState([]);
   const [listChoice, setListChoice] = useState([]);
-  
 
   const [annee, setAnnee] = useState("all");
   const [genre, setGenre] = useState("");
@@ -37,8 +36,6 @@ function App() {
       });
   }, []);
 
-  
-  // filtre X3 cumulatifs
   useEffect(() => {
     if (annee === "all") {
       setSongList(
@@ -154,7 +151,7 @@ function App() {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
-/*   const daddyC = [2,
+  /*   const daddyC = [2,
     7,
     10,
     11,

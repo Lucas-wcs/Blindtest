@@ -18,7 +18,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
   const [counterStart, setCounterStart] = useState(false); // true/false counterTimer est activé
   const [secondes, setSecondes] = useState(100); // secondes utilisé pour timer et afficher les réponses
   const [nbTests, setNbTests] = useState(0); // secondes utilisé pour timer et afficher les réponses
-  const nbVoulu = 5;
+  const nbVoulu = 5; // nb tests voulu
 
   const [answers, setAnswers] = useState([]); // les 4 choix
   const [score, setScore] = useState(0); // le score +1 quand bon
@@ -109,11 +109,6 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         <div className="quizz">
           <span className="scoreMobile">
             <ButtonScore score={score} />
-            <CounterTime
-              change={change}
-              secondes={secondes}
-              setSecondes={setSecondes}
-            />
           </span>
 
           <Pochette pochette={pochette} />

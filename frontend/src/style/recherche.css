@@ -91,14 +91,14 @@ h3 {
   color: var(--orange);
   z-index: 2;
 }
-.rech .searchright .rhap_volume-indicator, .rech .searchright
-.rhap_progress-container, .rech .searchright
-.rhap_volume-button,.rech .searchright
-.rhap_time,.rech .searchright
-.rhap_current-time,.rech .searchright
-.rhap_repeat-button,.rech .searchright
-.rhap_volume-indicator,.rech .searchright
-.rhap_volume-bar-area {
+.rech .searchright .rhap_volume-indicator,
+.rech .searchright .rhap_progress-container,
+.rech .searchright .rhap_volume-button,
+.rech .searchright .rhap_time,
+.rech .searchright .rhap_current-time,
+.rech .searchright .rhap_repeat-button,
+.rech .searchright .rhap_volume-indicator,
+.rech .searchright .rhap_volume-bar-area {
   color: transparent;
   display: none;
 }
