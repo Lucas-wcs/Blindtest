@@ -26,7 +26,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
   const [AnswerArtiste, setAnswerArtiste] = useState(""); // la bonne réponse
   const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
   const [lastI, setLastI] = useState(false); // pour ne pas avoir 2 fois le meme son de suite
-  // const [pochetteAnswer, setPochetteAnswer] = useState("");
+  const [pochetteAnswer, setPochetteAnswer] = useState("");
   const [change, setChange] = useState(false);
 
   useEffect(() => {
@@ -55,25 +55,25 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
       setAnswerArtiste(listChoice[i1].artiste);
       setAudio(listChoice[i1].mp3);
       setLastI(i1);
-      // setPochetteAnswer(listChoice[i1].pochette);
+      setPochetteAnswer(listChoice[i1].pochette);
     } else if (random === 2) {
       setAnswer(listChoice[i2].titre);
       setAnswerArtiste(listChoice[i2].artiste);
       setAudio(listChoice[i2].mp3);
       setLastI(i2);
-      // setPochetteAnswer(listChoice[i2].pochette);
+      setPochetteAnswer(listChoice[i2].pochette);
     } else if (random === 3) {
       setAnswer(listChoice[i3].titre);
       setAnswerArtiste(listChoice[i3].artiste);
       setAudio(listChoice[i3].mp3);
       setLastI(i3);
-      // setPochetteAnswer(listChoice[i3].pochette);
+      setPochetteAnswer(listChoice[i3].pochette);
     } else {
       setAnswer(listChoice[i4].titre);
       setAnswerArtiste(listChoice[i4].artiste);
       setAudio(listChoice[i4].mp3);
       setLastI(i4);
-      // setPochetteAnswer(listChoice[i4].pochette);
+      setPochetteAnswer(listChoice[i4].pochette);
     }
 
     setAnswers([
@@ -112,21 +112,24 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         <TitleBt />
         <div className="btpagemain">
           <span className="scoreDesktop">
-            <ButtonScore score={score} setScore={setScore} />
+            <ButtonScore score={score} />
 
             <div className="timer-wrapper">
               <CountdownCircleTimer
+                // le faire commencer quand on clique sur next test
+                // le faire arreter quand secondes=0
                 isPlaying
-                duration={20}
+                duration={5}
                 colors={["#377D22", "#FFEF00", "#ec7e40", "#A30000"]}
                 colorsTime={[15, 10, 5, 0]}
-                onComplete={() => ({ shouldRepeat: false, delay: 5 })}
+                onComplete={() => ({ shouldRepeat: false, delay: 0 })}
                 size={250}
               >
                 {renderTime}
               </CountdownCircleTimer>
             </div>
           </span>
+
           <div className="quizz">
             <span className="scoreMobile">
               <ButtonScore score={score} />
@@ -154,11 +157,13 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
                 setNbTests={setNbTests}
               />
             ) : null}
+
             {secondes <= 0 && nbTests < nbVoulu ? (
               <button type="button" onClick={() => setter()}>
                 Next Test
               </button>
             ) : null}
+
             {nbTests >= nbVoulu ? (
               <button type="button" onClick={() => resetTab()}>
                 <Link to="/choice">
@@ -167,7 +172,6 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
                 </Link>
               </button>
             ) : null}
-            {/* ------------------------------------------ */}
 
             {nbTests < nbVoulu ? (
               <Player
@@ -183,7 +187,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         </div>
 
         {/* <div className="answer-resp" /> */}
-        {/* --- */}
+
         {/* affiche reponse */}
         {secondes <= 0 && nbTests < nbVoulu ? (
           <div className="answer-name">
@@ -192,12 +196,13 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
             </p>
             <p>{AnswerArtiste} : </p>
             <p>{answer}</p>
+            <img src={pochetteAnswer} alt={pochetteAnswer} />
           </div>
         ) : null}
 
         {/* <div className="answer-resp">
         <img src={pochetteAnswer} alt="pochette" />
-      </div> */}
+        </div> */}
         {/* --- */}
       </div>
     </div>

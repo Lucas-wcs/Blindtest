@@ -1,4 +1,4 @@
-css dani .test-selection .buttons-container {
+.test-selection .buttons-container {
   background-color: var(--bleu);
   margin: 5% 10%;
   box-shadow: -5px 5px 0 var(--orange);
@@ -112,19 +112,6 @@ span {
 }
 
 @media only screen and (min-width: 800px) {
-  body .test-selection {
-    color: var(--noir);
-    font-family: var(--ffTexte);
-    background-color: var(--bg);
-    background-image: url(../assets/mur.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-position: left;
-    background-size: cover;
-    min-height: 100vh;
-  }
-
   .test-selection .title {
     text-align: center;
     font-size: 1.8rem;
@@ -256,5 +243,7 @@ span {
     background-color: var(--orange);
     font-size: 1.8rem;
     margin: 1% 20%;
-  } */
+
+  }*/
+ 
 }
