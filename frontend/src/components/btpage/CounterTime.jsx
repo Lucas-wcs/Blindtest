@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 
 function CounterTime({ change, secondes, setSecondes }) {
-  const startingSecondes = 20;
+  const startingSecondes = 5;
   // 20 en prod
   let interval = 0;
 
