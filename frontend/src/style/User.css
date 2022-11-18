@@ -86,23 +86,7 @@
   display: inline-block;
 }
 
-@media (max-width: 767px) {
-  body .pageUser {
-    background-image: none;
-  }
-}
-
 @media (min-width: 1024px) {
-  body .pageUser {
-    background-image: url(../assets/mur.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-position: left;
-    background-size: cover;
-    min-height: 100vh;
-  }
-
   .pageUser .lastListen {
     background: none;
     box-shadow: none;
