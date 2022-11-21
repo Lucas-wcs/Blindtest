@@ -22,6 +22,9 @@
   padding: 15px;
   margin-top: 10%;
   background-color: var(--orange);
+  border: solid black 4px;
+  font-weight: bold;
+  box-shadow: 4px 3px 3px black;
 }
 
 .login-wrapper ::placeholder {
@@ -45,6 +48,15 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.login-wrapper .inputButton{
+  border-radius: 45%;
+  padding: 17px;
+  background-color: var(--beige);
+  font-weight: bold;
+  border: solid 3px black;
+  
+}
+
 @media (max-width: 767px) {
   .login-wrapper body {
     background-image: none;
@@ -53,12 +65,15 @@
 
 @media (min-width: 1024px) {
   .login-wrapper h1 {
-    font-size: 50px;
+    font-size: 70px;
+    word-spacing: 20px;
   }
   .login-wrapper .formUser {
-    margin-top: 5%;
+    margin-top: 2%;
     background-color: var(--beige);
-    padding: 5%;
+    padding: 3%;
+    border: solid black 4px;
+    border-radius: 3%;
   }
 
   .login-wrapper .userNameConnexion {
@@ -74,5 +89,9 @@
   .login-wrapper .buttonSend {
     padding: 15px;
     margin-top: 10%;
+  }
+
+  .login-wrapper .inputButton{
+    background-color: white;
   }
 }
