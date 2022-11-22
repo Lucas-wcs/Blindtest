@@ -23,7 +23,7 @@ function Filter({ setAnnee, setGenre, setCherche }) {
         Re<span>c</span>hercher <span>d</span>es tit<span>r</span>es
       </h1>
       <button type="button" className="filter" onClick={changement}>
-        {!isOpen ? "fermer" : "Ouvrir"} les filtres
+        {!isOpen ? "Ouvrir" : "Fermer"} les filtres
       </button>
       {openFilter && (
         <Choice
