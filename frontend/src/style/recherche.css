@@ -7,10 +7,21 @@ h3 {
 .rech .playbutton {
   border-radius: 10px;
 }
-
+.rech .filter{
+  border: solid var(--orange) 1px;
+  border-radius: 25px;
+  background-color: var(white);
+}
+.rech .select_filter #epoque-select, #genre-select, .searchbox{
+  border: solid black 1px;
+  padding-inline-start: 8px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 25px;
+  border-color: var(--orange);
+}
 .rech .all {
   background-image: url(../assets/mur.jpg);
-
   position: absolute;
   background-attachment: fixed;
   width: 100%;
