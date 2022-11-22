@@ -16,6 +16,7 @@ function AnswerContainer({
     <div className="answer-container">
       {array.map((arr) => (
         <Answers
+          key={arr.id}
           artiste={arr.artiste}
           titre={arr.titre}
           setScore={setScore}

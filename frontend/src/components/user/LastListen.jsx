@@ -20,7 +20,7 @@ function LastListen({ lastEcoute }) {
           }
 
           return (
-            <div className="musicDivBlock">
+            <div className="musicDivBlock" key={music.id}>
               <img className="imgMusic" src={music.pochette} alt="pochette" />
               <p className="titleAndArtist">
                 {music.titre} / {music.artiste}
@@ -49,7 +49,17 @@ function LastListen({ lastEcoute }) {
 }
 
 LastListen.propTypes = {
-  lastEcoute: PropTypes.string.isRequired,
+  lastEcoute: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
 };
 
 export default LastListen;

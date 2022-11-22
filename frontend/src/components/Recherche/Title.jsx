@@ -39,7 +39,6 @@ Title.propTypes = {
       PropTypes.number,
       PropTypes.string,
     ])
-    // [src, titre, artiste, date, audio]
   ).isRequired,
 };
 

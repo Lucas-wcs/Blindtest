@@ -39,7 +39,17 @@ function User({ myLastListening }) {
 }
 
 User.propTypes = {
-  myLastListening: PropTypes.func.isRequired,
+  myLastListening: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
 };
 
 export default User;
