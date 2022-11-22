@@ -2,10 +2,12 @@ import React from "react";
 /* import Buttons from "@components/btchoice/Buttons";
 import PropTypes from "prop-types"; */
 
-function ButtonOurTests({ name }) {
+function ButtonOurTests({ name , songArray, setOurTest}) {
     return (
       <div className="eachbutton-our-test">
-        <button>{name}</button>
+        <button
+        onClick={()=> setOurTest(songArray)}
+        >{name}</button>
       </div>
     );
   }
