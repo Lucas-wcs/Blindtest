@@ -202,7 +202,7 @@ function App() {
                 anneeChoice={anneeChoice}
                 listChoice={listChoice}
                 setOurTest={setOutTests}
-                newArray={newArray} 
+                /*newArray={newArray}*/ 
               />
             }
           />

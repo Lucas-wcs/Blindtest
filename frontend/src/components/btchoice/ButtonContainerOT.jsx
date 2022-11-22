@@ -1,16 +1,16 @@
 import React from "react";
 import ButtonOurTests from "./ButtonOurTests";
-import PropTypes from "prop-types";
+/* import PropTypes from "prop-types"; */
 
-function ButtonContainerOT({array})
+function ButtonContainerOT({array, setOurTest})
  {
   return (
     <div className="buttons-container">
       <h2 className="title-our-test" id="tests-titles">
         NOS TESTS
-      </h2>
+      </h2> 
       {array && array.map((arr) => (
-        <ButtonOurTests name={arr.name} id={arr.id} />
+        <ButtonOurTests name={arr.name} id={arr.id} setOurTest={setOurTest} songArray={arr.songArray}/>
       ))}
     </div>
   );
