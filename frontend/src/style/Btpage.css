@@ -19,8 +19,6 @@
   height: 550px;
 }
 .btpage body {
-  min-height: 100vh;
-  background-color: var(--bg);
   display: flex;
   justify-content: center;
 }
@@ -118,15 +116,6 @@
 }
 
 @media screen and (min-width: 800px) {
-  body .btpage {
-    background-image: url(../assets/mur.png);
-
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-position: left;
-    display: unset;
-  }
   .btpage .btpagemain {
     display: flex;
     flex-direction: row;

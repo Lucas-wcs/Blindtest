@@ -18,7 +18,7 @@ function Favoris({ fav }) {
           }
 
           return (
-            <div className="musicDivBlock">
+            <div className="musicDivBlock" key={music.id}>
               <img className="imgMusic" src={music.pochette} alt="pochette" />
               <p className="titleAndArtist">
                 {music.titre} / {music.artiste}
@@ -46,7 +46,17 @@ function Favoris({ fav }) {
 }
 
 Favoris.propTypes = {
-  fav: PropTypes.string.isRequired,
+  fav: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
 };
 
 export default Favoris;

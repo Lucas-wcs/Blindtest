@@ -1,26 +1,3 @@
-body {
-  background: linear-gradient(
-      0deg,
-      rgba(146, 102, 61, 0.2),
-      rgba(146, 102, 61, 0.2)
-    ),
-    #ffffff;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-  background-position: left;
-}
-
-.login-wrapper h1 {
-  text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,
-    1px 2px 1px lightgray, 3px 2px 1px gray, 2px 3px 1px lightgray,
-    4px 3px 1px gray, 3px 4px 1px lightgray, 5px 4px 1px gray,
-    4px 5px 1px lightgray, 6px 5px 1px gray, 5px 6px 1px lightgray,
-    7px 6px 1px gray;
-  font-size: 40px;
-  word-spacing: 1rem;
-}
-
 .login-wrapper {
   display: flex;
   flex-direction: column;
@@ -45,6 +22,9 @@ body {
   padding: 15px;
   margin-top: 10%;
   background-color: var(--orange);
+  border: solid black 4px;
+  font-weight: bold;
+  box-shadow: 4px 3px 3px black;
 }
 
 .login-wrapper ::placeholder {
@@ -68,6 +48,14 @@ body {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.login-wrapper .inputButton {
+  border-radius: 45%;
+  padding: 17px;
+  background-color: var(--beige);
+  font-weight: bold;
+  border: solid 3px black;
+}
+
 @media (max-width: 767px) {
   .login-wrapper body {
     background-image: none;
@@ -76,12 +64,15 @@ body {
 
 @media (min-width: 1024px) {
   .login-wrapper h1 {
-    font-size: 50px;
+    font-size: 70px;
+    word-spacing: 20px;
   }
   .login-wrapper .formUser {
-    margin-top: 5%;
+    margin-top: 2%;
     background-color: var(--beige);
-    padding: 5%;
+    padding: 3%;
+    border: solid black 4px;
+    border-radius: 3%;
   }
 
   .login-wrapper .userNameConnexion {
@@ -97,5 +88,9 @@ body {
   .login-wrapper .buttonSend {
     padding: 15px;
     margin-top: 10%;
+  }
+
+  .login-wrapper .inputButton {
+    background-color: white;
   }
 }

@@ -26,6 +26,8 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
   const [AnswerArtiste, setAnswerArtiste] = useState(""); // la bonne réponse
   const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
   const [lastI, setLastI] = useState(false); // pour ne pas avoir 2 fois le meme son de suite
+  const [pochetteAnswer, setPochetteAnswer] = useState("");
+
   const [change, setChange] = useState(false);
 
   useEffect(() => {
@@ -54,21 +56,25 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
       setAnswerArtiste(listChoice[i1].artiste);
       setAudio(listChoice[i1].mp3);
       setLastI(i1);
+      setPochetteAnswer(listChoice[i1].pochette);
     } else if (random === 2) {
       setAnswer(listChoice[i2].titre);
       setAnswerArtiste(listChoice[i2].artiste);
       setAudio(listChoice[i2].mp3);
       setLastI(i2);
+      setPochetteAnswer(listChoice[i2].pochette);
     } else if (random === 3) {
       setAnswer(listChoice[i3].titre);
       setAnswerArtiste(listChoice[i3].artiste);
       setAudio(listChoice[i3].mp3);
       setLastI(i3);
+      setPochetteAnswer(listChoice[i3].pochette);
     } else {
       setAnswer(listChoice[i4].titre);
       setAnswerArtiste(listChoice[i4].artiste);
       setAudio(listChoice[i4].mp3);
       setLastI(i4);
+      setPochetteAnswer(listChoice[i4].pochette);
     }
 
     setAnswers([
@@ -108,6 +114,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
               </span>
             ) : null}
           </span>
+
           <div className="quizz">
             <span className="scoreMobile">
               <ButtonScore score={score} />
@@ -135,6 +142,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
                 setNbTests={setNbTests}
               />
             ) : null}
+
             {secondes <= 0 && nbTests < nbVoulu ? (
               <button type="button" onClick={() => setter()}>
                 <div className="answer-name">
@@ -151,6 +159,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
                 </div>
               </button>
             ) : null}
+
             {nbTests >= nbVoulu ? (
               <button type="button" onClick={() => resetTab()}>
                 <Link to="/choice">
@@ -159,7 +168,6 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
                 </Link>
               </button>
             ) : null}
-            {/* ------------------------------------------ */}
 
             {nbTests < nbVoulu ? (
               <Player
@@ -175,12 +183,23 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         </div>
 
         {/* <div className="answer-resp" /> */}
-        {/* --- */}
+
         {/* affiche reponse */}
+
+        {secondes <= 0 && nbTests < nbVoulu ? (
+          <div className="answer-name">
+            <p>
+              <span className="false-answer">FAUX !</span> La réponse était :
+            </p>
+            <p>{AnswerArtiste} : </p>
+            <p>{answer}</p>
+            <img src={pochetteAnswer} alt={pochetteAnswer} />
+          </div>
+        ) : null}
 
         {/* <div className="answer-resp">
         <img src={pochetteAnswer} alt="pochette" />
-      </div> */}
+        </div> */}
         {/* --- */}
       </div>
     </div>
