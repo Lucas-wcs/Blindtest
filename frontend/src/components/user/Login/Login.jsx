@@ -31,7 +31,7 @@ export default function Login({ setToken }) {
       <form className="formUser" onSubmit={handleSubmit}>
         <label>
           <p className="userNameConnexion">Nom utilisateur</p>
-          <input
+          <input className="inputButton"
             placeholder="Entrez votre nom"
             type="text"
             onChange={(e) => setUserName(e.target.value)}
@@ -39,7 +39,7 @@ export default function Login({ setToken }) {
         </label>
         <label>
           <p className="passwordUserConnexion">Mot de passe</p>
-          <input
+          <input className="inputButton"
             placeholder="Entrez votre mot de passe"
             type="password"
             onChange={(e) => setPassword(e.target.value)}

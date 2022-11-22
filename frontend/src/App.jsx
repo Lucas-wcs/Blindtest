@@ -26,14 +26,23 @@ function App() {
 
   // prise du tableau entier
   useEffect(() => {
+    const source = axios.CancelToken.source();
     axios
-      .get("http://localhost:5000/api/music")
+      .get("http://localhost:5000/api/music", {
+        cancelToken: source.token,
+      })
       .then((response) => response.data)
       .then((data) => {
         setSongList(data);
         setListChoice(data);
         setList(data);
+      })
+      .catch((error) => {
+        console.error(error.message);
       });
+    return () => {
+      source.cancel();
+    };
   }, []);
 
   useEffect(() => {
@@ -178,7 +187,11 @@ function App() {
       <div>
         <Menu setGenreChoice={setGenreChoice} setAnneeChoice={setAnneeChoice} />
         <Routes>
-          <Route exact path="/" element={<Accueil />} />
+          <Route
+            exact
+            path="/"
+            element={list.length !== 0 && <Accueil data={list} />}
+          />
           <Route
             path="/recherche"
             element={
