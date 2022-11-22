@@ -3,13 +3,12 @@ import React, { useEffect } from "react";
 
 function CounterTime({ change, secondes, setSecondes }) {
   const startingSecondes = 20;
-  // 20 en prod
   let interval = 0;
 
   useEffect(() => {
     setSecondes(startingSecondes);
     interval = setInterval(() => {
-      setSecondes((prevState) => prevState - 1);
+      setSecondes((prevState) => prevState - 0.5);
     }, 1000);
 
     return () => clearInterval(interval);

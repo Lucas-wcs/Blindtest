@@ -7,12 +7,14 @@ h3 {
 .rech .playbutton {
   border-radius: 10px;
 }
-.rech .filter{
+.rech .filter {
   border: solid var(--orange) 1px;
   border-radius: 25px;
   background-color: var(white);
 }
-.rech .select_filter #epoque-select, #genre-select, .searchbox{
+.rech .select_filter #epoque-select,
+#genre-select,
+.searchbox {
   border: solid black 1px;
   padding-inline-start: 8px;
   padding-top: 1px;
@@ -158,7 +160,13 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(30deg, rgba(34,48,90,1) 0%, rgba(27,54,134,1) 33%, rgba(40,71,159,1) 68%, rgba(40,79,198,1) 100%);
+  background: linear-gradient(
+    30deg,
+    rgba(34, 48, 90, 1) 0%,
+    rgba(27, 54, 134, 1) 33%,
+    rgba(40, 71, 159, 1) 68%,
+    rgba(40, 79, 198, 1) 100%
+  );
   padding: 1rem;
   margin: 70px;
   border-radius: 5%;
