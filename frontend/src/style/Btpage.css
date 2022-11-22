@@ -16,6 +16,7 @@
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-around;
+  height: 550px;
 }
 .btpage body {
   display: flex;
@@ -99,7 +100,7 @@
 .btpage .counterDesktop {
   display: none;
 }
-.btpage .timerMobile {
+.btpage .timer {
   color: #d7c392;
   display: flex;
   justify-content: center;
@@ -156,8 +157,9 @@
     height: 100px;
     width: 300px;
   }
+
   .btpage .scoreMobile,
-  .btpage .timerMobile {
+  .btpage .timer {
     display: none;
   }
   .btpage .scoreDesktop .buttonScore {
@@ -189,6 +191,11 @@
     height: 80px;
     font-weight: bold;
     font-size: 50px;
+
+    border: 0.5rem outset orange;
+    outline: 0.5rem solid var(--beige);
+    /* box-shadow: 0 0 0 2rem var(--beige); */
+    border-radius: 12px;
   }
   .btpage .counterDesktop {
     display: flex;
@@ -221,11 +228,20 @@
     object-fit: cover;
   }
   .btpage .answer-name {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 30px;
   }
   .btpage .false-answer {
+    font-size: 40px;
     color: red;
     text-decoration: underline;
+    font-weight: bold;
+  }
+  .btpage .next {
+    color: var(--bleu);
+  }
+  .btpage .good-answer {
+    font-size: 40px;
+    font-weight: bold;
+    color: green;
   }
 }

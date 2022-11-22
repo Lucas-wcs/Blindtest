@@ -24,6 +24,7 @@ function Favoris({ fav }) {
                   {music.titre} / {music.artiste}
                 </p>
 
+
                 <div
                   id="favorite"
                   onClick={handleClickFavorite}
@@ -46,7 +47,17 @@ function Favoris({ fav }) {
 }
 
 Favoris.propTypes = {
-  fav: PropTypes.string.isRequired,
+  fav: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
 };
 
 export default Favoris;

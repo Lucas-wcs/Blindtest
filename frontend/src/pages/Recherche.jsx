@@ -30,6 +30,7 @@ function Recherche({ songList, setAnnee, setGenre, setCherche }) {
           <div className="allSong">
             {songList.map((song) => (
               <List
+                key={song.id}
                 artiste={song.artiste}
                 src={song.pochette}
                 titre={song.titre}

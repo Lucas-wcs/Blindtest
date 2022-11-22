@@ -26,7 +26,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
   const [AnswerArtiste, setAnswerArtiste] = useState(""); // la bonne réponse
   const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
   const [lastI, setLastI] = useState(false); // pour ne pas avoir 2 fois le meme son de suite
-  const [pochetteAnswer, setPochetteAnswer] = useState("");
+
   const [change, setChange] = useState(false);
 
   useEffect(() => {
@@ -55,25 +55,21 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
       setAnswerArtiste(listChoice[i1].artiste);
       setAudio(listChoice[i1].mp3);
       setLastI(i1);
-      setPochetteAnswer(listChoice[i1].pochette);
     } else if (random === 2) {
       setAnswer(listChoice[i2].titre);
       setAnswerArtiste(listChoice[i2].artiste);
       setAudio(listChoice[i2].mp3);
       setLastI(i2);
-      setPochetteAnswer(listChoice[i2].pochette);
     } else if (random === 3) {
       setAnswer(listChoice[i3].titre);
       setAnswerArtiste(listChoice[i3].artiste);
       setAudio(listChoice[i3].mp3);
       setLastI(i3);
-      setPochetteAnswer(listChoice[i3].pochette);
     } else {
       setAnswer(listChoice[i4].titre);
       setAnswerArtiste(listChoice[i4].artiste);
       setAudio(listChoice[i4].mp3);
       setLastI(i4);
-      setPochetteAnswer(listChoice[i4].pochette);
     }
 
     setAnswers([
@@ -82,19 +78,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
       listChoice[i3],
       listChoice[i4],
     ]);
-  }, [listChoice, change]);
-
-  const renderTime = ({ remainingTime }) => {
-    if (remainingTime === 0) {
-      return <div className="timer">Final</div>;
-    }
-
-    return (
-      <div className="timer">
-        <div className="value">{remainingTime}</div>
-      </div>
-    );
-  };
+  }, [listChoice, change, CountdownCircleTimer]);
 
   const setter = () => {
     setChange(!change);
@@ -112,22 +96,18 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         <TitleBt />
         <div className="btpagemain">
           <span className="scoreDesktop">
-            <ButtonScore score={score} />
-
-            <div className="timer-wrapper">
-              <CountdownCircleTimer
-                // le faire commencer quand on clique sur next test
-                // le faire arreter quand secondes=0
-                isPlaying
-                duration={5}
-                colors={["#377D22", "#FFEF00", "#ec7e40", "#A30000"]}
-                colorsTime={[15, 10, 5, 0]}
-                onComplete={() => ({ shouldRepeat: false, delay: 0 })}
-                size={250}
-              >
-                {renderTime}
-              </CountdownCircleTimer>
-            </div>
+            <ButtonScore score={score} setScore={setScore} />
+            {nbTests < nbVoulu ? (
+              <span className="count">
+                <CounterTime
+                  change={change}
+                  setCounterStart={setCounterStart}
+                  counterStart={counterStart}
+                  secondes={secondes}
+                  setSecondes={setSecondes}
+                />
+              </span>
+            ) : null}
           </span>
 
           <div className="quizz">
@@ -144,7 +124,6 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
 
             <Pochette pochette={pochette} />
 
-            {/* ------------------------------------------ */}
             {secondes > 0 && nbTests < nbVoulu ? (
               <AnswerContainer
                 array={answers}
@@ -160,7 +139,18 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
 
             {secondes <= 0 && nbTests < nbVoulu ? (
               <button type="button" onClick={() => setter()}>
-                Next Test
+                <div className="answer-name">
+                  <p>
+                    <span className="false-answer">Nope ! </span> <br />
+                    La bonne réponse était :
+                  </p>
+                  <br />
+                  <p className="good-answer">
+                    {AnswerArtiste} : {answer}
+                  </p>
+                  <br />
+                  <p className="next">Click to Next </p>
+                </div>
               </button>
             ) : null}
 
@@ -178,32 +168,10 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
                 className="MusicPlayerBox"
                 src={`http://localhost:5000/mp3/${audio}`}
                 showJumpControls={false}
-                // autoPlay
-                // autoPlayAfterSrcChange
-                // mettre false pour dev et true en prod
               />
             ) : null}
           </div>
         </div>
-
-        {/* <div className="answer-resp" /> */}
-
-        {/* affiche reponse */}
-        {secondes <= 0 && nbTests < nbVoulu ? (
-          <div className="answer-name">
-            <p>
-              <span className="false-answer">FAUX !</span> La réponse était :
-            </p>
-            <p>{AnswerArtiste} : </p>
-            <p>{answer}</p>
-            <img src={pochetteAnswer} alt={pochetteAnswer} />
-          </div>
-        ) : null}
-
-        {/* <div className="answer-resp">
-        <img src={pochetteAnswer} alt="pochette" />
-        </div> */}
-        {/* --- */}
       </div>
     </div>
   );

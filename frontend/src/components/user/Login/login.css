@@ -54,17 +54,21 @@
 }
 
 .login-wrapper .inputButton {
+
   border-radius: 17%;
+
   padding: 17px;
   background-color: var(--beige);
   font-weight: bold;
   border: solid 3px black;
+
 }
 
 @media (min-width: 365px) {
   .login-wrapper h1 {
     word-spacing: 10px;
   }
+
 }
 
 @media (max-width: 767px) {
@@ -107,4 +111,9 @@
     padding: 15px;
     margin-top: 10%;
   }
+
+  .login-wrapper .inputButton {
+    background-color: white;
+  }
+
 }
