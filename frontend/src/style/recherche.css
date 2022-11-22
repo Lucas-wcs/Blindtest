@@ -95,6 +95,7 @@ h3 {
   position: absolute;
   width: 0px;
   height: 0px;
+  box-shadow: unset;
 }
 
 .rech .searchright .rhap_container {
@@ -104,6 +105,8 @@ h3 {
   background-color: transparent;
   width: 0px;
   height: 0px;
+  box-shadow: unset;
+  
 }
 .rech .searchright {
   transition: 0.3s;
