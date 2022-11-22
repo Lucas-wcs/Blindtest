@@ -27,6 +27,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
   const [audio, setAudio] = useState(""); // l'audio de la bonne réponse
   const [lastI, setLastI] = useState(false); // pour ne pas avoir 2 fois le meme son de suite
   const [pochetteAnswer, setPochetteAnswer] = useState("");
+
   const [change, setChange] = useState(false);
 
   useEffect(() => {
@@ -82,19 +83,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
       listChoice[i3],
       listChoice[i4],
     ]);
-  }, [listChoice, change]);
-
-  const renderTime = ({ remainingTime }) => {
-    if (remainingTime === 0) {
-      return <div className="timer">Final</div>;
-    }
-
-    return (
-      <div className="timer">
-        <div className="value">{remainingTime}</div>
-      </div>
-    );
-  };
+  }, [listChoice, change, CountdownCircleTimer]);
 
   const setter = () => {
     setChange(!change);
@@ -112,22 +101,18 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         <TitleBt />
         <div className="btpagemain">
           <span className="scoreDesktop">
-            <ButtonScore score={score} />
-
-            <div className="timer-wrapper">
-              <CountdownCircleTimer
-                // le faire commencer quand on clique sur next test
-                // le faire arreter quand secondes=0
-                isPlaying
-                duration={5}
-                colors={["#377D22", "#FFEF00", "#ec7e40", "#A30000"]}
-                colorsTime={[15, 10, 5, 0]}
-                onComplete={() => ({ shouldRepeat: false, delay: 0 })}
-                size={250}
-              >
-                {renderTime}
-              </CountdownCircleTimer>
-            </div>
+            <ButtonScore score={score} setScore={setScore} />
+            {nbTests < nbVoulu ? (
+              <span className="count">
+                <CounterTime
+                  change={change}
+                  setCounterStart={setCounterStart}
+                  counterStart={counterStart}
+                  secondes={secondes}
+                  setSecondes={setSecondes}
+                />
+              </span>
+            ) : null}
           </span>
 
           <div className="quizz">
@@ -160,7 +145,18 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
 
             {secondes <= 0 && nbTests < nbVoulu ? (
               <button type="button" onClick={() => setter()}>
-                Next Test
+                <div className="answer-name">
+                  <p>
+                    <span className="false-answer">Nope ! </span> <br />
+                    La bonne réponse était :
+                  </p>
+                  <br />
+                  <p className="good-answer">
+                    {AnswerArtiste} : {answer}
+                  </p>
+                  <br />
+                  <p className="next">Click to Next </p>
+                </div>
               </button>
             ) : null}
 
@@ -189,6 +185,7 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
         {/* <div className="answer-resp" /> */}
 
         {/* affiche reponse */}
+
         {secondes <= 0 && nbTests < nbVoulu ? (
           <div className="answer-name">
             <p>
