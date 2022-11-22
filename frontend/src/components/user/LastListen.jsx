@@ -6,9 +6,7 @@ import "react-h5-audio-player/lib/styles.css";
 function LastListen({ lastEcoute }) {
   return (
     <div>
-      <div>
-        <h2 className="lastListenTitle">DERNIERE ECOUTE</h2>
-      </div>
+      <h2 className="lastListenTitle">DERNIERE ECOUTE</h2>
       <div className="aBlock">
         {lastEcoute.map((music) => {
           const [isFavorite, setIsFavorite] = React.useState(

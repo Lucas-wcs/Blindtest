@@ -18,6 +18,11 @@
   margin-bottom: 8%;
 }
 
+.login-wrapper .userNameConnexion,
+.login-wrapper .passwordUserConnexion {
+  text-shadow: 2px 1px 1px black, 0 0 10em orange, 0 0 0.9em white;
+}
+
 .login-wrapper .buttonSend {
   padding: 15px;
   margin-top: 10%;
@@ -48,13 +53,18 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.login-wrapper .inputButton{
-  border-radius: 45%;
+.login-wrapper .inputButton {
+  border-radius: 17%;
   padding: 17px;
   background-color: var(--beige);
   font-weight: bold;
   border: solid 3px black;
-  
+}
+
+@media (min-width: 365px) {
+  .login-wrapper h1 {
+    word-spacing: 10px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -63,17 +73,24 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .login-wrapper h1 {
-    font-size: 70px;
-    word-spacing: 20px;
-  }
+@media (min-width: 768px) {
   .login-wrapper .formUser {
     margin-top: 2%;
     background-color: var(--beige);
     padding: 3%;
     border: solid black 4px;
     border-radius: 3%;
+  }
+
+  .login-wrapper .inputButton {
+    background-color: white;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-wrapper h1 {
+    font-size: 70px;
+    word-spacing: 20px;
   }
 
   .login-wrapper .userNameConnexion {
@@ -89,9 +106,5 @@
   .login-wrapper .buttonSend {
     padding: 15px;
     margin-top: 10%;
-  }
-
-  .login-wrapper .inputButton{
-    background-color: white;
   }
 }
