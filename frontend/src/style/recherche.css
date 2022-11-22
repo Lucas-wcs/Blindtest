@@ -158,7 +158,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bleu);
+  background: linear-gradient(30deg, rgba(34,48,90,1) 0%, rgba(27,54,134,1) 33%, rgba(40,71,159,1) 68%, rgba(40,79,198,1) 100%);
   padding: 1rem;
   margin: 70px;
   border-radius: 5%;
