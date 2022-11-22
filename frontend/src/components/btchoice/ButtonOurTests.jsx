@@ -1,6 +1,5 @@
 import React from "react";
-/* import Buttons from "@components/btchoice/Buttons";
-import PropTypes from "prop-types"; */
+import PropTypes from "prop-types";
 
 function ButtonOurTests({ name , songArray, setOurTest}) {
     return (
@@ -12,19 +11,8 @@ function ButtonOurTests({ name , songArray, setOurTest}) {
     );
   }
 
-/* ButtonOurTest.propTypes = {
-  setChoice: PropTypes.func.isRequired,
-
- 
-  choice: PropTypes.arrayOf(
-    PropTypes.shape([
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    ])
-  ).isRequired,
+ButtonOurTests.propTypes = {
+  name: PropTypes.string.isRequired,
 };
- */
+
 export default ButtonOurTests;

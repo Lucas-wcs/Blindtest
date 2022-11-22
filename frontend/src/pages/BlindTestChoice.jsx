@@ -85,7 +85,6 @@ const kind = [
    },
  ];
 
-
 function BlindTestChoice({
   setGenreChoice,
   genreChoice,
@@ -96,8 +95,6 @@ function BlindTestChoice({
 
 })
 {
-
-  
 
   return (
     <div className="test-selection">
@@ -122,7 +119,7 @@ function BlindTestChoice({
       </div>
 
       <div className="buttons-downside">
-           {listChoice.length >= 4 ? (
+        {listChoice.length >= 5 ? (
           <button type="button" className="send">
             <Link to="/test">GO !</Link>
           </button>

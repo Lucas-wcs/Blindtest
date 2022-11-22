@@ -19,8 +19,6 @@ function App() {
   // -------------------------------------------------------------------------------------
   const [songList, setSongList] = useState([]);
   const [listChoice, setListChoice] = useState([]);
- 
-  
 
   const [annee, setAnnee] = useState("all");
   const [genre, setGenre] = useState("");
@@ -28,18 +26,25 @@ function App() {
 
   // prise du tableau entier
   useEffect(() => {
+    const source = axios.CancelToken.source();
     axios
-      .get("http://localhost:5000/api/music")
+      .get("http://localhost:5000/api/music", {
+        cancelToken: source.token,
+      })
       .then((response) => response.data)
       .then((data) => {
         setSongList(data);
         setListChoice(data);
         setList(data);
+      })
+      .catch((error) => {
+        console.error(error.message);
       });
+    return () => {
+      source.cancel();
+    };
   }, []);
 
-  
-  // filtre X3 cumulatifs
   useEffect(() => {
     if (annee === "all") {
       setSongList(
@@ -155,19 +160,15 @@ function App() {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
- 
 
   function setOutTests (songArray) {
-
     let newArray = [] 
-
     songArray.forEach(element => {
       newArray.push(list.find((music) => music.id==element))
-      
     });
     console.log(newArray);
-
   }
+  
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
@@ -177,7 +178,11 @@ function App() {
       <div>
         <Menu setGenreChoice={setGenreChoice} setAnneeChoice={setAnneeChoice} />
         <Routes>
-          <Route exact path="/" element={<Accueil />} />
+          <Route
+            exact
+            path="/"
+            element={list.length !== 0 && <Accueil data={list} />}
+          />
           <Route
             path="/recherche"
             element={

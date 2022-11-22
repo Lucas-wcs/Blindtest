@@ -16,13 +16,9 @@ function ButtonContainerOT({array, setOurTest})
   );
 }
 
-
 export default ButtonContainerOT;
 
-
-/* ButtonContainer.propTypes = {
-  setChoice: PropTypes.func.isRequired,
-
+ButtonContainerOT.propTypes = {
   array: PropTypes.arrayOf(
     PropTypes.shape([
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -32,15 +28,4 @@ export default ButtonContainerOT;
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ])
   ).isRequired,
-
-  choice: PropTypes.arrayOf(
-    PropTypes.shape([
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    ])
-  ).isRequired,
 };
- */

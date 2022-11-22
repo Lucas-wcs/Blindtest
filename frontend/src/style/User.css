@@ -33,7 +33,7 @@
   vertical-align: middle;
   margin-bottom: 15px;
   border-radius: 10%;
-  border: solid 4px black;
+  border: solid 7px black;
 }
 
 .pageUser .titleAndArtist {
@@ -45,6 +45,7 @@
   margin-top: 13%;
   margin-bottom: 10%;
   color: white;
+  text-shadow: 3px 2px 2px orange, 0 0 2em #24335f, 0 0 0.5em blue;
 }
 
 .pageUser .musicDivBlock {
@@ -55,27 +56,42 @@
 }
 
 .pageUser .MusicPlayerBox {
-  background-color: var(--bleu);
+  background-color: white;
   border-radius: 1rem;
+  border: solid 3px black;
 }
 
-@media (max-width: 767px) {
-  body .pageUser {
-    background-image: none;
-  }
+.pageUser .isFavorite {
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
+  background-size: 100%;
+  display: inline-block;
+}
+
+.pageUser .notFavorite {
+  width: 40px;
+  height: 40px;
+  border: solid 3px black;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
+  background-size: 100%;
+  display: inline-block;
+}
+
+.pageUser .disconnectBtn {
+  padding: 16px;
+  width: 140px;
+  height: 60px;
+  background-color: var(--orange);
+  border-radius: 50%;
+  margin-top: 5%;
+  display: inline-block;
+  border: solid black 4px;
+  font-weight: bold;
+  box-shadow: 4px 3px 3px black;
 }
 
 @media (min-width: 1024px) {
-  body .pageUser {
-    background-image: url(../assets/vinyle.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-position: left;
-    background-size: cover;
-    min-height: 100vh;
-  }
-
   .pageUser .lastListen {
     background: none;
     box-shadow: none;
@@ -85,10 +101,12 @@
   .pageUser .titleName {
     color: black;
     font-size: 105px;
+    word-spacing: 4px;
   }
 
   .pageUser h2 {
     font-size: 40px;
+    text-decoration: underline;
   }
 
   .pageUser .blockMusic {
@@ -115,7 +133,7 @@
 
   .pageUser .favorisTitle {
     margin-bottom: 10%;
-    font-size: 70px;
+    font-size: 55px;
   }
 
   .pageUser .lastListenTitle {
@@ -125,5 +143,13 @@
 
   .pageUser .musicDivBlock {
     border: none;
+  }
+
+  .pageUser .MusicPlayerBox {
+    background-color: var(--beige);
+  }
+
+  .pageUser .disconnectBtn {
+    margin-top: 1%;
   }
 }

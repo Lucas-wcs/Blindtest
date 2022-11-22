@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
+import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -8,10 +9,15 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { BiUserCircle } from "react-icons/bi";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 
-function Menu() {
+function Menu({ setGenreChoice, setAnneeChoice }) {
   const [isActive, setActive] = useState(false);
   const toggle = () => {
     setActive(!isActive);
+  };
+
+  const resetTab = () => {
+    setGenreChoice([]);
+    setAnneeChoice([]);
   };
 
   return (
@@ -26,7 +32,7 @@ function Menu() {
         <FontAwesomeIcon icon={faXmark} className="xmark" />
       </button>
 
-      <Link to="/user">
+      <Link to="/connexion">
         <BiUserCircle id="button-user" />
       </Link>
 
@@ -39,10 +45,12 @@ function Menu() {
             <Link to="/recherche">Rechercher</Link>
           </li>
           <li>
-            <Link to="/choice">Choix Blind Test</Link>
+            <Link to="/choice" onClick={() => resetTab()}>
+              Choix Blind Test
+            </Link>
           </li>
           <li>
-            <Link to="/user">User</Link>
+            <Link to="/connexion">User</Link>
           </li>
         </ul>
 
@@ -53,14 +61,14 @@ function Menu() {
               target="_blank"
               rel="noreferrer"
             >
-              <BsTwitter />
+              <BsFacebook />
             </a>
             <a
               href="https://twitter.com/?lang=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <BsFacebook />
+              <BsTwitter />
             </a>
             <a
               href="https://www.instagram.com/?hl=fr"
@@ -80,5 +88,10 @@ function Menu() {
     </div>
   );
 }
+
+Menu.propTypes = {
+  setGenreChoice: PropTypes.func.isRequired,
+  setAnneeChoice: PropTypes.func.isRequired,
+};
 
 export default Menu;
