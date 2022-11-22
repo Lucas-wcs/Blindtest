@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 
 function Toggle() {
   const [difficulty, setDifficulty] = useState(true);
@@ -22,4 +22,4 @@ function Toggle() {
   );
 }
 
-export default Toggle;
+export default Toggle;*/
