@@ -160,24 +160,15 @@ function App() {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
-  /*   const daddyC = [2,
-    7,
-    10,
-    11,
-    24,
-    36,
-    38,
-    44,
-    55,
-    58]
 
-  const newArray = [] 
-
-  function setOutTests (array) {
-    array.forEach(element => {
+  function setOutTests (songArray) {
+    let newArray = [] 
+    songArray.forEach(element => {
       newArray.push(list.find((music) => music.id==element))
     });
-   */
+    console.log(newArray);
+  }
+  
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
@@ -215,6 +206,8 @@ function App() {
                 setAnneeChoice={setAnneeChoice}
                 anneeChoice={anneeChoice}
                 listChoice={listChoice}
+                setOurTest={setOutTests}
+                /*newArray={newArray}*/ 
               />
             }
           />
@@ -238,7 +231,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
-  );
-}
+  )};
+
 
 export default App;

@@ -54,23 +54,36 @@ const kind = [
   },
 ];
 
-const ourChoice = [
-  {
-    name: "Daddy C.",
-  },
-  {
-    name: "Jeremy",
-  },
-  {
-    name: "Valentin",
-  },
-  {
-    name: "Matthieu",
-  },
-  {
-    name: "Dani",
-  },
-];
+ const ourChoice = [
+   {
+     name: "Daddy C.",
+     songArray : [2,
+      7,
+      10,
+      11,
+      24,
+      36,
+      38,
+      44,
+      55,
+      58]
+   },
+   {
+     name: "Jeremy",
+     songArray : [16,  17, 23, 29,  30, 32, 42, 55, 57, 61]
+   },
+   {
+     name: "Valentin",
+     songArray : [3, 12, 17, 29, 39, 44, 46, 50, 60, 69]
+   },
+   {
+     name: "Matthieu",
+   },
+   {
+     name: "Dani",
+     songArray : [4, 6, 15, 39, 40, 43, 57, 58, 61, 64]
+   },
+ ];
 
 function BlindTestChoice({
   setGenreChoice,
@@ -78,7 +91,11 @@ function BlindTestChoice({
   setAnneeChoice,
   anneeChoice,
   listChoice,
-}) {
+  setOurTest,
+
+})
+{
+
   return (
     <div className="test-selection">
       <Title />
@@ -97,7 +114,7 @@ function BlindTestChoice({
         </div>
 
         <div className="our-tests">
-          <ButtonContainerOT array={ourChoice} />
+          <ButtonContainerOT array={ourChoice} setOurTest={setOurTest}/>
         </div>
       </div>
 
