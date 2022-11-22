@@ -119,7 +119,8 @@
 
 @media screen and (min-width: 800px) {
   body .btpage {
-    background-image: url(../assets/mur.jpg);
+    background-image: url(../assets/mur.png);
+
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;

@@ -2,74 +2,75 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import Title from "@components/btchoice/Title";
-import Toggle from "@components/btchoice/Toggle";
-import ButtonContainer from "@components/btchoice/ButtonContainer";
+import Title from "../components/btchoice/Title";
+
+import ButtonContainer from "../components/btchoice/ButtonContainer";
 import "../style/BlindTestChoice.css";
+import ButtonContainerOT from "../components/btchoice/ButtonContainerOT";
 
 const years = [
   {
     name: "1960 & 1970",
-    id: 1,
+    id: "button1",
   },
   {
     name: 1980,
-    id: 2,
+    id: "button2",
   },
   {
     name: 1990,
-    id: 3,
+    id: "button3",
   },
   {
     name: 2000,
-    id: 4,
+    id: "button4",
   },
   {
     name: 2010,
-    id: 5,
+    id: "button5",
   },
 ];
 
 const kind = [
   {
     name: "rock",
-    id: 6,
+    id: "button6",
   },
   {
     name: "pop",
-    id: 7,
+    id: "button7",
   },
   {
     name: "film",
-    id: 8,
+    id: "button8",
   },
   {
     name: "rap",
-    id: 9,
+    id: "button9",
   },
   {
     name: "electro",
-    id: 10,
+    id: "button10",
   },
 ];
 
-// const ourChoice = [
-//   {
-//     name: "Daddy C.",
-//   },
-//   {
-//     name: "Jeremy",
-//   },
-//   {
-//     name: "Valentin",
-//   },
-//   {
-//     name: "Matthieu",
-//   },
-//   {
-//     name: "Dani",
-//   },
-// ];
+const ourChoice = [
+  {
+    name: "Daddy C.",
+  },
+  {
+    name: "Jeremy",
+  },
+  {
+    name: "Valentin",
+  },
+  {
+    name: "Matthieu",
+  },
+  {
+    name: "Dani",
+  },
+];
 
 function BlindTestChoice({
   setGenreChoice,
@@ -96,13 +97,11 @@ function BlindTestChoice({
         </div>
 
         <div className="our-tests">
-          {/* <ButtonContainer array={ourChoice} /> */}
+          <ButtonContainerOT array={ourChoice} />
         </div>
       </div>
 
       <div className="buttons-downside">
-        <Toggle />
-
         {listChoice.length >= 5 ? (
           <button type="button" className="send">
             <Link to="/test">GO !</Link>
