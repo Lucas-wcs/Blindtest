@@ -24,7 +24,6 @@ function App() {
   const [genre, setGenre] = useState("");
   const [cherche, setCherche] = useState("");
 
-  // prise du tableau entier
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
@@ -85,19 +84,15 @@ function App() {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
-  // si rien => prend tout
-  // est ce que le genre de chaque élément de l'api est inclu dans genreChoice
 
   const [anneeChoice, setAnneeChoice] = useState([]);
   const [genreChoice, setGenreChoice] = useState([]);
 
   useEffect(() => {
     if (anneeChoice.includes("1960 & 1970")) {
-      // houla pas sûr de ça =>
       anneeChoice.push(1960, 1970);
       const index = anneeChoice.indexOf("1960 & 1970");
-      anneeChoice.splice(index, 1); // index à sup , combien à sup
-      // <= houla pas sûr de ça
+      anneeChoice.splice(index, 1);
     }
 
     // si 0/0 ou 6/5 ou 0/5 ou 6/0 => prendre tout
@@ -161,14 +156,16 @@ function App() {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
 
-  function setOutTests (songArray) {
-    let newArray = [] 
-    songArray.forEach(element => {
-      newArray.push(list.find((music) => music.id==element))
+  const [songArray, setSongArray] = useState([]);
+
+  useEffect(() => {
+    const newArray = [];
+    songArray.forEach((element) => {
+      newArray.push(list.find((music) => music.id === element));
     });
-    console.log(newArray);
-  }
-  
+    setListChoice(newArray);
+  }, [songArray]);
+
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
@@ -196,7 +193,6 @@ function App() {
               )
             }
           />
-          {/* ------------------------ */}
           <Route
             path="/choice"
             element={
@@ -206,12 +202,10 @@ function App() {
                 setAnneeChoice={setAnneeChoice}
                 anneeChoice={anneeChoice}
                 listChoice={listChoice}
-                setOurTest={setOutTests}
-                /*newArray={newArray}*/ 
+                setSongArray={setSongArray}
               />
             }
           />
-          {/* --- */}
           <Route
             path="/test"
             element={
@@ -224,14 +218,12 @@ function App() {
               )
             }
           />
-          {/* ------------------------ */}
           <Route path="/user" element={<User myLastListening={list} />} />
-
           <Route path="/connexion" element={<Connexion />} />
         </Routes>
       </div>
     </BrowserRouter>
-  )};
-
+  );
+}
 
 export default App;

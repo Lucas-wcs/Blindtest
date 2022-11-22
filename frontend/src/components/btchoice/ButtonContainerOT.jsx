@@ -1,17 +1,22 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ButtonOurTests from "./ButtonOurTests";
-/* import PropTypes from "prop-types"; */
 
-function ButtonContainerOT({array, setOurTest})
- {
+function ButtonContainerOT({ array, setSongArray }) {
   return (
     <div className="buttons-container">
       <h2 className="title-our-test" id="tests-titles">
         NOS TESTS
-      </h2> 
-      {array && array.map((arr) => (
-        <ButtonOurTests name={arr.name} id={arr.id} setOurTest={setOurTest} songArray={arr.songArray}/>
-      ))}
+      </h2>
+      {array &&
+        array.map((arr) => (
+          <ButtonOurTests
+            name={arr.name}
+            id={arr.id}
+            setSongArray={setSongArray}
+            songArray={arr.songArray}
+          />
+        ))}
     </div>
   );
 }
@@ -28,4 +33,5 @@ ButtonContainerOT.propTypes = {
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ])
   ).isRequired,
+  setSongArray: PropTypes.func.isRequired,
 };
