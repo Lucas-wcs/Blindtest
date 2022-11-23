@@ -8,15 +8,17 @@ function ButtonContainerOT({ array, setSongArray }) {
       <h2 className="title-our-test" id="tests-titles">
         NOS TESTS
       </h2>
-      {array &&
-        array.map((arr) => (
-          <ButtonOurTests
-            name={arr.name}
-            id={arr.id}
-            setSongArray={setSongArray}
-            songArray={arr.songArray}
-          />
-        ))}
+      <div className="our-buttons">
+        {array &&
+          array.map((arr) => (
+            <ButtonOurTests
+              name={arr.name}
+              id={arr.id}
+              setSongArray={setSongArray}
+              songArray={arr.songArray}
+            />
+          ))}
+      </div>
     </div>
   );
 }

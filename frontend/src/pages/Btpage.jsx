@@ -157,8 +157,10 @@ function Btpage({ listChoice, setGenreChoice, setAnneeChoice }) {
             {nbTests >= nbVoulu ? (
               <button type="button" onClick={() => resetTab()}>
                 <Link to="/choice">
-                  <p>{`Your Score : ${score} / ${nbVoulu}`}</p>
-                  <p>Play Again?</p>
+                  <div className="forfull">
+                    <p>{`Your Score : ${score} / ${nbVoulu}`}</p>
+                    <p>Play Again?</p>
+                  </div>
                 </Link>
               </button>
             ) : null}
