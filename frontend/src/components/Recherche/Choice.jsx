@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Choice({ update, update2 }) {
+function Choice({ setAnnee, setGenre, setCherche }) {
   return (
     <div>
       <div className="buttons">
@@ -9,22 +9,23 @@ function Choice({ update, update2 }) {
           <select
             name="Epoque"
             id="epoque-select"
-            onChange={(event) => update(event.target.value)}
+            onChange={(event) => setAnnee(event.target.value)}
           >
-            <option value="all">All</option>
-            <option value="2011">Actuel</option>
-            <option value="2000">Annee 2000-2010</option>
+            <option value="all">Toutes les époques</option>
+            <option value="2010">Annee 2010-aujourd'hui</option>
+            <option value="2000">Annee 2000-2009</option>
             <option value="1990">Annee 1990-1999</option>
             <option value="1980">Annee 1980-1989</option>
-            <option value="1960">Annee 1960-1979</option>
+            <option value="1970">Annee 1970-1979</option>
+            <option value="1960">Annee 1960-1969</option>
           </select>
 
           <select
             name="Genre"
             id="genre-select"
-            onChange={(event) => update2(event.target.value)}
+            onChange={(event) => setGenre(event.target.value)}
           >
-            <option value="all">All</option>
+            <option value="">Tous les genres</option>
             <option value="rap">Rap</option>
             <option value="pop">Pop</option>
             <option value="rock">Rock</option>
@@ -36,25 +37,24 @@ function Choice({ update, update2 }) {
         <input
           type="text"
           className="searchbox"
-          name="name"
-          required
-          size="20"
           placeholder="Recherche par titre"
+          onChange={(event) => setCherche(event.target.value)}
         />
       </div>
 
-      <button
+      {/* <button
         type="button"
         className="go"
         onClick={(event) => update(event.target.value)}
       >
         GO !
-      </button>
+      </button> */}
     </div>
   );
 }
 Choice.propTypes = {
-  update: PropTypes.string.isRequired,
-  update2: PropTypes.string.isRequired,
+  setAnnee: PropTypes.func.isRequired,
+  setGenre: PropTypes.func.isRequired,
+  setCherche: PropTypes.func.isRequired,
 };
 export default Choice;

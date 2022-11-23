@@ -1,16 +1,24 @@
+.btpage .master {
+  background-image: url(../assets/mur.jpg);
+  position: absolute;
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .btpage .titleBt h1 {
   padding-top: 0;
+  font-size: 50px;
 }
 .btpage .btpagemain {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-around;
-  margin: 30px;
+  height: 550px;
 }
 .btpage body {
-  min-height: 100vh;
-  background-color: var(--bg);
   display: flex;
   justify-content: center;
 }
@@ -25,7 +33,7 @@
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  box-shadow: -5px 5px 0px 0px #ec7e40;
+  box-shadow: -5px 5px 0px 0px #cb5f20;
 }
 
 .btpage .quizz img {
@@ -36,6 +44,8 @@
   font-size: x-large;
   margin: 10px;
   background-color: var(--beige);
+  border: #cb5f20 3px solid;
+  border-radius: 20px;
 }
 .btpage .points {
   background-color: var(--bleu);
@@ -45,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: -5px 5px 0px 0px #ec7e40;
+  box-shadow: -5px 5px 0px 0px #cb5f20;
 }
 .btpage .points button {
   font-size: 60px;
@@ -67,62 +77,176 @@
 .btpage .answerButton button {
   width: 90%;
 }
-.btpage .buttonScore {
+.btpage .buttonScore,
+.btpage .timer {
   height: max-content;
+  outline: 0.5rem solid var(--beige);
+  border-radius: 12px;
+  color: #d7c392;
+  font-weight: bold;
+  font-size: large;
+  width: 150px;
+  padding: 5px;
 }
 .btpage .scoreMobile {
   height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 16px;
 }
-.btpage .scoreDesktop {
+.btpage .scoreDesktop,
+.btpage .counterDesktop {
   display: none;
+}
+.btpage .timer {
+  color: #d7c392;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 150px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.btpage .forfull {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 800px) {
-  body .btpage {
-    background-image: url(../assets/vinyle.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-position: left;
-    display: unset;
+  .btpage .btpagemain {
+    display: flex;
+    flex-direction: row;
   }
 
   .btpage .quizz {
     float: right;
-    width: 500px;
+    width: 700px;
     background-color: unset;
     box-shadow: none;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 15px;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-column-gap: 0px;
     grid-row-gap: 10px;
+    margin: 0;
+    padding-right: 10px;
   }
+
   .btpage .scoreDesktop {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+    padding: 2rem;
   }
   .btpage .quizz img {
-    width: 80%;
-    border: #d7c392 solid 5px;
+    width: 400px;
+    border: #cb5f20 solid 5px;
     margin-top: 15px;
+    outline: 0.5rem solid var(--beige);
   }
+
+  .btpage button {
+    cursor: pointer;
+  }
+
   .btpage .answerButton button {
-    width: 100%;
+    height: 100px;
+    width: 300px;
   }
-  .btpage .scoreMobile {
+
+  .btpage .scoreMobile,
+  .btpage .timer {
     display: none;
   }
-  .btpage .buttonScore {
-    margin-left: 16px;
-  }
-  .btpage .buttonScore button {
-    font-size: 50px;
+  .btpage .scoreDesktop .buttonScore {
+    width: 250px;
+    height: 250px;
+    outline: 0.5rem solid var(--beige);
+    border-radius: 50%;
+    color: var(--bleu);
+    font-weight: bold;
+    font-size: 40px;
+    padding: 5px;
+    border: 0.5rem outset orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .btpage .timeout {
     font-size: x-large;
   }
   .btpage .timer {
+    color: var(--bleu);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    margin: 2rem;
+    padding: 1rem;
+    width: 350px;
+    height: 80px;
+    font-weight: bold;
     font-size: 50px;
+
+    border: 0.5rem outset orange;
+    outline: 0.5rem solid var(--beige);
+    border-radius: 12px;
+  }
+  .btpage .counterDesktop {
+    display: flex;
+    justify-content: center;
+  }
+  .btpage .time-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+  .btpage .answer-resp {
+    margin-top: -50px;
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  .btpage .rhap_container {
+    display: none;
+    background-color: transparent;
+    border: var(--bg) 0.5px solid;
+  }
+  .btpage .rhap_container button {
+    color: var(--bleu);
+  }
+  .btpage .answer-container {
+    padding: 10px;
+  }
+  .btpage .answer-resp img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .btpage .answer-name {
+    font-size: 30px;
+  }
+  .btpage .false-answer {
+    font-size: 40px;
     color: red;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  .btpage .next {
+    color: var(--bleu);
+  }
+  .btpage .good-answer {
+    font-size: 40px;
+    font-weight: bold;
+    color: green;
   }
 }
