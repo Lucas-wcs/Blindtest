@@ -54,7 +54,8 @@
 }
 
 .login-wrapper .inputButton {
-  border-radius: 20px;
+
+  border-radius: 25px;
 
   padding: 17px;
   background-color: var(--beige);
