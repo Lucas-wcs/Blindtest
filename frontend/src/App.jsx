@@ -14,9 +14,6 @@ import "./App.css";
 function App() {
   const [list, setList] = useState([]);
 
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
   const [songList, setSongList] = useState([]);
   const [listChoice, setListChoice] = useState([]);
 
@@ -81,10 +78,6 @@ function App() {
     }
   }, [annee, genre, cherche]);
 
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
-
   const [anneeChoice, setAnneeChoice] = useState([]);
   const [genreChoice, setGenreChoice] = useState([]);
 
@@ -95,7 +88,6 @@ function App() {
       anneeChoice.splice(index, 1);
     }
 
-    // si 0/0 ou 6/5 ou 0/5 ou 6/0 => prendre tout
     if (
       (anneeChoice.length === 0 && genreChoice.length === 0) ||
       (anneeChoice.length === 6 && genreChoice.length === 5) ||
@@ -103,10 +95,7 @@ function App() {
       (anneeChoice.length === 6 && genreChoice.length === 0)
     ) {
       setListChoice(list);
-    }
-
-    // si toutes les années et choix des genres (entre 1 et 4)
-    else if (anneeChoice.length === 0 || anneeChoice.length === 6) {
+    } else if (anneeChoice.length === 0 || anneeChoice.length === 6) {
       setListChoice(
         list.filter(
           (each) =>
@@ -116,9 +105,7 @@ function App() {
             each.genre.includes(genreChoice[3])
         )
       );
-    }
-    // si tous les genres et choix des années (entre 1 et 5)
-    else if (genreChoice.length === 0 || genreChoice.length === 5) {
+    } else if (genreChoice.length === 0 || genreChoice.length === 5) {
       setListChoice(
         list.filter(
           (each) =>
@@ -129,10 +116,7 @@ function App() {
             (each.date >= anneeChoice[4] && each.date <= anneeChoice[4] + 9)
         )
       );
-    }
-
-    // si genres (entre 1 et 4) et années (entre 1 et 5)
-    else {
+    } else {
       setListChoice(
         list.filter(
           (each) =>
@@ -152,9 +136,6 @@ function App() {
       );
     }
   }, [anneeChoice, genreChoice, list]);
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
 
   const [songArray, setSongArray] = useState([]);
 
@@ -165,10 +146,6 @@ function App() {
     });
     setListChoice(newArray);
   }, [songArray]);
-
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
 
   return (
     <BrowserRouter>

@@ -728,7 +728,7 @@ const api = [
     artiste: "Michael Jackson",
     date: 1987,
     genre: "pop",
-    mp3: ".mp3",
+    mp3: "smooth_criminal.mp3",
     isFavorite: false,
   },
 ];

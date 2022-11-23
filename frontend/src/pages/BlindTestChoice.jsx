@@ -110,7 +110,9 @@ function BlindTestChoice({
       <div className="buttons-downside">
         {listChoice.length >= 5 ? (
           <button type="button" className="send">
-            <Link to="/test">GO !</Link>
+            <Link to="/test">
+              <p className="forfull">GO !</p>
+            </Link>
           </button>
         ) : null}
       </div>

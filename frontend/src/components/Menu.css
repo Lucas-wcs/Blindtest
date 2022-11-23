@@ -86,7 +86,6 @@
   transition: 0.3s ease;
 
   left: -220px;
-  /* suivant click du bouton */
 
   display: flex;
   flex-direction: column;
@@ -108,7 +107,6 @@
 
 #principale-menu nav li {
   line-height: 70px;
-  /* permet d'avoir la hauteur voulu + aligner le texte */
   font-weight: 600;
   border-bottom: 1px solid black;
 }
@@ -117,7 +115,6 @@
   position: relative;
   font-size: 1.5rem;
   display: block;
-  /* prend toute la largeur et hauteur */
   transition: ease-in 0.3s;
 }
 
