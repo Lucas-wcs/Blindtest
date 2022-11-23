@@ -42,7 +42,7 @@
 
 .login-wrapper button {
   border: solid 2px black;
-  border-radius: 12%;
+  border-radius: 20px;
   transition-duration: 0.4s;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .login-wrapper .inputButton {
-  border-radius: 17%;
+  border-radius: 20px;
 
   padding: 17px;
   background-color: var(--beige);
@@ -80,7 +80,7 @@
     background-color: var(--beige);
     padding: 3%;
     border: solid black 4px;
-    border-radius: 3%;
+    border-radius: 20px;
   }
 
   .login-wrapper .inputButton {
