@@ -41,14 +41,6 @@ function Choice({ setAnnee, setGenre, setCherche }) {
           onChange={(event) => setCherche(event.target.value)}
         />
       </div>
-
-      {/* <button
-        type="button"
-        className="go"
-        onClick={(event) => update(event.target.value)}
-      >
-        GO !
-      </button> */}
     </div>
   );
 }

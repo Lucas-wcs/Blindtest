@@ -21,6 +21,11 @@
   margin-top: 20px;
   font-family: var(--ffTexte);
   text-align: center;
+  background-color: var(--beige);
+  box-shadow: var(--orange) -7px 7px;
+  width: 80%;
+  justify-content: center;
+  margin-left: 10%;
 }
 
 .pageUser .imgMusic {
@@ -35,7 +40,7 @@
 .pageUser .titleAndArtist {
   margin-bottom: 15px;
   font-size: 16px;
-  text-decoration: underline;
+  text-shadow: 5px 3px 3px white, 0 0 4em #24335f, 0 0 0.1em blue;
 }
 
 .pageUser .favorisTitle,
@@ -99,6 +104,14 @@
   .pageUser .lastListen {
     background: none;
     box-shadow: none;
+    width: 78%;
+  }
+
+  .pageUser .pieceOfMusic {
+    background: none;
+    box-shadow: none;
+    width: 36%;
+    margin-right: 10%;
   }
 
   .pageUser .titleName {
@@ -128,10 +141,6 @@
   .pageUser .titleAndLast {
     display: inline-block;
     margin-left: 10%;
-  }
-
-  .pageUser .pieceOfMusic {
-    margin-left: 15%;
   }
 
   .pageUser .favorisTitle {

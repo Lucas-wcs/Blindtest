@@ -43,13 +43,3 @@ Title.propTypes = {
 };
 
 export default Title;
-
-// arrayOf(
-//   PropTypes.shape([
-//     PropTypes.object,
-//     PropTypes.string,
-//     PropTypes.string,
-//     PropTypes.number,
-//     PropTypes.string,
-//   ])
-// )

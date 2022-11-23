@@ -30,7 +30,6 @@ function Accueil({ data }) {
       ilast = i;
       i2last = i2;
 
-      // i et i2 => jamais les memes et pas ceux d'avant
       setPochette(data[i].pochette);
       setPochette2(data[i2].pochette);
     }, 3000);

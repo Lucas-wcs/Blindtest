@@ -4,14 +4,6 @@ import Player from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
 function List({ src, titre, date, audio, artiste, setBigAlbum }) {
-  // {lastEcoute.map((music) => {
-  //   const [isFavorite, setIsFavorite] = React.useState(
-  //     lastEcoute.isFavorite
-  //   );
-
-  //   function handleClickFavorite() {
-  //     setIsFavorite(!isFavorite);
-  //   }
   return (
     <div className="searchright">
       <Player
@@ -37,13 +29,6 @@ function List({ src, titre, date, audio, artiste, setBigAlbum }) {
       <h3>{titre}</h3>
       <p>{artiste}</p>
       <p>{date}</p>
-      {/* <div
-                id="favorite"
-                onClick={handleClickFavorite}
-                className={isFavorite ? "isFavorite" : "notFavorite"}
-                onKeyDown={handleClickFavorite}
-                role="presentation"
-              /> */}
     </div>
   );
 }
