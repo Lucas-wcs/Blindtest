@@ -6,40 +6,41 @@ import "react-h5-audio-player/lib/styles.css";
 function Favoris({ fav }) {
   return (
     <div>
-      <div>
-        <h2 className="favorisTitle">VOS FAVORIS</h2>
-      </div>
+      <h2 className="favorisTitle">VOS FAVORIS</h2>
       <div className="aBlock">
-        {fav.map((music) => {
-          const [isFavorite, setIsFavorite] = React.useState(fav.isFavorite);
+        {fav
+          .filter((e) => e.isFavorite === true)
+          .map((music) => {
+            const [isFavorite, setIsFavorite] = React.useState(fav.isFavorite);
 
-          function handleClickFavorite() {
-            setIsFavorite(!isFavorite);
-          }
+            function handleClickFavorite() {
+              setIsFavorite(!isFavorite);
+            }
 
-          return (
-            <div className="musicDivBlock" key={music.id}>
-              <img className="imgMusic" src={music.pochette} alt="pochette" />
-              <p className="titleAndArtist">
-                {music.titre} / {music.artiste}
-              </p>
+            return (
+              <div className="musicDivBlock">
+                <img className="imgMusic" src={music.pochette} alt="pochette" />
+                <p className="titleAndArtist">
+                  {music.titre} / {music.artiste}
+                </p>
 
-              <div
-                id="favorite"
-                onClick={handleClickFavorite}
-                className={isFavorite ? "isFavorite" : "notFavorite"}
-                onKeyDown={handleClickFavorite}
-                role="presentation"
-              />
 
-              <Player
-                className="MusicPlayerBox"
-                src={`http://localhost:5000/mp3/${music.mp3}`}
-                showJumpControls={false}
-              />
-            </div>
-          );
-        })}
+                <div
+                  id="favorite"
+                  onClick={handleClickFavorite}
+                  className={isFavorite ? "notFavorite" : "isFavorite"}
+                  onKeyDown={handleClickFavorite}
+                  role="presentation"
+                />
+
+                <Player
+                  className="MusicPlayerBox"
+                  src={`http://localhost:5000/mp3/${music.mp3}`}
+                  showJumpControls={false}
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

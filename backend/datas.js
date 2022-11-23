@@ -140,7 +140,7 @@ const api = [
     date: 2014,
     genre: "electro",
     mp3: "instant_crush.mp3",
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 14,
@@ -227,7 +227,7 @@ const api = [
     date: 1994,
     genre: "film",
     mp3: "you_never_can_tell.mp3",
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 22,
@@ -268,7 +268,7 @@ const api = [
     date: 1994,
     genre: "film",
     mp3: "histoire_de_la_vie.mp3",
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 26,
@@ -290,7 +290,7 @@ const api = [
     date: 1986,
     genre: "film",
     mp3: "full_monty.mp3",
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 28,
@@ -312,7 +312,7 @@ const api = [
     date: 2008,
     genre: "pop",
     mp3: "so_what.mp3",
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 30,
@@ -367,7 +367,7 @@ const api = [
     date: 1999,
     genre: "pop",
     mp3: "crazy.mp3",
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 35,
@@ -422,7 +422,7 @@ const api = [
     date: 1969,
     genre: "pop",
     mp3: "come_together.mp3",
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 40,
