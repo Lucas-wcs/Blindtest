@@ -1,107 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import Choice from "./Choice";
 
-function Choice() {
-  return (
-    <div>
-      <div className="buttons">
-        <fieldset className="choice">
-          <legend>Genre</legend>
+function Filter({ setAnnee, setGenre, setCherche }) {
+  const [openFilter, setOpenFilter] = useState(false);
+  function openFilters() {
+    setOpenFilter(!openFilter);
+  }
 
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Rock" />
-            <label htmlFor="huey"> Rock</label>
-          </div>
+  const [isOpen, setIsOpen] = useState(false);
+  function handleChange() {
+    setIsOpen(!isOpen);
+  }
 
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Pop" />
-            <label htmlFor="dewey"> Pop</label>
-          </div>
-
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Film" />
-            <label htmlFor="louie"> Film</label>
-          </div>
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Rap" />
-            <label htmlFor="louie"> Rap</label>
-          </div>
-          <div>
-            <input type="checkbox" id="check" name="drone" value="Electro" />
-            <label htmlFor="louie"> Electro</label>
-          </div>
-        </fieldset>
-
-        <fieldset className="choice">
-          <legend>Epoque</legend>
-
-          <div>
-            <input type="checkbox" id="check" name="drone" value="actuel" />
-            <label htmlFor="huey"> Actuel</label>
-          </div>
-
-          <div>
-            <input
-              type="checkbox"
-              id="check"
-              name="drone"
-              value="annee_2000-2010"
-            />
-            <label htmlFor="dewey"> Annee 2000-2010</label>
-          </div>
-
-          <div>
-            <input
-              type="checkbox"
-              id="check"
-              name="drone"
-              value="annee_1990-2000"
-            />
-            <label htmlFor="louie"> Annee 1990-2000</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="check"
-              name="drone"
-              value="annee_1960-2000"
-            />
-            <label htmlFor="louie"> Annee 1960-2000</label>
-          </div>
-        </fieldset>
-        <input
-          type="text"
-          className="searchbox"
-          name="name"
-          required
-          size="20"
-          placeholder="Recherche par titre"
-        />
-      </div>
-
-      <button type="button" className="go">
-        GO !
-      </button>
-    </div>
-  );
-}
-
-function Filter() {
+  function changement() {
+    handleChange();
+    openFilters();
+  }
   return (
     <div>
       <h1>
-        Re<span>c</span>herchez <span>d</span>es tit<span>r</span>es
+        Re<span>c</span>hercher <span>d</span>es tit<span>r</span>es
       </h1>
-      <button
-        type="button"
-        className="filter"
-        onClick={() => {
-          Choice();
-        }}
-      >
-        Ouvrir les filtres
+      <button type="button" className="filter" onClick={changement}>
+        {!isOpen ? "Ouvrir" : "Fermer"} les filtres
       </button>
+      {openFilter && (
+        <Choice
+          setAnnee={setAnnee}
+          setGenre={setGenre}
+          setCherche={setCherche}
+        />
+      )}
     </div>
   );
 }
-
+Filter.propTypes = {
+  setAnnee: PropTypes.func.isRequired,
+  setGenre: PropTypes.func.isRequired,
+  setCherche: PropTypes.func.isRequired,
+};
 export default Filter;

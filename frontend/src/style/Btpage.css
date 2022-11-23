@@ -1,69 +1,53 @@
-*,
-*::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --blanc: white;
-  --noir: black;
-  --orange: #ec7e40;
-  --bleu: #24335f;
-  --beige: #d7c392;
-  --bg: rgba(146, 102, 61, 0.2);
-
-  --ffTitre: "Monoton", cursive;
-  --ffTexte: sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-body {
-  color: var(--noir);
-  font-family: var(--ffTexte);
-}
-
-body {
+.btpage .master {
+  background-image: url(../assets/mur.jpg);
+  position: absolute;
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover;
   min-height: 100vh;
-  background-color: var(--bg);
+}
+
+.btpage .titleBt h1 {
+  padding-top: 0;
+  font-size: 50px;
+}
+.btpage .btpagemain {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  height: 550px;
+}
+.btpage body {
   display: flex;
   justify-content: center;
 }
 
-.quizz {
+.btpage .quizz {
   background-color: var(--bleu);
   width: 80vw;
-  height: 500px;
+  height: 550px;
   margin: 30px;
   justify-content: space-around;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  box-shadow: -5px 5px 0px 0px #ec7e40;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  box-shadow: -5px 5px 0px 0px #cb5f20;
 }
-.quizz img {
-  width: 150px;
+
+.btpage .quizz img {
+  margin: 0 auto;
+  width: 250px;
 }
-.quizz button {
+.btpage .quizz button {
   font-size: x-large;
   margin: 10px;
   background-color: var(--beige);
+  border: #cb5f20 3px solid;
+  border-radius: 20px;
 }
-.points {
+.btpage .points {
   background-color: var(--bleu);
   width: 80vw;
   height: 250px;
@@ -71,44 +55,198 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: -5px 5px 0px 0px #ec7e40;
+  box-shadow: -5px 5px 0px 0px #cb5f20;
 }
-.points button {
+.btpage .points button {
   font-size: 60px;
   background-color: var(--beige);
 }
-.buttons {
+.btpage .buttonScore button {
+  font-size: 30px;
+  background-color: var(--beige);
+}
+.btpage .buttons {
   margin-bottom: 30px;
 }
+.btpage .answer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+}
+.btpage .answerButton button {
+  width: 90%;
+}
+.btpage .buttonScore,
+.btpage .timer {
+  height: max-content;
+  outline: 0.5rem solid var(--beige);
+  border-radius: 12px;
+  color: #d7c392;
+  font-weight: bold;
+  font-size: large;
+  width: 150px;
+  padding: 5px;
+}
+.btpage .scoreMobile {
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 16px;
+}
+.btpage .scoreDesktop,
+.btpage .counterDesktop {
+  display: none;
+}
+.btpage .timer {
+  color: #d7c392;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 150px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.btpage .forfull {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (min-width: 800px) {
-  html {
-    background-image: url(../assets/vinyle.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-position: left;
-  }
-  .quizzpoints {
+  .btpage .btpagemain {
     display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 90px;
-  }
-  .quizz,
-  .points {
-    box-shadow: none;
-    background-color: unset;
-    width: 300px;
-    display: flex;
+    flex-direction: row;
   }
 
-  .quizz img {
-    width: 350px;
+  .btpage .quizz {
+    float: right;
+    width: 700px;
+    background-color: unset;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    margin: 0;
+    padding-right: 10px;
   }
-  .points {
+
+  .btpage .scoreDesktop {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+    padding: 2rem;
+  }
+  .btpage .quizz img {
+    width: 400px;
+    border: #cb5f20 solid 5px;
+    margin-top: 15px;
+    outline: 0.5rem solid var(--beige);
+  }
+
+  .btpage button {
+    cursor: pointer;
+  }
+
+  .btpage .answerButton button {
+    height: 100px;
     width: 300px;
   }
-  .points button {
+
+  .btpage .scoreMobile,
+  .btpage .timer {
+    display: none;
+  }
+  .btpage .scoreDesktop .buttonScore {
+    width: 250px;
+    height: 250px;
+    outline: 0.5rem solid var(--beige);
+    border-radius: 50%;
+    color: var(--bleu);
+    font-weight: bold;
     font-size: 40px;
+    padding: 5px;
+    border: 0.5rem outset orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btpage .timeout {
+    font-size: x-large;
+  }
+  .btpage .timer {
+    color: var(--bleu);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    margin: 2rem;
+    padding: 1rem;
+    width: 350px;
+    height: 80px;
+    font-weight: bold;
+    font-size: 50px;
+
+    border: 0.5rem outset orange;
+    outline: 0.5rem solid var(--beige);
+    border-radius: 12px;
+  }
+  .btpage .counterDesktop {
+    display: flex;
+    justify-content: center;
+  }
+  .btpage .time-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+  .btpage .answer-resp {
+    margin-top: -50px;
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  .btpage .rhap_container {
+    display: none;
+    background-color: transparent;
+    border: var(--bg) 0.5px solid;
+  }
+  .btpage .rhap_container button {
+    color: var(--bleu);
+  }
+  .btpage .answer-container {
+    padding: 10px;
+  }
+  .btpage .answer-resp img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .btpage .answer-name {
+    font-size: 30px;
+  }
+  .btpage .false-answer {
+    font-size: 40px;
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  .btpage .next {
+    color: var(--bleu);
+  }
+  .btpage .good-answer {
+    font-size: 40px;
+    font-weight: bold;
+    color: green;
   }
 }

@@ -1,18 +1,44 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Player from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 function LastListen({ lastEcoute }) {
   return (
     <div>
-      <div>
-        <h2>DERNIERE ECOUTE</h2>
-      </div>
-      <div>
+      <h2 className="lastListenTitle">DERNIERE ECOUTE</h2>
+      <div className="aBlock">
         {lastEcoute.map((music) => {
+          const [isFavorite, setIsFavorite] = React.useState(
+            lastEcoute.isFavorite
+          );
+
+          function handleClickFavorite() {
+            setIsFavorite(!isFavorite);
+          }
+
           return (
-            <a href="http://localhost:3000/">
-              {music.title} || {music.artist} || {music.pieceToListen} <br />
-            </a>
+            <div className="musicDivBlock" key={music.id}>
+              <img className="imgMusic" src={music.pochette} alt="pochette" />
+              <p className="titleAndArtist">
+                {music.titre} / {music.artiste}
+              </p>
+
+              <div
+                id="favorite"
+                onClick={handleClickFavorite}
+                className={isFavorite ? "isFavorite" : "notFavorite"}
+                onKeyDown={handleClickFavorite}
+                role="presentation"
+              />
+
+              <Player
+                className="MusicPlayerBox"
+                src={`http://localhost:5000/mp3/${music.mp3}`}
+                showJumpControls={false}
+                autoPlayAfterSrcChange={false}
+              />
+            </div>
           );
         })}
       </div>
@@ -21,7 +47,17 @@ function LastListen({ lastEcoute }) {
 }
 
 LastListen.propTypes = {
-  lastEcoute: PropTypes.string.isRequired,
+  lastEcoute: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
 };
 
 export default LastListen;

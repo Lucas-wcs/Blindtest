@@ -1,0 +1,185 @@
+.test-selection .buttons-container {
+  background-color: var(--bleu);
+  margin: 5% 10%;
+  box-shadow: -5px 5px 0 var(--orange);
+  padding-bottom: 3rem;
+}
+
+.test-selection span {
+  color: var(--orange);
+}
+
+.test-selection .title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: var(--ffTitre);
+}
+
+.test-selection .tests-titles,
+.test-selection .title-our-test {
+  color: var(--blanc);
+  font-size: 2rem;
+  font-family: var(--ffTexte);
+  padding: 4%;
+}
+
+.test-selection .eachbutton:checked {
+  width: 80%;
+  height: 4.5rem;
+  margin: 2% auto;
+  background-color: var();
+  text-align: center;
+  line-height: 3.5rem;
+}
+
+.test-selection .eachbutton {
+  width: 80%;
+  height: 4.5rem;
+  margin: 0% auto;
+  text-align: center;
+  line-height: 4.5rem;
+}
+
+.test-selection .eachbutton-our-test button {
+  width: 80%;
+  height: 4.5rem;
+  margin: 1% auto;
+  text-align: center;
+  line-height: 4.5rem;
+  background-color: var(--beige);
+  font-size: 1.6rem;
+}
+
+.test-selection .eachbutton input {
+  display: none;
+}
+
+.test-selection .eachbutton label {
+  display: block;
+  background-color: var(--beige);
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin: 2% 0;
+}
+
+.test-selection .eachbutton input:checked + label {
+  background-color: var(--orange);
+}
+
+.test-selection .send {
+  width: 60%;
+  height: 4.5rem;
+  background-color: var(--orange);
+  font-size: 1.8rem;
+  border: solid;
+  margin: 0 auto 2rem;
+}
+
+.test-selection .forfull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .test-selection .title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: var(--ffTitre);
+  }
+
+  .test-selection .music-filter {
+    display: flex;
+    width: 60%;
+  }
+
+  .test-selection .buttons-container {
+    background-color: unset;
+    margin: 0;
+    box-shadow: unset;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .test-selection .section {
+    display: flex;
+    justify-content: space-around;
+    clear: both;
+    height: 100%;
+    margin-left: 4rem;
+  }
+
+  .test-selection .eachbutton-our-test button {
+    width: 80%;
+    height: 4rem;
+    margin: auto;
+    text-align: center;
+    background-color: var(--beige);
+    font-size: 1.6rem;
+    line-height: 1rem;
+  }
+
+  .our-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .test-selection .eachbutton label {
+    height: 60%;
+    background-color: var(--beige);
+    box-shadow: -5px 5px 0 var(--bleu);
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    line-height: 3rem;
+    width: 80%;
+    margin: 0;
+  }
+
+  .test-selection .eachbutton input:checked + label {
+    background-color: var(--orange);
+  }
+
+  .test-selection #button1 + label,
+  .test-selection #button6 + label,
+  .test-selection #button5 + label,
+  .test-selection #button10 + label {
+    margin-left: 15%;
+  }
+
+  .test-selection #button2 + label,
+  .test-selection #button4 + label,
+  .test-selection #button7 + label,
+  .test-selection #button9 + label {
+    margin-left: 25%;
+  }
+
+  .test-selection #button3 + label,
+  .test-selection #button8 + label {
+    margin-left: 35%;
+  }
+
+  .test-selection .tests-titles {
+    color: var(--noir);
+    font-size: 2rem;
+    font-family: var(--ffTexte);
+    margin: 1%;
+  }
+
+  .test-selection .our-tests {
+    background-color: var(--bleu);
+    box-shadow: -5px 5px 0 var(--orange);
+    width: 30%;
+    margin-bottom: 1rem;
+  }
+
+  .test-selection .our-tests .buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

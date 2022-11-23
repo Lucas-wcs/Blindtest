@@ -1,19 +1,29 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Menu.css";
+import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import "boxicons";
 
-function Menu() {
-  const [isActive, setActive] = useState("false");
+import { BiUserCircle } from "react-icons/bi";
+import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
+
+function Menu({ setGenreChoice, setAnneeChoice }) {
+  const [isActive, setActive] = useState(false);
   const toggle = () => {
     setActive(!isActive);
+  };
+
+  const resetTab = () => {
+    setGenreChoice([]);
+    setAnneeChoice([]);
   };
 
   return (
     <div id="principale-menu" className={isActive ? "click" : null}>
       <button
+        id="button-menu"
         type="button"
         className={isActive ? "click" : null}
         onClick={toggle}
@@ -22,47 +32,50 @@ function Menu() {
         <FontAwesomeIcon icon={faXmark} className="xmark" />
       </button>
 
+      <Link to="/connexion">
+        <BiUserCircle id="button-user" />
+      </Link>
+
       <nav className={isActive ? "click" : null}>
         <ul>
           <li>
-            <a href="./accueil.html">Accueil</a>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
-            <a href="./blindtest.html">Choix Blind Test</a>
+            <Link to="/recherche">Rechercher</Link>
           </li>
           <li>
-            <a href="./rechercher.html">Rechercher</a>
+            <Link to="/choice" onClick={() => resetTab()}>
+              Choix Blind Test
+            </Link>
           </li>
           <li>
-            <a href="./user.html">User</a>
+            <Link to="/connexion">User</Link>
           </li>
         </ul>
 
         <div className="bottom">
           <div className="icons-applis">
             <a
-              className="test"
               href="https://fr-fr.facebook.com/"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon type="logo" name="facebook-square" />
+              <BsFacebook />
             </a>
             <a
-              className="test"
               href="https://twitter.com/?lang=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon type="logo" name="twitter" />
+              <BsTwitter />
             </a>
             <a
-              className="test"
               href="https://www.instagram.com/?hl=fr"
               target="_blank"
               rel="noreferrer"
             >
-              <box-icon name="instagram-alt" type="logo" />
+              <BsInstagram />
             </a>
           </div>
 
@@ -75,5 +88,10 @@ function Menu() {
     </div>
   );
 }
+
+Menu.propTypes = {
+  setGenreChoice: PropTypes.func.isRequired,
+  setAnneeChoice: PropTypes.func.isRequired,
+};
 
 export default Menu;

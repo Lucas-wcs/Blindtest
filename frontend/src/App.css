@@ -11,7 +11,7 @@
 :root {
   --blanc: white;
   --noir: black;
-  --orange: #ec7e40;
+  --orange: #cb5f20;
   --bleu: #24335f;
   --beige: #d7c392;
   --bg: rgba(146, 102, 61, 0.2);
@@ -36,14 +36,20 @@ a {
 body {
   color: var(--noir);
   font-family: var(--ffTexte);
-  background-color: var(--bg);
   min-height: 100vh;
   text-align: center;
-  padding-bottom: 2rem;
+
+  background-image: url(./assets/mur.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: left;
+  background-size: cover;
 }
 
 h1 {
   font-family: var(--ffTitre);
+  font-weight: 200;
   color: var(--noir);
   padding-top: 70px;
   text-shadow: 1px 0px 1px gray, 0px 1px 1px lightgray, 2px 1px 1px gray,

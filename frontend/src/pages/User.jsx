@@ -1,151 +1,55 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import MyTitle from "../components/user/MyTitle";
 import LastListen from "../components/user/LastListen";
 import Favoris from "../components/user/Favoris";
 import "../style/User.css";
-import "boxicons";
 
-function User() {
-  const lastEcoute = [
-    {
-      artist: "Survivor",
-      title: "Eye of the tiger",
-      pieceToListen: "test",
-    },
-    {
-      artist: "Survivor",
-      title: "Eye of the tiger",
-      pieceToListen: "test",
-    },
-    {
-      artist: "Survivor",
-      title: "Eye of the tiger",
-      pieceToListen: "test",
-    },
-    {
-      artist: "Survivor",
-      title: "Eye of the tiger",
-      pieceToListen: "test",
-    },
-    {
-      artist: "Survivor",
-      title: "Eye of the tiger",
-      pieceToListen: "test",
-    },
-  ];
-
-  const fav = [
-    {
-      img: (
-        <img
-          className="imgMusic"
-          src="https://www.noviscore.fr/pochette255-eye-of-the-tiger-survivor.jpg"
-          alt="img"
-        />
-      ),
-      titre: "Eye of the tiger",
-      artiste: "Survivor",
-      duree: "3:00",
-      favoris: true,
-      btn: React.createElement(
-        "button",
-        { type: "button" },
-        <box-icon color="orange" name="caret-right-circle" />
-      ),
-    },
-    {
-      img: (
-        <img
-          className="imgMusic"
-          src="https://www.noviscore.fr/pochette255-eye-of-the-tiger-survivor.jpg"
-          alt="img"
-        />
-      ),
-      titre: "Eye of the tiger",
-      artiste: "Survivor",
-      duree: "3:00",
-      favoris: true,
-      btn: React.createElement(
-        "button",
-        { type: "button" },
-        <box-icon color="orange" name="caret-right-circle" />
-      ),
-    },
-    {
-      img: (
-        <img
-          className="imgMusic"
-          src="https://www.noviscore.fr/pochette255-eye-of-the-tiger-survivor.jpg"
-          alt="img"
-        />
-      ),
-      titre: "Eye of the tiger",
-      artiste: "Survivor",
-      duree: "3:00",
-      favoris: true,
-      btn: React.createElement(
-        "button",
-        { type: "button" },
-        <box-icon color="orange" name="caret-right-circle" />
-      ),
-    },
-    {
-      img: (
-        <img
-          className="imgMusic"
-          src="https://www.noviscore.fr/pochette255-eye-of-the-tiger-survivor.jpg"
-          alt="img"
-        />
-      ),
-      titre: "Eye of the tiger",
-      artiste: "Survivor",
-      duree: "3:00",
-      favoris: true,
-      btn: React.createElement(
-        "button",
-        { type: "button" },
-        <box-icon color="orange" name="caret-right-circle" />
-      ),
-    },
-    {
-      img: (
-        <img
-          className="imgMusic"
-          src="https://www.noviscore.fr/pochette255-eye-of-the-tiger-survivor.jpg"
-          alt="img"
-        />
-      ),
-      titre: "Eye of the tiger",
-      artiste: "Survivor",
-      duree: "3:00",
-      favoris: true,
-      btn: React.createElement(
-        "button",
-        { type: "button" },
-        <box-icon color="orange" name="caret-right-circle" />
-      ),
-    },
-  ];
-
+function User({ myLastListening }) {
   return (
-    <div>
-      <header>
-        <p>HEADER</p>
-      </header>
-
-      <div className="titleUser">
-        <MyTitle />
+    <div className="pageUser">
+      <div className="disconnectBtn">
+        <NavLink
+          to="/connexion"
+          onClick={() => {
+            localStorage.clear();
+          }}
+        >
+          Déconnexion
+        </NavLink>
       </div>
 
-      <div className="lastListen">
-        <LastListen lastEcoute={lastEcoute} />
-      </div>
+      <div className="blockMusic">
+        <div className="titleAndLast">
+          <div className="titleUser">
+            <MyTitle />
+          </div>
 
-      <div className="pieceOfMusic">
-        <Favoris fav={fav} />
+          <div className="lastListen">
+            <LastListen lastEcoute={myLastListening} />
+          </div>
+        </div>
+
+        <div className="pieceOfMusic">
+          <Favoris fav={myLastListening} />
+        </div>
       </div>
     </div>
   );
 }
+
+User.propTypes = {
+  myLastListening: PropTypes.arrayOf(
+    PropTypes.shape([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.string,
+    ])
+  ).isRequired,
+};
 
 export default User;

@@ -1,4 +1,4 @@
-button {
+#principale-menu #button-menu {
   position: fixed;
   top: 15px;
   left: 15px;
@@ -20,23 +20,45 @@ button {
   z-index: 10;
 }
 
-button .bars {
+#principale-menu #button-user {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+
+  height: 45px;
+  width: 45px;
+  background-color: transparent;
+  border: 2px var(--orange) solid;
+  color: var(--orange);
+  border-radius: 7px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+#principale-menu #button-menu .bars {
   display: block;
 }
 
-button .xmark {
+#principale-menu #button-menu .xmark {
   display: none;
 }
 
-button.click {
-  left: 265px;
+#principale-menu #button-menu.click {
+  left: 235px;
 }
 
-button.click .xmark {
+#principale-menu #button-menu.click .xmark {
   display: block;
 }
 
-button.click .bars {
+#principale-menu #button-menu.click .bars {
   display: none;
 }
 
@@ -54,16 +76,16 @@ button.click .bars {
 
 /* ----------------------------------------------- */
 
-nav {
+#principale-menu nav {
   position: fixed;
-  width: 250px;
+  width: 220px;
   height: 100%;
   color: black;
   z-index: 10;
   background-color: white;
   transition: 0.3s ease;
 
-  left: -252px;
+  left: -220px;
   /* suivant click du bouton */
 
   display: flex;
@@ -74,24 +96,24 @@ nav {
   overflow-y: auto;
 }
 
-nav.click {
+#principale-menu nav.click {
   left: 0px;
 }
 
 /* --- */
 
-nav ul {
+#principale-menu nav ul {
   width: 100%;
 }
 
-nav li {
+#principale-menu nav li {
   line-height: 70px;
   /* permet d'avoir la hauteur voulu + aligner le texte */
   font-weight: 600;
   border-bottom: 1px solid black;
 }
 
-nav a {
+#principale-menu nav a {
   position: relative;
   font-size: 1.5rem;
   display: block;
@@ -99,13 +121,13 @@ nav a {
   transition: ease-in 0.3s;
 }
 
-nav a:hover {
+#principale-menu nav a:hover {
   color: var(--orange);
 }
 
 /* --- */
 
-.icons-applis {
+#principale-menu .icons-applis {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -114,25 +136,20 @@ nav a:hover {
   margin: 50px auto;
 }
 
-.icons-applis a {
+#principale-menu .icons-applis a {
   transition: ease-out 0.3s;
 }
 
-.icons-applis a:hover {
+#principale-menu .icons-applis a:hover {
   fill: var(--orange);
 }
 
-.test {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bottom {
+#principale-menu .bottom {
   margin-bottom: 20px;
 }
 
-.copyright {
+#principale-menu .copyright {
   font-size: 0.7rem;
   padding: 0 0.5rem;
+  color: black;
 }
