@@ -24,7 +24,6 @@ function Favoris({ fav }) {
                   {music.titre} / {music.artiste}
                 </p>
 
-
                 <div
                   id="favorite"
                   onClick={handleClickFavorite}
