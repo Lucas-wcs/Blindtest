@@ -241,7 +241,7 @@ const api = [
   },
   {
     id: 23,
-    pochette: "https://www.cinezik.org/critiques/jaquettes/famille-addams.jpg",
+    pochette: "https://www.mauvais-genres.com/29355-thickbox_default/la-famille-addams-affiche-de-film-ds-69x104-cm-1991-raul-julia-barry-sonnenfeld.jpg",
     titre: "La famille adams",
     artiste: "Jeff Danna",
     date: 1991,
